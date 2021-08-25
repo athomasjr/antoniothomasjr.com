@@ -1,0 +1,10 @@
+node_modules
+build
+.vscode
+.cache
+public
+gatsby-config.js
+gatsby-browser.js
+gatsby-node.js
+gatsby-srr.js
+config

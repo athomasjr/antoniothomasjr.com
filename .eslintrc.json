@@ -1,0 +1,64 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"node": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:@typescript-eslint/recommended",
+		"airbnb",
+		"prettier"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 12,
+		"sourceType": "module"
+	},
+	"plugins": [
+		"react",
+		"@typescript-eslint",
+		"react-hooks",
+		"no-loops",
+		"graphql",
+		"prettier"
+	],
+	"settings": {
+		"react": {
+			"version": "^17.0.2"
+		},
+		"import/resolver": {
+			"typescript": {}
+		}
+	},
+	"rules": {
+		"no-use-before-define": "off",
+		"@typescript-eslint/no-use-before-define": ["off"],
+		"react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
+		"import/extensions": [
+			"error",
+			"ignorePackages",
+			{
+				"ts": "never",
+				"tsx": "never"
+			}
+		],
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
+		"import/prefer-default-export": "off",
+		"react/prop-types": "off",
+		"prettier/prettier": "error",
+		"prefer-const": "warn",
+		"semi": "off",
+		"@typescript-eslint/explicit-module-boundary-types": "off",
+		"react/require-default-props": "off",
+		"react/jsx-props-no-spreading": "off",
+		"react/jsx-fragments": "off",
+		"react/no-unescaped-entities": ["off", { "forbid": ["'"] }],
+		"jsx-a11y/label-has-associated-control": "off"
+	}
+}
