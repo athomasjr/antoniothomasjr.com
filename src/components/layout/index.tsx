@@ -1,4 +1,3 @@
-import Shapes from 'components/common/shapes'
 import Footer from 'components/footer'
 import Header from 'components/header'
 import MobileHeader from 'components/mobile-header'
@@ -12,10 +11,9 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
 	return (
 		<div className={styles.wrapper}>
-			<Shapes />
 			<Header />
 			<MobileHeader />
-			<main>{children}</main>
+			<main className={styles.main}>{children}</main>
 			<Footer />
 		</div>
 	)

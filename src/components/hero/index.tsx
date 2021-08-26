@@ -9,7 +9,7 @@ export default function Hero() {
 		<div className={styles.hero}>
 			<StaticImage
 				src='../../images/hero-3.png'
-				alt='Antonio profile'
+				alt='Close-up of Antonio'
 				className={styles.img}
 			/>
 
