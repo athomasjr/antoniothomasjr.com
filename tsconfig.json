@@ -1,5 +1,5 @@
 {
-	"include": ["./src/**/*", "./config/**/*"],
+	"include": ["./src/**/*"],
 	"exclude": ["node_modules", "public", ".cache"],
 	"compilerOptions": {
 		"module": "commonjs",
@@ -15,12 +15,7 @@
 		"noUnusedParameters": true,
 		"removeComments": false,
 		"noImplicitAny": true,
-		"baseUrl": "src/"
-		// "paths": {
-		// 	"components/*": ["src/components/*"],
-		// 	"~": ["src/*"],
-		// 	"pages/*": ["src/pages/*"],
-		// 	"types": ["src/types"],
-		// }
+		"baseUrl": "src/",
+		"typeRoots": ["./typings/", "./node_modules/@types"]
 	}
 }

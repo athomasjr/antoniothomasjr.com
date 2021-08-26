@@ -1,0 +1,20 @@
+@import 'styles/variables';
+
+.wrapper {
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas: 'header' 'main' 'footer';
+	overflow-x: hidden;
+	overflow-y: hidden;
+	padding: 0 70px;
+
+	> main {
+		grid-area: main;
+	}
+
+	@media screen and (min-width: $bp-tablet-landscape) {
+		padding: 0 100px;
+	}
+}

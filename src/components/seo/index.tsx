@@ -3,6 +3,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Helmet, HelmetProps } from 'react-helmet'
+import favicon from '../../../favicon.png'
 // import { Maybe } from 'types'
 
 interface ISeoProps extends HelmetProps {
@@ -74,13 +75,13 @@ export default function Seo({
 					content: site?.siteMetadata?.social?.twitter,
 				},
 			]}
-			// link={[
-			// 	{
-			// 		rel: 'shortcut icon',
-			// 		type: 'image/png',
-			// 		href: `${favicon}`,
-			// 	},
-			// ]}
+			link={[
+				{
+					rel: 'shortcut icon',
+					type: 'image/png',
+					href: `${favicon}`,
+				},
+			]}
 		/>
 	)
 }

@@ -4,15 +4,15 @@ require('dotenv').config({
 })
 
 const siteMetadata = {
-	title: '',
-	description: '',
-	siteUrl: '',
-	keywords: '',
+	title: 'Antonio Thomas',
+	// description: '',
+	siteUrl: 'https://www.antoniothomasjr.com',
+	// keywords: '',
 	author: {
 		name: 'Antonio Thomas',
 		summary: 'who lives in Fitchburg Wisconsin as a frontend developer.',
 	},
-	social: {},
+	// social: {},
 }
 
 module.exports = {
@@ -51,9 +51,18 @@ module.exports = {
 				'~': path.join(__dirname, './src'),
 				pages: path.join(__dirname, './src/pages'),
 				images: path.join(__dirname, './src/images'),
+				assets: path.join(__dirname, './src/assets'),
 				components: path.join(__dirname, './src/components'),
 				types: path.join(__dirname, './src/types'),
 				styles: path.join(__dirname, './src/styles'),
+			},
+		},
+		{
+			resolve: 'gatsby-plugin-react-svg',
+			options: {
+				rule: {
+					include: /\.inline\.svg$/,
+				},
 			},
 		},
 		{
