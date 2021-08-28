@@ -5,12 +5,14 @@ import MyLink from '../my-link'
 interface NavLinksProps {
 	linkData: MyNavLinkData[]
 	className?: string
+	activeClass?: string
 	onClick?: () => void
 }
 
 export default function NavLinks({
 	linkData,
 	className,
+	activeClass,
 
 	onClick,
 }: NavLinksProps) {
@@ -20,7 +22,7 @@ export default function NavLinks({
 				<ul>
 					{linkData.map(link => (
 						<li key={link.id}>
-							<MyLink onClick={onClick} link={link} />
+							<MyLink activeClass={activeClass} onClick={onClick} link={link} />
 						</li>
 					))}
 				</ul>

@@ -1,10 +1,13 @@
 @import 'styles/variables';
 
 .about {
-	display: grid;
-	grid-template-columns: 1fr;
 	background: $color-about-bg;
-	padding: 50px 20px;
+	padding: 100px 40px;
+
+	@media screen and (max-width: 427px) {
+		margin-top: 150px;
+		padding-left: 30px;
+	}
 
 	div:first-child {
 		display: flex;
@@ -20,6 +23,7 @@
 				grid-gap: 5px;
 				list-style: none;
 				grid-template-columns: 1fr 1fr;
+				align-items: center;
 				li {
 					font-size: 1.6rem;
 					svg {
@@ -38,6 +42,7 @@
 
 @media screen and (min-width: $bp-tablet-landscape) {
 	.about {
+		display: grid;
 		grid-template-columns: 1fr 1fr;
 		padding: 100px 250px;
 		margin-bottom: 100px;
@@ -74,7 +79,35 @@
 		}
 	}
 
-	.img {
+	.img_container {
 		max-width: 450px;
+		background: $color-about-bg;
+	}
+
+	.img {
+		background: $color-about-bg;
+	}
+}
+
+.from {
+	&_left {
+		grid-column: 1/2;
+		transform: translateX(-50%);
+	}
+
+	&_right {
+		grid-column: 2/3;
+		transform: translateX(50%);
+	}
+
+	&_right,
+	&_left {
+		transition: opacity 250ms ease-in, transform 400ms ease-in;
+		opacity: 0;
+
+		&.appear {
+			opacity: 1;
+			transform: translateX(0);
+		}
 	}
 }

@@ -8,12 +8,11 @@ import About from '../components/about/index'
 export default function IndexPage() {
 	return (
 		<>
-			<Circles />
-
 			<Layout>
 				<Seo />
 				<Hero />
 				<About />
+				<Circles />
 			</Layout>
 		</>
 	)

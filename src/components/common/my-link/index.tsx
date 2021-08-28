@@ -6,20 +6,32 @@ import { MyNavLinkData } from 'types'
 interface NavLinkProps {
 	link: MyNavLinkData
 	className?: string
+	activeClass?: string
 	onClick?: () => void
 }
 
-export default function MyLink({ link, className, onClick }: NavLinkProps) {
+export default function MyLink({
+	link,
+	className,
+	onClick,
+	activeClass,
+}: NavLinkProps) {
 	const navLink = link.isAnchor ? (
 		<AnchorLink
 			onAnchorLinkClick={onClick}
 			to={link.to}
 			title={link.text}
-			stripHash
 			className={className}
+			gatsbyLinkProps={{ activeClassName: activeClass }}
+			stripHash={false}
 		/>
 	) : (
-		<GatsbyLink onClick={onClick} to={link.to} className={className}>
+		<GatsbyLink
+			onClick={onClick}
+			to={link.to}
+			className={className}
+			activeClassName={activeClass}
+		>
 			{link.text}
 		</GatsbyLink>
 	)

@@ -80,6 +80,7 @@ module.exports = {
 
 		`gatsby-plugin-sass`,
 		'gatsby-plugin-anchor-links',
+
 		`gatsby-plugin-react-helmet`,
 	],
 	flags: {
