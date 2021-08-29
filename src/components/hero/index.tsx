@@ -14,7 +14,7 @@ export default function Hero() {
 	return (
 		<div className={styles.hero}>
 			<StaticImage
-				src='../../images/hero-3.png'
+				src='../../images/hero7.png'
 				alt='Close-up of Antonio'
 				className={styles.img_container}
 				loading='eager'
@@ -22,8 +22,7 @@ export default function Hero() {
 
 			<div
 				ref={inViewRef}
-				className={classNames(styles.from_right, { [styles.appear]: inView })}
-			>
+				className={classNames(styles.from_right, { [styles.appear]: inView })}>
 				<h1>
 					{heroContent.greeting}
 					<span className={styles.waving_hand}>👋🏾</span>

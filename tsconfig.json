@@ -1,5 +1,5 @@
 {
-	"include": ["./src/**/*"],
+	"include": ["./src/**/*", "cypress/**/*.ts", "cypress/support/commands.js"],
 	"exclude": ["node_modules", "public", ".cache"],
 	"compilerOptions": {
 		"module": "commonjs",
@@ -16,6 +16,7 @@
 		"removeComments": false,
 		"noImplicitAny": true,
 		"baseUrl": "src/",
-		"typeRoots": ["./typings/", "./node_modules/@types"]
+		"typeRoots": ["./typings/", "./node_modules/@types"],
+		"types": ["cypress", "@testing-library/cypress", "scss", "png", "svg"]
 	}
 }

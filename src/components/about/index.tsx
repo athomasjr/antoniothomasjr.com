@@ -18,9 +18,8 @@ export default function About() {
 			<div
 				className={classNames(styles.from_left, {
 					[styles.appear]: inView,
-				})}
-			>
-				<h1>{aboutContent.heading}</h1>
+				})}>
+				<h2>{aboutContent.heading}</h2>
 				<p>{aboutContent.content1}</p>
 				<p>{aboutContent.content2}</p>
 			</div>
@@ -28,8 +27,7 @@ export default function About() {
 				// ref={setRefs}
 				className={classNames(styles.from_right, {
 					[styles.appear]: inView,
-				})}
-			>
+				})}>
 				<StaticImage
 					className={styles.img_container}
 					imgClassName={styles.img}
@@ -38,6 +36,7 @@ export default function About() {
 					loading='lazy'
 				/>
 				<div>
+					<h3>Tools I use &#58;</h3>
 					<ul>
 						{aboutContent.skills.map(skill => (
 							<li key={skill}>

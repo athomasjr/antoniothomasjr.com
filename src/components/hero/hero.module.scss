@@ -58,9 +58,10 @@
 }
 
 .img_container {
-	border-bottom-right-radius: 55px;
-	border-bottom-left-radius: 55px;
 	width: 150px;
+	background: $color-highlight;
+
+	clip-path: circle(35% at 52% 65%);
 
 	@media screen and (max-width: 427px) {
 		margin-bottom: 200px;

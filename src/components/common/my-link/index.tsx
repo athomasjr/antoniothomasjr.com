@@ -30,8 +30,7 @@ export default function MyLink({
 			onClick={onClick}
 			to={link.to}
 			className={className}
-			activeClassName={activeClass}
-		>
+			activeClassName={activeClass}>
 			{link.text}
 		</GatsbyLink>
 	)

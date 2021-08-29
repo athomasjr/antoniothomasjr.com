@@ -17,6 +17,10 @@
 
 	div:nth-child(2) {
 		div:nth-child(2) {
+			h3 {
+				color: $color-hero-headline;
+				margin-left: 40px;
+			}
 			ul {
 				padding-top: 20px;
 				display: grid;
@@ -35,7 +39,7 @@
 		}
 	}
 
-	h1 {
+	h2 {
 		color: $color-hero-headline;
 	}
 }
@@ -63,11 +67,17 @@
 
 			div:nth-child(2) {
 				background: $color-hero-background;
-				width: 378px;
-				height: 243px;
+
+				padding-bottom: 40px;
 				border-radius: 32px;
-				margin-top: -10px;
 				display: block;
+				display: grid;
+				grid-template-rows: auto 1fr;
+				align-items: center;
+
+				h3 {
+					margin: 18px 0 0 20px;
+				}
 
 				ul {
 					height: 100%;

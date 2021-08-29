@@ -74,6 +74,7 @@ module.exports = {
 				options: {
 					emitWarning: true,
 					failOnError: false,
+					fix: true,
 				},
 			},
 		},
