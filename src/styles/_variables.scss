@@ -8,7 +8,9 @@ $color-about-bg: #242629;
 $color-header-bg: rgba(22, 22, 26, 0.9);
 $color-tag-purple: #7f5af088;
 $color-tag-black: #16161a88;
+$color-tag-green: #2cb67d88;
 $color-tag-white: #fffffe30;
+$color-tag-red: #ff000060;
 //* <---------  Fonts ----------->
 // $font-title: 'Mrs Saint Delafield';
 $font-body: 'Mukta';
@@ -21,7 +23,9 @@ $bp-tablet: 48em; // min 768px;
 $bp-mobile-landscape: 40em; // min 640px;
 $bp-mobile: 39.938rem; // max 639px;
 
-//* <---------  Padding ----------->k
+//* <---------  Padding ----------->
+$padding-page-mobile: 100px 40px;
+$padding-page-desktop: 100px 250px;
 
 //* <---------  Box-Shadow ----------->
 $shadow-card: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

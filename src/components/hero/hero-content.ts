@@ -7,6 +7,6 @@ export interface HeroContent {
 export const heroContent: HeroContent = {
 	greeting: "Hi I'm Antonio",
 	intro:
-		'Freelance front-end developer. I help people reach there goals by bringing their ideas to the web.',
+		'Freelance front-end developer. I help people reach their goals by bringing their ideas to the web.',
 	cta: 'Get in Touch',
 }

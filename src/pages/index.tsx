@@ -1,4 +1,5 @@
 import Circles from 'components/common/circles'
+import Contact from 'components/contact'
 import Hero from 'components/hero/index'
 import Layout from 'components/layout'
 import Seo from 'components/seo'
@@ -14,6 +15,7 @@ export default function IndexPage() {
 				<Hero />
 				<About />
 				<Projects />
+				<Contact />
 				<Circles />
 			</Layout>
 		</>

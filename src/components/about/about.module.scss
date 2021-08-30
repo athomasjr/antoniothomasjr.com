@@ -48,7 +48,7 @@
 	.about {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		padding: 100px 250px;
+		padding: $padding-page-desktop;
 		margin-bottom: 100px;
 		column-gap: 100px;
 
