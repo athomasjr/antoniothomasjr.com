@@ -2786,17 +2786,17 @@ var no_show = "mobile-header-module--no_show--185hm";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "project_card": () => (/* binding */ project_card),
+/* harmony export */   "image2_container": () => (/* binding */ image2_container),
 /* harmony export */   "content": () => (/* binding */ content),
 /* harmony export */   "image1_container": () => (/* binding */ image1_container),
-/* harmony export */   "image2_container": () => (/* binding */ image2_container),
 /* harmony export */   "fade_in": () => (/* binding */ fade_in),
 /* harmony export */   "appear": () => (/* binding */ appear)
 /* harmony export */ });
 // Exports
 var project_card = "project-card-module--project_card--3adBs";
+var image2_container = "project-card-module--image2_container--q2QMQ";
 var content = "project-card-module--content--28tBH";
 var image1_container = "project-card-module--image1_container--3rviI";
-var image2_container = "project-card-module--image2_container--q2QMQ";
 var fade_in = "project-card-module--fade_in--1icxa";
 var appear = "project-card-module--appear--3zENP";
 
@@ -7526,6 +7526,98 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const projectData = [{
+  title: 'Read Sleep Eat Repeat',
+  description: 'A blog to check out books that are worth reading and books to skip with honest feedback from Read Eat Sleep Repeat',
+  stack: ['Gatsby', 'React', 'Sass/Scss'],
+  responsibility: 'Full design & development',
+  image1: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_1__.StaticImage, {
+    src: "../../images/projects/read-eat-sleep-repeat/resp3.png",
+    alt: "test",
+    style: {
+      borderTopLeftRadius: '4px',
+      borderBottomRightRadius: '20px'
+    },
+    __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/977264844.json */ "./.cache/caches/gatsby-plugin-image/977264844.json")
+  }),
+  image2: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_1__.StaticImage, {
+    src: "../../images/projects/read-eat-sleep-repeat/resp1.png",
+    alt: "test",
+    style: {
+      borderRadius: '4px'
+    },
+    __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/3448559802.json */ "./.cache/caches/gatsby-plugin-image/3448559802.json")
+  }),
+  url: 'https://www.readsleepeatrepeat.com/'
+}, {
+  title: 'Read Sleep Eat Repeat',
+  description: 'A blog to check out books that are worth reading and books to skip with honest feedback from Read Eat Sleep Repeat',
+  stack: ['Gatsby', 'React', 'Sass/Scss'],
+  responsibility: 'Full design & development',
+  image1: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_1__.StaticImage, {
+    src: "../../images/projects/read-eat-sleep-repeat/resp3.png",
+    alt: "test",
+    style: {
+      borderTopLeftRadius: '4px',
+      borderBottomRightRadius: '20px'
+    },
+    __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/977264844.json */ "./.cache/caches/gatsby-plugin-image/977264844.json")
+  }),
+  image2: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_1__.StaticImage, {
+    src: "../../images/projects/read-eat-sleep-repeat/resp1.png",
+    alt: "test",
+    style: {
+      borderRadius: '4px'
+    },
+    __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/3448559802.json */ "./.cache/caches/gatsby-plugin-image/3448559802.json")
+  }),
+  url: 'https://www.readsleepeatrepeat.com/'
+}, {
+  title: 'Read Sleep Eat Repeat',
+  description: 'A blog to check out books that are worth reading and books to skip with honest feedback from Read Eat Sleep Repeat',
+  stack: ['Gatsby', 'React', 'Sass/Scss'],
+  responsibility: 'Full design & development',
+  image1: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_1__.StaticImage, {
+    src: "../../images/projects/read-eat-sleep-repeat/resp3.png",
+    alt: "test",
+    style: {
+      borderTopLeftRadius: '4px',
+      borderBottomRightRadius: '20px'
+    },
+    __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/977264844.json */ "./.cache/caches/gatsby-plugin-image/977264844.json")
+  }),
+  image2: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_1__.StaticImage, {
+    src: "../../images/projects/read-eat-sleep-repeat/resp1.png",
+    alt: "test",
+    style: {
+      borderRadius: '4px'
+    },
+    __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/3448559802.json */ "./.cache/caches/gatsby-plugin-image/3448559802.json")
+  }),
+  url: 'https://www.readsleepeatrepeat.com/'
+}, {
+  title: 'Read Sleep Eat Repeat',
+  description: 'A blog to check out books that are worth reading and books to skip with honest feedback from Read Eat Sleep Repeat',
+  stack: ['Gatsby', 'React', 'Sass/Scss'],
+  responsibility: 'Full design & development',
+  image1: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_1__.StaticImage, {
+    src: "../../images/projects/read-eat-sleep-repeat/resp3.png",
+    alt: "test",
+    style: {
+      borderTopLeftRadius: '4px',
+      borderBottomRightRadius: '20px'
+    },
+    __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/977264844.json */ "./.cache/caches/gatsby-plugin-image/977264844.json")
+  }),
+  image2: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_1__.StaticImage, {
+    src: "../../images/projects/read-eat-sleep-repeat/resp1.png",
+    alt: "test",
+    style: {
+      borderRadius: '4px'
+    },
+    __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/3448559802.json */ "./.cache/caches/gatsby-plugin-image/3448559802.json")
+  }),
+  url: 'https://www.readsleepeatrepeat.com/'
+}, {
   title: 'Read Sleep Eat Repeat',
   description: 'A blog to check out books that are worth reading and books to skip with honest feedback from Read Eat Sleep Repeat',
   stack: ['Gatsby', 'React', 'Sass/Scss'],

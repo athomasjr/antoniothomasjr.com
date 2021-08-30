@@ -1,27 +1,23 @@
 @import 'styles/variables';
 
 .project_card {
-	position: relative;
+	width: 70%;
+	height: 100%;
+	margin: 0 auto 40px;
 	background: $color-about-bg;
-	border-radius: 20px;
-	height: 680px;
-
-	.content {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		padding: 0 10px;
-	}
+	display: flex;
+	flex-direction: column;
+	padding: 32px;
+	border-radius: 4px;
 
 	p:last-child {
-		padding: 5px 8px 5px 8px;
-		// background-color: $color-tag-black;
+		padding: 5px;
 		background-color: $color-tag-white;
 		color: $color-hero-headline;
-		width: 40%;
+		width: 50%;
 		text-align: center;
 		border-radius: 4px;
-		font-size: 1.5em;
+		font-size: 1em;
 	}
 
 	h3 {
@@ -32,46 +28,79 @@
 		list-style: none;
 		display: flex;
 		padding: 0;
-
-		li {
-			padding: 5px 8px 5px 8px;
-			margin: 0 25px 0 0;
-			background-color: $color-tag-purple;
-			color: $color-hero-headline;
-			border-radius: 4px;
-			text-align: center;
-		}
 	}
-}
 
-.image1_container {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	// width: 450px;
-	width: 85%;
-}
-.image2_container {
-	position: absolute;
-	left: 50px;
-	bottom: 60px;
-	width: 300px;
-	box-shadow: $shadow-project-img;
-	transition: transform 200ms;
-}
+	li {
+		padding: 5px 8px 5px 8px;
+		margin: 0 5px 0 0;
+		background-color: $color-tag-purple;
+		color: $color-hero-headline;
+		border-radius: 4px;
+		text-align: center;
+	}
 
-@media screen and (min-width: $bp-tablet-landscape) {
-	.project_card {
+	@media screen and (min-width: $bp-laptop) {
+		width: 100%;
 		padding: 32px 32px 0 32px;
+		margin: 0;
+		position: relative;
+		border-radius: 20px;
+		height: 680px;
+
+		p:last-child {
+			padding: 5px 8px 5px 8px;
+			width: 40%;
+			font-size: 1.5em;
+		}
+
+		ul {
+			font-size: 1.5rem;
+
+			li {
+				margin: 0 25px 0 0;
+			}
+		}
+
 		&:hover {
 			.image2_container {
 				transform: translate(-5%, -5%);
 			}
 		}
+	}
+}
 
-		ul {
-			font-size: 1.5rem;
-		}
+.content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0 5px;
+	@media screen and (min-width: $bp-laptop) {
+		padding: 0 10px;
+	}
+}
+
+.image1_container {
+	display: none;
+	@media screen and (min-width: $bp-laptop) {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 85%;
+	}
+}
+
+.image2_container {
+	margin-top: 15px;
+
+	@media screen and (min-width: $bp-laptop) {
+		margin-top: 0;
+		position: absolute;
+		left: 50px;
+		bottom: 60px;
+		width: 300px;
+		box-shadow: $shadow-project-img;
+		transition: transform 200ms;
 	}
 }
 
