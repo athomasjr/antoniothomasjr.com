@@ -28,6 +28,7 @@ const schema = yup.object().shape({
 		.required(),
 })
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const encode = (data: any) =>
 	Object.keys(data)
 		.map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
@@ -85,7 +86,14 @@ export default function ContactForm() {
 	)
 
 	const showForm = (
-		<form onSubmit={handleSubmit(onSubmit)} className={styles.contact_form}>
+		<form
+			name='contact'
+			method='post'
+			data-netlify='true'
+			data-netlify-honeypot='bot-field'
+			onSubmit={handleSubmit(onSubmit)}
+			className={styles.contact_form}>
+			<input type='hidden' name='form-name' value='contact' />
 			<div>
 				<label htmlFor='name'>
 					First name
