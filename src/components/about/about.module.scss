@@ -4,11 +4,6 @@
 	background: $color-about-bg;
 	padding: 100px 40px;
 
-	@media screen and (max-width: 427px) {
-		margin-top: 150px;
-		padding-left: 30px;
-	}
-
 	div:first-child {
 		display: flex;
 		flex-direction: column;
@@ -18,8 +13,7 @@
 	div:nth-child(2) {
 		div:nth-child(2) {
 			h3 {
-				color: $color-hero-headline;
-				margin-left: 40px;
+				display: none;
 			}
 			ul {
 				padding-top: 20px;
@@ -42,39 +36,38 @@
 	h2 {
 		color: $color-hero-headline;
 	}
-}
 
-@media screen and (min-width: $bp-tablet-landscape) {
-	.about {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		padding: $padding-page-desktop;
-		margin-bottom: 100px;
-		column-gap: 100px;
+	@media screen and (max-width: $bp-small-phone-max) {
+		margin-top: 150px;
+		padding-left: 30px;
 
+		div:nth-child(2) {
+			div:nth-child(2) {
+				ul {
+					li {
+						font-size: 1rem;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width: $bp-tablet-landscape) {
 		p {
 			font-size: 2rem;
 		}
 
-		div:first-child {
-			width: 80%;
-			justify-self: start;
-		}
-
 		div:nth-child(2) {
 			align-self: end;
-			justify-self: end;
+			margin: 0 auto;
 
 			div:nth-child(2) {
-				background: $color-hero-background;
-
+				margin-bottom: 20px;
 				padding-bottom: 40px;
 				border-radius: 32px;
-				display: block;
 				display: grid;
-				grid-template-rows: auto 1fr;
 				align-items: center;
-
+				width: 50%;
 				h3 {
 					margin: 18px 0 0 20px;
 				}
@@ -87,11 +80,40 @@
 				}
 			}
 		}
+
+		@media screen and (min-width: $bp-laptop) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			column-gap: 100px;
+			padding: $padding-page-desktop;
+			div:first-child {
+				width: 80%;
+			}
+
+			div:nth-child(2) {
+				justify-self: end;
+				width: 90%;
+				margin: 0;
+
+				div:nth-child(2) {
+					margin-bottom: 0;
+					background: $color-hero-background;
+					width: 80%;
+					h3 {
+						display: block;
+						color: $color-hero-headline;
+					}
+				}
+			}
+		}
 	}
 
 	.img_container {
-		max-width: 450px;
 		background: $color-about-bg;
+
+		@media screen and (min-width: $bp-tablet-landscape) and (max-width: $bp-laptop) {
+			margin: 0 0 10px 200px;
+		}
 	}
 
 	.img {
