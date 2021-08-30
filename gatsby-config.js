@@ -1,19 +1,9 @@
 const path = require('path')
+const siteMetadata = require('./config/siteMetadata/index.js')
+
 require('dotenv').config({
 	path: './.env',
 })
-
-const siteMetadata = {
-	title: 'Antonio Thomas',
-	// description: '',
-	siteUrl: 'https://www.antoniothomasjr.com',
-	// keywords: '',
-	author: {
-		name: 'Antonio Thomas',
-		summary: 'who lives in Fitchburg Wisconsin as a frontend developer.',
-	},
-	// social: {},
-}
 
 module.exports = {
 	siteMetadata,
@@ -55,6 +45,7 @@ module.exports = {
 				components: path.join(__dirname, './src/components'),
 				types: path.join(__dirname, './src/types'),
 				styles: path.join(__dirname, './src/styles'),
+				hooks: path.join(__dirname, './src/hooks'),
 			},
 		},
 		{

@@ -3,25 +3,26 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Helmet, HelmetProps } from 'react-helmet'
+import { Maybe } from 'types'
 import favicon from '../../../favicon.png'
-// import { Maybe } from 'types'
 
 interface ISeoProps extends HelmetProps {
 	description?: string
 	title?: string | undefined
-	// slug?: string | Maybe<string>
+	slug?: string | Maybe<string>
 	isPost?: boolean
 }
 
 export default function Seo({
 	title,
 	description,
-	// slug,
+	slug,
 	isPost = false,
 }: ISeoProps) {
 	const { site } = useStaticQuery(query)
 
-	// const slugWithoutSlashes = () => (isPost ? slug?.replace(/\//g, '') : slug)
+	const slugWithoutSlashes = () => (isPost ? slug?.replace(/\//g, '') : slug)
+	const metaKeywords: string[] = site.siteMetadata?.keywords
 
 	const twitterCard = isPost ? 'summary_large_image' : 'summary'
 
@@ -44,12 +45,13 @@ export default function Seo({
 					property: 'og:description',
 					content: description || site?.siteMetadata?.description!,
 				},
-				// {
-				// 	property: 'og:url',
-				// 	content: slug
-				// 		? `${site?.siteMetadata?.siteUrl}/${slugWithoutSlashes()}/`
-				// 		: site?.siteMetadata?.siteUrl!,
-				// },
+
+				{
+					property: 'og:url',
+					content: slug
+						? `${site?.siteMetadata?.siteUrl}/${slugWithoutSlashes()}/`
+						: site?.siteMetadata?.siteUrl!,
+				},
 				{
 					name: 'twitter:card',
 					content: twitterCard,
@@ -74,7 +76,14 @@ export default function Seo({
 					name: `twitter:site`,
 					content: site?.siteMetadata?.social?.twitter,
 				},
-			]}
+			].concat(
+				metaKeywords && metaKeywords.length > 0
+					? {
+							name: `keywords`,
+							content: metaKeywords.join(', '),
+					  }
+					: [],
+			)}
 			link={[
 				{
 					rel: 'shortcut icon',
@@ -93,6 +102,24 @@ export const query = graphql`
 				description
 				siteUrl
 				title
+				social {
+					github {
+						username
+						url
+					}
+					linkedin {
+						url
+						username
+					}
+					twitter {
+						handle
+						url
+					}
+				}
+				author {
+					name
+					summary
+				}
 			}
 		}
 	}
