@@ -74,6 +74,12 @@ module.exports = {
 		'gatsby-plugin-anchor-links',
 
 		`gatsby-plugin-react-helmet`,
+		{
+			resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+			options: {
+				siteUrl: `https://www.antoniothomasjr.com`,
+			},
+		},
 	],
 	flags: {
 		FAST_DEV: true,
