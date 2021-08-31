@@ -13,6 +13,7 @@ export default function MobileHeader() {
 			<MobileMenu showNav={showNav} onClick={() => setShowNav(!showNav)} />
 
 			<NavLinks
+				onClick={() => setShowNav(!showNav)}
 				className={classNames(styles.nav, { [styles.no_show]: !showNav })}
 				linkData={myLinkData}
 			/>
