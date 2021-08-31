@@ -88,6 +88,7 @@ export default function ContactForm() {
 	const showForm = (
 		<form
 			name='contact'
+			action='/'
 			method='post'
 			data-netlify='true'
 			data-netlify-honeypot='bot-field'
