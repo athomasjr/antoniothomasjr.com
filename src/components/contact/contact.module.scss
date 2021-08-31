@@ -1,39 +1,62 @@
 @import 'styles/variables';
 
 .contact {
-	display: grid;
-	grid-template-columns: 1fr;
+	display: flex;
+	flex-direction: column;
+	padding: 60px 30px;
+	margin: 20px 0;
 	background: $color-about-bg;
-	padding: $padding-page-desktop;
-	grid-gap: 30px;
+	text-align: center;
 	h2 {
 		color: $color-hero-headline;
-		font-size: 3.5rem;
-	}
-
-	h3 {
-		font-size: 2.3rem;
 	}
 
 	h4 {
 		background-color: $color-tag-purple;
 		color: $color-hero-headline;
-		font-size: 1.6rem;
 		padding: 5px 10px;
 		border-radius: 4px;
 		display: inline-block;
 	}
+
+	@media screen and (min-width: $bp-tablet-landscape) {
+		margin: 0;
+		display: grid;
+		grid-template-columns: 1fr;
+		padding: $padding-page-desktop;
+		grid-gap: 30px;
+		text-align: left;
+		h2 {
+			font-size: 3.5rem;
+		}
+
+		h3 {
+			font-size: 2.3rem;
+		}
+
+		h4 {
+			font-size: 1.6rem;
+		}
+	}
 }
 
-@media screen and (min-width: $bp-tablet-landscape) {
-	.content_container {
+.content_container {
+	width: 60%;
+	align-self: center;
+
+	@media screen and (min-width: $bp-tablet-landscape) {
 		justify-self: center;
-		max-width: 70%;
 		width: 70%;
+		max-width: 70%;
 	}
-	.form_container {
-		max-width: 70%;
+}
+.form_container {
+	width: 60%;
+	align-self: center;
+
+	@media screen and (min-width: $bp-tablet-landscape) {
 		width: 70%;
+		max-width: 70%;
 		justify-self: center;
 	}
 }
