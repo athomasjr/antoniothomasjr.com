@@ -31,7 +31,8 @@ const schema = yup.object().shape({
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const encode = (data: any) =>
 	Object.keys(data)
-		.map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+		// eslint-disable-next-line prefer-template
+		.map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
 		.join('&')
 
 export default function ContactForm() {
@@ -59,7 +60,7 @@ export default function ContactForm() {
 			await fetch('/', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-				body: encode({ 'contact-form': 'contact', ...data }),
+				body: encode({ 'form-name': 'contact', ...data }),
 			})
 			if (isSubmitted || isSubmitSuccessful) {
 				setSubmitted(true)
@@ -88,8 +89,8 @@ export default function ContactForm() {
 	const showForm = (
 		<form
 			name='contact'
-			action='/'
-			method='post'
+			method='POST'
+			action='#'
 			data-netlify='true'
 			data-netlify-honeypot='bot-field'
 			onSubmit={handleSubmit(onSubmit)}
