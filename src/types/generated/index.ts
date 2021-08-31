@@ -1852,6 +1852,7 @@ export enum SiteFieldsEnum {
 	SiteMetadataTitle = 'siteMetadata___title',
 	SiteMetadataDescription = 'siteMetadata___description',
 	SiteMetadataSiteUrl = 'siteMetadata___siteUrl',
+	SiteMetadataImage = 'siteMetadata___image',
 	SiteMetadataAuthorName = 'siteMetadata___author___name',
 	SiteMetadataAuthorSummary = 'siteMetadata___author___summary',
 	SiteMetadataSocialTwitterHandle = 'siteMetadata___social___twitter___handle',
@@ -2389,6 +2390,7 @@ export enum SitePageFieldsEnum {
 	PluginCreatorPluginOptionsOptionsFix = 'pluginCreator___pluginOptions___options___fix',
 	PluginCreatorPluginOptionsOptionsExtensions = 'pluginCreator___pluginOptions___options___extensions',
 	PluginCreatorPluginOptionsOptionsExclude = 'pluginCreator___pluginOptions___options___exclude',
+	PluginCreatorPluginOptionsSiteUrl = 'pluginCreator___pluginOptions___siteUrl',
 	PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
 	PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
 	PluginCreatorBrowserApIs = 'pluginCreator___browserAPIs',
@@ -2615,6 +2617,7 @@ export enum SitePluginFieldsEnum {
 	PluginOptionsOptionsFix = 'pluginOptions___options___fix',
 	PluginOptionsOptionsExtensions = 'pluginOptions___options___extensions',
 	PluginOptionsOptionsExclude = 'pluginOptions___options___exclude',
+	PluginOptionsSiteUrl = 'pluginOptions___siteUrl',
 	PluginOptionsPathCheck = 'pluginOptions___pathCheck',
 	NodeApIs = 'nodeAPIs',
 	BrowserApIs = 'browserAPIs',
@@ -2757,6 +2760,7 @@ export type SitePluginPluginOptions = {
 	hooks?: Maybe<Scalars['String']>
 	stages?: Maybe<Array<Maybe<Scalars['String']>>>
 	options?: Maybe<SitePluginPluginOptionsOptions>
+	siteUrl?: Maybe<Scalars['String']>
 	pathCheck?: Maybe<Scalars['Boolean']>
 }
 
@@ -2780,6 +2784,7 @@ export type SitePluginPluginOptionsFilterInput = {
 	hooks?: Maybe<StringQueryOperatorInput>
 	stages?: Maybe<StringQueryOperatorInput>
 	options?: Maybe<SitePluginPluginOptionsOptionsFilterInput>
+	siteUrl?: Maybe<StringQueryOperatorInput>
 	pathCheck?: Maybe<BooleanQueryOperatorInput>
 }
 
@@ -2810,6 +2815,7 @@ export type SiteSiteMetadata = {
 	title?: Maybe<Scalars['String']>
 	description?: Maybe<Scalars['String']>
 	siteUrl?: Maybe<Scalars['String']>
+	image?: Maybe<Scalars['String']>
 	author?: Maybe<SiteSiteMetadataAuthor>
 	social?: Maybe<SiteSiteMetadataSocial>
 }
@@ -2829,6 +2835,7 @@ export type SiteSiteMetadataFilterInput = {
 	title?: Maybe<StringQueryOperatorInput>
 	description?: Maybe<StringQueryOperatorInput>
 	siteUrl?: Maybe<StringQueryOperatorInput>
+	image?: Maybe<StringQueryOperatorInput>
 	author?: Maybe<SiteSiteMetadataAuthorFilterInput>
 	social?: Maybe<SiteSiteMetadataSocialFilterInput>
 }
@@ -2922,6 +2929,7 @@ export type SeoQuery = {
 			description?: Maybe<string>
 			siteUrl?: Maybe<string>
 			title?: Maybe<string>
+			image?: Maybe<string>
 			social?: Maybe<{
 				__typename?: 'SiteSiteMetadataSocial'
 				github?: Maybe<{

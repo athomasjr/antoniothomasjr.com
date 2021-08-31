@@ -10,6 +10,7 @@ interface ISeoProps extends HelmetProps {
 	description?: string
 	title?: string | undefined
 	slug?: string | Maybe<string>
+	image?: string
 	isPost?: boolean
 }
 
@@ -17,6 +18,7 @@ export default function Seo({
 	title,
 	description,
 	slug,
+	image,
 	isPost = false,
 }: ISeoProps) {
 	const { site } = useStaticQuery(query)
@@ -59,6 +61,12 @@ export default function Seo({
 				{
 					property: `og:type`,
 					content: `website`,
+				},
+				{
+					property: `0g:image`,
+					content: `${site?.siteMetadata?.siteUrl}${
+						image || site?.siteMetadata?.image
+					}`,
 				},
 				{
 					name: 'twitter:title',
@@ -120,6 +128,7 @@ export const query = graphql`
 					name
 					summary
 				}
+				image
 			}
 		}
 	}
