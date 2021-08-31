@@ -63,7 +63,7 @@ export default function Seo({
 					content: `website`,
 				},
 				{
-					property: `0g:image`,
+					property: `og:image`,
 					content: `${site?.siteMetadata?.siteUrl}${
 						image || site?.siteMetadata?.image
 					}`,
