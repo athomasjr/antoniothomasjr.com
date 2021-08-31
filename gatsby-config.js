@@ -1,10 +1,6 @@
 const path = require('path')
 const siteMetadata = require('./config/siteMetadata/index.js')
 
-require('dotenv').config({
-	path: './.env',
-})
-
 module.exports = {
 	siteMetadata,
 	plugins: [
