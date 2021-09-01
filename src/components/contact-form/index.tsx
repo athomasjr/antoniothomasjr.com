@@ -40,7 +40,6 @@ export default function ContactForm() {
 		error: false,
 		message: '',
 	})
-	const [submitted, setSubmitted] = useState(false)
 
 	const {
 		register,
@@ -63,7 +62,6 @@ export default function ContactForm() {
 				body: encode({ 'form-name': 'contact', ...data }),
 			})
 			if (isSubmitted || isSubmitSuccessful) {
-				setSubmitted(true)
 				reset()
 			}
 		} catch (error) {
@@ -74,23 +72,11 @@ export default function ContactForm() {
 		}
 	}
 
-	const showThankYou = (
-		<div className={styles.message_success}>
-			<p>Thank you!</p>
-			<button
-				className={styles.cta_button}
-				type='button'
-				onClick={() => setSubmitted(false)}>
-				Go back
-			</button>
-		</div>
-	)
-
 	const showForm = (
 		<form
 			name='contact'
 			method='POST'
-			action='#'
+			action='/thanks/'
 			data-netlify='true'
 			data-netlify-honeypot='bot-field'
 			onSubmit={handleSubmit(onSubmit)}
@@ -154,12 +140,15 @@ export default function ContactForm() {
 		return (
 			<div className={styles.message_error}>
 				<p>{submitError.message}</p>
+				<button
+					onClick={() => setSubmitError({ error: false, message: '' })}
+					className={styles.cta_button}
+					type='button'>
+					Try again
+				</button>
 			</div>
 		)
 	}
 
-	if (submitted) {
-		return <>{showThankYou}</>
-	}
 	return <>{showForm}</>
 }

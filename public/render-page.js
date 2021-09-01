@@ -2636,8 +2636,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "message_container": () => (/* binding */ message_container),
 /* harmony export */   "cta_button": () => (/* binding */ cta_button),
 /* harmony export */   "error": () => (/* binding */ error),
-/* harmony export */   "message_error": () => (/* binding */ message_error),
-/* harmony export */   "message_success": () => (/* binding */ message_success)
+/* harmony export */   "message_error": () => (/* binding */ message_error)
 /* harmony export */ });
 // Exports
 var contact_form = "contact-form-module--contact_form--2-DOM";
@@ -2645,7 +2644,6 @@ var message_container = "contact-form-module--message_container--2D7vt";
 var cta_button = "contact-form-module--cta_button--2Wks-";
 var error = "contact-form-module--error--1CzD9";
 var message_error = "contact-form-module--message_error--1G7PK";
-var message_success = "contact-form-module--message_success--3m-lE";
 
 
 /***/ }),
@@ -6995,10 +6993,6 @@ function ContactForm() {
     message: ''
   });
   const {
-    0: submitted,
-    1: setSubmitted
-  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
-  const {
     register,
     handleSubmit,
     reset,
@@ -7028,7 +7022,6 @@ function ContactForm() {
       });
 
       if (isSubmitted || isSubmitSuccessful) {
-        setSubmitted(true);
         reset();
       }
     } catch (error) {
@@ -7039,17 +7032,10 @@ function ContactForm() {
     }
   };
 
-  const showThankYou = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
-    className: _contact_form_module_scss__WEBPACK_IMPORTED_MODULE_4__.message_success
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("p", null, "Thank you!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("button", {
-    className: _contact_form_module_scss__WEBPACK_IMPORTED_MODULE_4__.cta_button,
-    type: "button",
-    onClick: () => setSubmitted(false)
-  }, "Go back"));
   const showForm = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("form", {
     name: "contact",
     method: "POST",
-    action: "#",
+    action: "/thanks/",
     "data-netlify": "true",
     "data-netlify-honeypot": "bot-field",
     onSubmit: handleSubmit(onSubmit),
@@ -7093,11 +7079,14 @@ function ContactForm() {
   if (submitError.error) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
       className: _contact_form_module_scss__WEBPACK_IMPORTED_MODULE_4__.message_error
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("p", null, submitError.message));
-  }
-
-  if (submitted) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null, showThankYou);
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("p", null, submitError.message), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("button", {
+      onClick: () => setSubmitError({
+        error: false,
+        message: ''
+      }),
+      className: _contact_form_module_scss__WEBPACK_IMPORTED_MODULE_4__.cta_button,
+      type: "button"
+    }, "Try again"));
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null, showForm);
@@ -7517,7 +7506,7 @@ function Seo({
       property: `og:type`,
       content: `website`
     }, {
-      property: `0g:image`,
+      property: `og:image`,
       content: `${site === null || site === void 0 ? void 0 : (_site$siteMetadata9 = site.siteMetadata) === null || _site$siteMetadata9 === void 0 ? void 0 : _site$siteMetadata9.siteUrl}${image || (site === null || site === void 0 ? void 0 : (_site$siteMetadata10 = site.siteMetadata) === null || _site$siteMetadata10 === void 0 ? void 0 : _site$siteMetadata10.image)}`
     }, {
       name: 'twitter:title',

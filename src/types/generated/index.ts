@@ -2957,6 +2957,16 @@ export type SeoQuery = {
 	}>
 }
 
+export type ThankYouImgQueryVariables = Exact<{ [key: string]: never }>
+
+export type ThankYouImgQuery = {
+	__typename?: 'Query'
+	img?: Maybe<{
+		__typename?: 'File'
+		childImageSharp?: Maybe<{ __typename?: 'ImageSharp'; gatsbyImageData: any }>
+	}>
+}
+
 export type UseSiteMetaHookQueryVariables = Exact<{ [key: string]: never }>
 
 export type UseSiteMetaHookQuery = {
