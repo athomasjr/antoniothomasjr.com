@@ -1,4 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup'
+import { navigate } from 'gatsby'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
@@ -45,7 +46,7 @@ export default function ContactForm() {
 		register,
 		handleSubmit,
 		reset,
-		formState: { errors, isSubmitting, isSubmitSuccessful, isSubmitted },
+		formState: { errors, isSubmitting },
 	} = useForm<ContactFormInputs>({
 		resolver: yupResolver(schema),
 	})
@@ -61,9 +62,8 @@ export default function ContactForm() {
 				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 				body: encode({ 'form-name': 'contact', ...data }),
 			})
-			if (isSubmitted || isSubmitSuccessful) {
-				reset()
-			}
+			navigate('/thanks')
+			reset()
 		} catch (error) {
 			setSubmitError({
 				error: true,
@@ -76,7 +76,7 @@ export default function ContactForm() {
 		<form
 			name='contact'
 			method='POST'
-			action='/thanks/'
+			action='#'
 			data-netlify='true'
 			data-netlify-honeypot='bot-field'
 			onSubmit={handleSubmit(onSubmit)}
