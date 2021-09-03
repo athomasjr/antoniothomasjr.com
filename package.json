@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "dev": "gatsby develop -o",
-    "build": "gatsby build",
+    "build": "gatsby build  && node ./csp-util.js",
     "clean": "gatsby clean",
     "gen": "graphql-codegen --config codegen.yml",
     "gen:watch": "graphql-codegen --config codegen.yml -w",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet",
     "cy:open": "cypress open",
     "prepare": "husky install",
-    "net:dev": "netlify dev"
+    "net:dev": "netlify dev",
+    "serve": "gatsby serve"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
@@ -36,17 +37,21 @@
     "dotenv": "^8.6.0",
     "gatsby": "^3.12.0",
     "gatsby-background-image": "^1.5.3",
-    "gatsby-plugin-advanced-sitemap": "^2.0.0",
     "gatsby-plugin-anchor-links": "^1.2.1",
+    "gatsby-plugin-csp": "^1.1.3",
     "gatsby-plugin-image": "^1.12.0",
+    "gatsby-plugin-netlify": "^3.13.0",
     "gatsby-plugin-react-helmet": "^4.12.0",
     "gatsby-plugin-react-helmet-canonical-urls": "^1.4.0",
     "gatsby-plugin-react-svg": "^3.0.1",
+    "gatsby-plugin-robots-txt": "^1.6.9",
     "gatsby-plugin-sass": "^4.12.0",
     "gatsby-plugin-sharp": "^3.12.0",
+    "gatsby-plugin-sitemap": "^4.9.0",
     "gatsby-source-filesystem": "^3.12.0",
     "gatsby-transformer-sharp": "^3.12.0",
     "gbimage-bridge": "^0.1.4",
+    "htmlparser2": "^7.1.1",
     "node-sass": "^6.0.1",
     "normalize.css": "^8.0.1",
     "react": "^17.0.2",
@@ -55,6 +60,7 @@
     "react-hook-form": "^7.14.0",
     "react-icons": "^4.2.0",
     "react-intersection-observer": "^8.32.1",
+    "replace-in-file": "^6.2.0",
     "un": "^0.0.0",
     "yup": "^0.32.9"
   },

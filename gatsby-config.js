@@ -1,10 +1,47 @@
 const path = require('path')
 const siteMetadata = require('./config/siteMetadata/index.js')
+require('dotenv').config({ path: '.env' })
+
+const {
+	NODE_ENV,
+	URL: NETLIFY_SITE_URL = 'https://www.antoniothomasjr.com',
+	DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+	CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env
+const isNetlifyProduction = NETLIFY_ENV === 'production'
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
 
 module.exports = {
 	siteMetadata,
 	plugins: [
-		`gatsby-plugin-advanced-sitemap`,
+		{
+			resolve: `gatsby-plugin-sitemap`,
+			options: {
+				excludes: ['/thanks'],
+			},
+		},
+		{
+			resolve: 'gatsby-plugin-robots-txt',
+			options: {
+				resolveEnv: () => NETLIFY_ENV,
+				env: {
+					production: {
+						policy: [{ userAgent: '*' }],
+						sitemap: `${siteUrl}/sitemap.xml`,
+					},
+					'branch-deploy': {
+						policy: [{ userAgent: '*', disallow: ['/'] }],
+						sitemap: null,
+						host: null,
+					},
+					'deploy-preview': {
+						policy: [{ userAgent: '*', disallow: ['/'] }],
+						sitemap: null,
+						host: null,
+					},
+				},
+			},
+		},
 		{
 			resolve: `gatsby-plugin-typescript`,
 			options: {
@@ -74,6 +111,30 @@ module.exports = {
 			resolve: `gatsby-plugin-react-helmet-canonical-urls`,
 			options: {
 				siteUrl: `https://www.antoniothomasjr.com`,
+			},
+		},
+		{
+			resolve: `gatsby-plugin-csp`,
+			options: {
+				mergeScriptHashes: false,
+				mergeStyleHashes: false,
+				directives: {
+					'script-src': ` 'self' 'unsafe-inline'`,
+					'style-src': ` 'self' 'unsafe-inline'`,
+					'img-src': `'self' data:;`,
+					'report-uri': ` https://antonio.report-uri.com/r/d/csp/wizard
+
+`,
+				},
+			},
+		},
+		{
+			resolve: `gatsby-plugin-netlify`,
+			options: {
+				headers: {
+					'/*': ['Content-Security-Policy: __REPLACE_ME__'],
+				},
+				mergeSecurityHeaders: true,
 			},
 		},
 	],
