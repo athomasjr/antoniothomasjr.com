@@ -11,7 +11,6 @@ export default function MobileHeader() {
 	return (
 		<header className={styles.mobile_header}>
 			<MobileMenu showNav={showNav} onClick={() => setShowNav(!showNav)} />
-
 			<NavLinks
 				onClick={() => setShowNav(!showNav)}
 				className={classNames(styles.nav, { [styles.no_show]: !showNav })}
