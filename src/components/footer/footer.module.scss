@@ -1,14 +1,29 @@
 @import 'styles/variables';
+@import 'styles/mixins';
 
 .footer {
 	display: flex;
 	align-items: center;
 	height: 100px;
 	justify-content: space-between;
-	padding: 0 20px;
+	padding: 0 5px;
 	flex-direction: column;
+	min-width: 100%;
 
-	@media screen and (min-width: $bp-laptop) {
+	p {
+		font-size: 1rem;
+	}
+
+	@include for-tablet-up {
+		gap: 20px;
+		padding: 0 20px;
+
+		p {
+			font-size: 1.5rem;
+		}
+	}
+
+	@include for-laptop-up {
 		justify-content: space-between;
 		flex-direction: row;
 		padding: 0 100px;
