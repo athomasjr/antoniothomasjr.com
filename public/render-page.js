@@ -16993,14 +16993,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "myLinkData": () => (/* binding */ myLinkData)
 /* harmony export */ });
 const myLinkData = [{
+  id: 96392,
+  text: 'Recent Work',
+  to: '/#recent-work',
+  isAnchor: true
+}, {
   id: 51266,
   text: 'My Story',
   to: '/#about',
-  isAnchor: true
-}, {
-  id: 96392,
-  text: 'My Work',
-  to: '/#work',
   isAnchor: true
 }, {
   id: 90444,
@@ -17253,11 +17253,7 @@ function Contact() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("section", {
     id: "contact",
     className: _contact_module_scss__WEBPACK_IMPORTED_MODULE_2__.contact
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
-    className: _contact_module_scss__WEBPACK_IMPORTED_MODULE_2__.content_container
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h2", null, "Get in touch"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("p", null, "If you need a developer or want to say hi, send me a message below.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
-    className: _contact_module_scss__WEBPACK_IMPORTED_MODULE_2__.form_container
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(components_contact_form__WEBPACK_IMPORTED_MODULE_0__["default"], null)));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h2", null, "Get in touch"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("p", null, "If you need a developer or want to say hi, send me a message below.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(components_contact_form__WEBPACK_IMPORTED_MODULE_0__["default"], null)));
 }
 
 /***/ }),
@@ -17404,6 +17400,7 @@ function RecentWork() {
     triggerOnce: true
   });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement("section", {
+    id: "recent-work",
     ref: inViewRef,
     className: _recent_work_module_scss__WEBPACK_IMPORTED_MODULE_3__.recent_work
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement("h2", {

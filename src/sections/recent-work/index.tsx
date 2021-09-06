@@ -14,7 +14,7 @@ export default function RecentWork() {
 	})
 
 	return (
-		<section ref={inViewRef} className={styles.recent_work}>
+		<section id='recent-work' ref={inViewRef} className={styles.recent_work}>
 			<h2
 				// style={{ opacity: 0 }}
 				className={classNames(styles.invisible, {
