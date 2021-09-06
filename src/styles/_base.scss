@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 *,
 *::before,
@@ -6,24 +7,36 @@
 	box-sizing: inherit;
 }
 
+// * {
+// 	outline: solid 1px red;
+// }
+
+body,
+html {
+	overflow: hidden !important;
+	overflow-y: auto !important;
+}
+
 html {
 	box-sizing: border-box;
 	font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+	scroll-behavior: smooth;
 }
 
 body {
+	position: relative;
 	font-family: $font-body;
-	background-color: $color-hero-background;
+	background-color: $color-bg-1;
 	line-height: 1.75;
 	font-weight: 400;
 	color: $color-paragraph;
-	height: 100vh;
-	overflow-x: hidden;
+	min-height: 100vh;
+	width: 100%;
 }
 
 p {
-	margin-bottom: 1rem;
-	font-size: 1.7rem;
+	margin-bottom: 1.2rem;
+	font-size: 2rem;
 }
 
 h1,

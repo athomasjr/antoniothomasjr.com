@@ -6,7 +6,7 @@
 	width: 100%;
 	z-index: 2;
 	padding: 15px;
-	background-color: $color-hero-background;
+	// background-color: $color-bg-1;
 }
 
 .nav {
@@ -22,7 +22,7 @@
 	right: 0;
 	transition: transform 300ms;
 	transform: translateX(0);
-	background-color: $color-hero-background;
+	background-color: $color-bg-1;
 
 	ul {
 		list-style: none;

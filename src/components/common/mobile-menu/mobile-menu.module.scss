@@ -1,8 +1,10 @@
 @import 'styles/variables';
+@import 'styles/mixins';
 
 .mobile_menu {
 	position: fixed;
 	right: 0;
+	top: 0;
 	margin: 10px 20px 0 0;
 	display: flex;
 	flex-direction: column;
@@ -39,8 +41,7 @@
 		}
 	}
 
-	@media screen and (max-width: $bp-small-phone-max) {
-		margin-right: 40px;
+	@include for-phone-only {
 		width: 3.5rem;
 		height: 3.5rem;
 		div {

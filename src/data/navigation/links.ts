@@ -3,7 +3,7 @@ import { MyNavLinkData } from 'types'
 export const myLinkData: MyNavLinkData[] = [
 	{
 		id: 51266,
-		text: 'About',
+		text: 'My Story',
 		to: '/#about',
 		isAnchor: true,
 	},
@@ -15,7 +15,7 @@ export const myLinkData: MyNavLinkData[] = [
 	},
 	{
 		id: 90444,
-		text: 'Contact',
+		text: 'Contact Me',
 		to: '/#contact',
 		isAnchor: true,
 	},

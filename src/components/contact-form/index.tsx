@@ -67,7 +67,11 @@ export default function ContactForm() {
 		} catch (error) {
 			setSubmitError({
 				error: true,
-				message: `Oops! ${error.message}. Please try again.`,
+				// @ts-expect-error error in catch should be unknown
+				message: error.message
+					? // @ts-expect-error error in catch should be unknown
+					  `Oops! ${error.message}. Please try again.`
+					: `Oops! something went wrong, please try again.`,
 			})
 		}
 	}
@@ -83,45 +87,36 @@ export default function ContactForm() {
 			className={styles.contact_form}>
 			<input type='hidden' name='form-name' value='contact' />
 			<div>
-				<label htmlFor='name'>
-					First name
-					<input
-						id='name'
-						disabled={isSubmitting}
-						placeholder='Your name'
-						{...register('name')}
-					/>
-				</label>
+				<input
+					id='name'
+					disabled={isSubmitting}
+					placeholder='Your name'
+					{...register('name')}
+				/>
 				<p className={errors.name?.message ? styles.error : ''}>
 					{errors.name?.message}
 				</p>
 			</div>
 
 			<div>
-				<label htmlFor='email'>
-					Email Address
-					<input
-						id='email'
-						disabled={isSubmitting}
-						placeholder='you@example.com'
-						{...register('email')}
-					/>
-				</label>
+				<input
+					id='email'
+					disabled={isSubmitting}
+					placeholder='you@example.com'
+					{...register('email')}
+				/>
 				<p className={errors.email?.message ? styles.error : ''}>
 					{errors.email?.message}
 				</p>
 			</div>
 
 			<div className={styles.message_container}>
-				<label htmlFor='message'>
-					Message
-					<textarea
-						id='message'
-						disabled={isSubmitting}
-						placeholder='Your message'
-						{...register('message')}
-					/>
-				</label>
+				<textarea
+					id='message'
+					disabled={isSubmitting}
+					placeholder='Your message'
+					{...register('message')}
+				/>
 				<p className={errors.message?.message ? styles.error : ''}>
 					{errors.message?.message}
 				</p>

@@ -1,15 +1,8 @@
 @import 'styles/variables';
+@import 'styles/mixins';
 
 .header {
-	background: $color-header-bg;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: 100px;
-	padding: 0 100px;
-	// position: sticky;
-	// top: 0;
-	z-index: 1;
+	display: none;
 
 	nav {
 		ul {
@@ -39,7 +32,7 @@
 					}
 
 					&:hover {
-						color: $color-hero-headline;
+						color: $color-headline;
 					}
 
 					&:hover:after {
@@ -49,12 +42,24 @@
 			}
 		}
 	}
+
+	@include for-laptop-up {
+		padding: 0 150px;
+		background: $color-header-bg;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 100px;
+		z-index: 1;
+	}
+
+	@include for-big-laptop-up {
+		padding: 0 250px;
+	}
 }
 
-@media screen and (max-width: $bp-tablet-landscape) {
-	.header {
-		display: none;
-	}
+.logo_nav_container {
+	display: flex;
 }
 
 .active {

@@ -76,6 +76,7 @@ module.exports = {
 				images: path.join(__dirname, './src/images'),
 				assets: path.join(__dirname, './src/assets'),
 				components: path.join(__dirname, './src/components'),
+				sections: path.join(__dirname, './src/sections'),
 				types: path.join(__dirname, './src/types'),
 				styles: path.join(__dirname, './src/styles'),
 				hooks: path.join(__dirname, './src/hooks'),
@@ -104,8 +105,12 @@ module.exports = {
 		},
 
 		`gatsby-plugin-sass`,
-		'gatsby-plugin-anchor-links',
-
+		{
+			resolve: 'gatsby-plugin-anchor-links',
+			options: {
+				offset: -100,
+			},
+		},
 		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-plugin-react-helmet-canonical-urls`,

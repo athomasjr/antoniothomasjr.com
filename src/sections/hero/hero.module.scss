@@ -1,0 +1,160 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+// *----------------HERO--------------->
+
+.hero {
+	display: grid;
+	align-items: center;
+	// grid-template-columns: 1fr;
+	height: 100vh;
+	padding: 0 70px;
+
+	@include for-tablet-landscape-up {
+		padding: $padding-laptop;
+	}
+
+	@include for-laptop-up {
+		grid-template-columns: 1.5fr 1fr;
+	}
+
+	@include for-big-laptop-up {
+		padding: $padding-big-laptop;
+	}
+}
+
+// *----------------CONTENT CONTAINER--------------->
+
+.content {
+	margin: -150px 0 20px 0;
+
+	h1 {
+		color: $color-headline;
+		font-family: $font-headline;
+		font-weight: 600;
+	}
+
+	h2 {
+		margin: 0 0 20px 0;
+		font-size: 2rem;
+	}
+
+	@include for-small-phone-only {
+		margin-bottom: 0;
+
+		h1 {
+			font-size: 2.2rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+		}
+	}
+
+	@include for-tablet-up {
+		h1 {
+			font-size: 3.5rem;
+		}
+	}
+
+	@include for-tablet-landscape-up {
+		margin: 0 auto;
+	}
+
+	@include for-laptop-up {
+		margin: -150px 0 20px 0;
+		grid-column: 1/2;
+		grid-row: 1/1;
+		h1 {
+			font-size: 6rem;
+		}
+
+		h2 {
+			font-size: 4rem;
+			margin-bottom: 50px;
+		}
+	}
+}
+
+// *----------------IMAGE CONTAINER--------------->
+
+.img_container {
+	background: $color-highlight;
+	clip-path: circle(35% at 52% 65%);
+	width: 50%;
+	margin: 0 auto;
+
+	@include for-small-phone-only {
+		margin-bottom: 100px;
+	}
+
+	@include for-tablet-landscape-up {
+		width: 30%;
+	}
+
+	@include for-laptop-up {
+		width: 50%;
+		grid-column: 2/3;
+	}
+}
+
+// *----------------CTA--------------->
+
+.cta {
+	display: inline-block;
+	color: $color-headline;
+	font-size: 1.5rem;
+	a {
+		border-bottom: 2px solid $color-highlight;
+		padding: 0 0 5px 0;
+	}
+
+	@include for-tablet-up {
+		span {
+			font-size: 2rem;
+			margin-right: 10px;
+		}
+	}
+
+	@include for-laptop-up {
+		font-size: 2rem;
+		margin: 0;
+		transition: all 0.3s ease-in-out;
+	}
+}
+
+// *----------------WAVING HAND--------------->
+
+.waving_hand {
+	animation: wave 2.1s 0.6s infinite;
+	transform-origin: 75% 75%;
+	display: inline-block;
+	margin: 0 5px 0 0;
+}
+
+@keyframes wave {
+	0% {
+		transform: rotate(0deg);
+	}
+	10% {
+		transform: rotate(16deg);
+	}
+	20% {
+		transform: rotate(-6deg);
+	}
+	30% {
+		transform: rotate(16deg);
+	}
+	40% {
+		transform: rotate(-4deg);
+	}
+	50% {
+		transform: rotate(16deg);
+	}
+	60% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}

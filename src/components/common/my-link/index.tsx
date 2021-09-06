@@ -23,7 +23,7 @@ export default function MyLink({
 			title={link.text}
 			className={className}
 			gatsbyLinkProps={{ activeClassName: activeClass }}
-			stripHash={false}
+			stripHash
 		/>
 	) : (
 		<GatsbyLink
