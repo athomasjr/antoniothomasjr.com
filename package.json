@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "gatsby develop",
+    "start": "gatsby develop",
     "build": "gatsby build  && node ./csp-util.js",
     "clean": "gatsby clean",
     "gen": "graphql-codegen --config codegen.yml",
