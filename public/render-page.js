@@ -13165,7 +13165,7 @@ var plugins = [{
       "script-src": " 'self' 'unsafe-inline'",
       "style-src": " 'self' 'unsafe-inline'",
       "img-src": "'self' data:;",
-      "report-uri": " https://antonio.report-uri.com/r/d/csp/wizard\n\n"
+      "report-uri": " https://antonio.report-uri.com/r/d/csp/wizard"
     }
   }
 }];

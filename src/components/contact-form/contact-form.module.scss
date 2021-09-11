@@ -22,14 +22,14 @@
 		width: 100%;
 		border: none;
 		display: block;
-		color: $color-paragraph;
+		color: $color-body;
 		background: $color-bg-1;
 		border-radius: 4px;
 
 		&::placeholder,
 		&::-webkit-input-placeholder,
 		&::-moz-placeholder {
-			color: $color-paragraph;
+			color: $color-body;
 			opacity: 1;
 			font-size: 1.4rem;
 		}
