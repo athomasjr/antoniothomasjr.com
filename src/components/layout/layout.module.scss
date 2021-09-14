@@ -2,5 +2,11 @@
 
 .layout {
 	overflow-x: hidden;
-	overflow-y: hidden;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+
+	main {
+		flex: 1 0 auto;
+	}
 }

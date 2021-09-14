@@ -1,4 +1,3 @@
-import Layout from 'components/layout'
 import About from 'components/sections/about'
 import Contact from 'components/sections/contact'
 import Hero from 'components/sections/hero'
@@ -10,14 +9,12 @@ import React from 'react'
 export default function IndexPage() {
 	return (
 		<>
-			<Layout>
-				<Seo />
-				<Hero />
-				<RecentWork />
-				<About />
-				<Projects />
-				<Contact />
-			</Layout>
+			<Seo />
+			<Hero />
+			<RecentWork />
+			<About />
+			<Projects />
+			<Contact />
 		</>
 	)
 }

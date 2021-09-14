@@ -149,7 +149,6 @@ module.exports = {
 	],
 	flags: {
 		FAST_DEV: true,
-		DEV_WEBPACK_CACHE: true,
 		PARALLEL_SOURCING: true,
 	},
 }
