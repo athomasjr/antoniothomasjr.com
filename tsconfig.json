@@ -15,7 +15,7 @@
 		"noUnusedParameters": true,
 		"removeComments": false,
 		"noImplicitAny": true,
-		"baseUrl": "src/",
+		"baseUrl": "src",
 		"typeRoots": ["./typings/", "./node_modules/@types"],
 		"types": ["cypress", "@testing-library/cypress", "scss", "png", "svg"]
 	}

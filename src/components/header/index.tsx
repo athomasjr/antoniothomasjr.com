@@ -1,4 +1,4 @@
-import Logo from 'assets/logo.inline.svg'
+import Logo from 'assets/svg/logo.inline.svg'
 import NavLinks from 'components/common/nav-links'
 import { myLinkData } from 'data'
 import { Link as GatsbyLink } from 'gatsby'

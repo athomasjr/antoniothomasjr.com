@@ -1,6 +1,6 @@
 import Layout from 'components/layout'
+import NotFoundContent from 'components/sections/not-found-content'
 import React from 'react'
-import NotFoundContent from 'sections/not-found-content'
 
 export default function NotFound() {
 	return (

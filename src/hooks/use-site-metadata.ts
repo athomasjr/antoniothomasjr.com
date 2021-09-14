@@ -1,8 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import { UseSiteMetaHookQuery } from 'types'
+import { ISiteMetaData } from 'types'
 
 export const query = graphql`
-	query UseSiteMetaHook {
+	query SiteMetadataHook {
 		site {
 			siteMetadata {
 				social {
@@ -24,13 +24,17 @@ export const query = graphql`
 					name
 					summary
 				}
+				description
+				keywords
+				image
+				siteUrl
 			}
 		}
 	}
 `
 
-export function useSiteMetadata() {
-	const data = useStaticQuery<UseSiteMetaHookQuery>(query)
+export function useSiteMetadata(): ISiteMetaData {
+	const data = useStaticQuery(query)
 
 	return data.site?.siteMetadata
 }

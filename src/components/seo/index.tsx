@@ -1,12 +1,9 @@
-/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { graphql, useStaticQuery } from 'gatsby'
+import { useSiteMetadata } from 'hooks'
 import React from 'react'
-import { Helmet, HelmetProps } from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { Maybe } from 'types'
-import favicon from '../../../favicon.png'
 
-interface ISeoProps extends HelmetProps {
+interface ISeoProps {
 	description?: string
 	title?: string | undefined
 	slug?: string | Maybe<string>
@@ -21,10 +18,11 @@ export default function Seo({
 	image,
 	isPost = false,
 }: ISeoProps) {
-	const { site } = useStaticQuery(query)
+	const siteMetadata = useSiteMetadata()
 
 	const slugWithoutSlashes = () => (isPost ? slug?.replace(/\//g, '') : slug)
-	const metaKeywords: string[] = site.siteMetadata?.keywords
+	const metaKeywords: Maybe<Maybe<string>[]> | undefined =
+		siteMetadata?.keywords
 
 	const twitterCard = isPost ? 'summary_large_image' : 'summary'
 
@@ -32,27 +30,26 @@ export default function Seo({
 		<Helmet
 			htmlAttributes={{ lang: 'en' }}
 			title={title}
-			defaultTitle={site?.siteMetadata?.title!}
-			titleTemplate={`%s · ${site?.siteMetadata?.title!}`}
+			defaultTitle={siteMetadata.title}
+			titleTemplate={`%s · ${siteMetadata.title}`}
 			meta={[
 				{
 					name: 'description',
-					content: description || site?.siteMetadata?.description,
+					content: description || siteMetadata.description,
 				},
 				{
 					property: `og:title`,
-					content: title || site?.siteMetadata?.title!,
+					content: title || siteMetadata.title,
 				},
 				{
 					property: 'og:description',
-					content: description || site?.siteMetadata?.description!,
+					content: description || siteMetadata.description,
 				},
-
 				{
 					property: 'og:url',
 					content: slug
-						? `${site?.siteMetadata?.siteUrl}/${slugWithoutSlashes()}/`
-						: site?.siteMetadata?.siteUrl!,
+						? `${siteMetadata.siteUrl}/${slugWithoutSlashes()}/`
+						: siteMetadata.siteUrl,
 				},
 				{
 					name: 'twitter:card',
@@ -64,25 +61,24 @@ export default function Seo({
 				},
 				{
 					property: `og:image`,
-					content: `${site?.siteMetadata?.siteUrl}${
-						image || site?.siteMetadata?.image
-					}`,
+					content: `${siteMetadata.siteUrl}${image || siteMetadata.image}`,
 				},
 				{
 					name: 'twitter:title',
-					content: title || site?.siteMetadata?.title,
+					content: title || siteMetadata.title,
 				},
 				{
 					name: 'twitter:description',
-					content: description || site?.siteMetadata?.description,
+					content: description || siteMetadata.description,
 				},
+
 				{
 					name: `twitter:creator`,
-					content: site?.siteMetadata?.social?.twitter,
+					content: siteMetadata.social.twitter.handle,
 				},
 				{
 					name: `twitter:site`,
-					content: site?.siteMetadata?.social?.twitter,
+					content: siteMetadata.social.twitter.handle,
 				},
 			].concat(
 				metaKeywords && metaKeywords.length > 0
@@ -96,40 +92,40 @@ export default function Seo({
 				{
 					rel: 'shortcut icon',
 					type: 'image/png',
-					href: `${favicon}`,
+					href: `/favicon.png`,
 				},
 			]}
 		/>
 	)
 }
 
-export const query = graphql`
-	query SEO {
-		site {
-			siteMetadata {
-				description
-				siteUrl
-				title
-				social {
-					github {
-						username
-						url
-					}
-					linkedin {
-						url
-						username
-					}
-					twitter {
-						handle
-						url
-					}
-				}
-				author {
-					name
-					summary
-				}
-				image
-			}
-		}
-	}
-`
+// export const query = graphql`
+// 	query SEO {
+// 		site {
+// 			siteMetadata {
+// 				description
+// 				siteUrl
+// 				title
+// 				social {
+// 					github {
+// 						username
+// 						url
+// 					}
+// 					linkedin {
+// 						url
+// 						username
+// 					}
+// 					twitter {
+// 						handle
+// 						url
+// 					}
+// 				}
+// 				author {
+// 					name
+// 					summary
+// 				}
+// 				image
+// 			}
+// 		}
+// 	}
+// `
