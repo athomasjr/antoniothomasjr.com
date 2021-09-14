@@ -23,14 +23,14 @@ export const projectData: Project[] = [
 		responsibility: 'Full design & development',
 		image1: (
 			<StaticImage
-				src='../../images/projects/read-eat-sleep-repeat/resp3.png'
+				src='../../assets/images/projects/read-eat-sleep-repeat/resp3.png'
 				alt='test'
 				style={{ borderTopLeftRadius: '4px', borderBottomRightRadius: '20px' }}
 			/>
 		),
 		image2: (
 			<StaticImage
-				src='../../images/projects/read-eat-sleep-repeat/resp1.png'
+				src='../../assets/images/projects/read-eat-sleep-repeat/resp1.png'
 				alt='test'
 				style={{ borderRadius: '4px' }}
 			/>

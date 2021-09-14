@@ -1,5 +1,5 @@
 const path = require('path')
-const siteMetadata = require('./config/siteMetadata/index.js')
+const siteMetadata = require('./gatsby/siteMetadata/index.js')
 require('dotenv').config({ path: '.env' })
 
 const {
@@ -61,10 +61,17 @@ module.exports = {
 			resolve: 'gatsby-source-filesystem',
 			options: {
 				name: 'images',
-				path: `${__dirname}/src/images`,
+				path: `${__dirname}/src/assets/images`,
 			},
 		},
-
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				name: 'content',
+				path: `${__dirname}/content`,
+			},
+		},
+		`gatsby-plugin-mdx`,
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`,
@@ -73,10 +80,9 @@ module.exports = {
 			options: {
 				'~': path.join(__dirname, './src'),
 				pages: path.join(__dirname, './src/pages'),
-				images: path.join(__dirname, './src/images'),
+				images: path.join(__dirname, './src/assets/images'),
 				assets: path.join(__dirname, './src/assets'),
 				components: path.join(__dirname, './src/components'),
-				sections: path.join(__dirname, './src/sections'),
 				types: path.join(__dirname, './src/types'),
 				styles: path.join(__dirname, './src/styles'),
 				hooks: path.join(__dirname, './src/hooks'),
