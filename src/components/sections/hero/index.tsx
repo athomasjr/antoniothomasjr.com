@@ -10,7 +10,7 @@ export default function Hero() {
 		<div className={styles.hero}>
 			<StaticImage
 				src='../../../assets/images/hero7.png'
-				alt='Close-up of Antonio'
+				alt='Antonio in a white collared shirt and blue tie with purple background'
 				className={styles.img_container}
 				loading='eager'
 			/>

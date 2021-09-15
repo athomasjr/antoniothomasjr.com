@@ -13,7 +13,10 @@ export default function ThankYou() {
 	const bgImg = convertToBgImage(getImage(img))
 
 	return (
-		<BackgroundImage className={styles.thank_you} {...bgImg}>
+		<BackgroundImage
+			alt='collage of thank you images'
+			className={styles.thank_you}
+			{...bgImg}>
 			<div>
 				<h1>Thank you!</h1>
 				<p>I've received your message and will get back to you shortly.</p>

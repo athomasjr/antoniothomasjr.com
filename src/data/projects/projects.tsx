@@ -24,14 +24,14 @@ export const projectData: Project[] = [
 		image1: (
 			<StaticImage
 				src='../../assets/images/projects/read-eat-sleep-repeat/resp3.png'
-				alt='test'
+				alt='Read Sleep Sat Repeat page with book ratings'
 				style={{ borderTopLeftRadius: '4px', borderBottomRightRadius: '20px' }}
 			/>
 		),
 		image2: (
 			<StaticImage
 				src='../../assets/images/projects/read-eat-sleep-repeat/resp1.png'
-				alt='test'
+				alt='Read Sleep Eat Repeat website'
 				style={{ borderRadius: '4px' }}
 			/>
 		),

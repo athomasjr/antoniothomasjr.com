@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
+import BlogWrapper from '../../components/blog-wrapper/index'
 import { PostBySlugQuery } from '../../types/generated/index'
 
 interface IPostPageProps {
@@ -11,10 +12,10 @@ export default function PostPage({ data }: IPostPageProps) {
 	const { body, frontmatter } = data.mdx!
 
 	return (
-		<>
+		<BlogWrapper>
 			<h1>{frontmatter?.title}</h1>
 			<MDXRenderer>{body}</MDXRenderer>
-		</>
+		</BlogWrapper>
 	)
 }
 

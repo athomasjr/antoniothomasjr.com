@@ -41,7 +41,7 @@ export default function About() {
 				<StaticImage
 					imgClassName={styles.img_class}
 					src='../../../assets/images/about.jpeg'
-					alt='Antonio and wife'
+					alt='Antonio and wife with red barn in the background'
 					loading='lazy'
 				/>
 			</motion.div>
