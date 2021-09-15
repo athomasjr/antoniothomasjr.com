@@ -1,4 +1,4 @@
-import ProjectCard from 'components/project-card'
+import { ProjectCard } from 'components'
 import { projectData } from 'data'
 import React from 'react'
 import * as styles from './projects.module.scss'

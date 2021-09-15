@@ -1,6 +1,4 @@
-import Footer from 'components/footer'
-import Header from 'components/header'
-import MobileHeader from 'components/mobile-header'
+import { Footer, Header, MobileHeader } from 'components'
 import React from 'react'
 import * as styles from './layout.module.scss'
 

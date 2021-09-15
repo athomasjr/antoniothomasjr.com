@@ -1,4 +1,4 @@
-import Social from 'components/common/social'
+import { Social } from 'components/common'
 import { useSiteMetadata } from 'hooks'
 import React from 'react'
 import * as styles from './footer.module.scss'

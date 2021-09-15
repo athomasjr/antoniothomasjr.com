@@ -1,6 +1,5 @@
 import classNames from 'classnames'
-import MobileMenu from 'components/common/mobile-menu'
-import NavLinks from 'components/common/nav-links'
+import { MobileMenu, NavLinks } from 'components/common'
 import { myLinkData } from 'data'
 import React, { useState } from 'react'
 import * as styles from './mobile-header.module.scss'

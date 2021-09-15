@@ -4,7 +4,7 @@ require('dotenv').config({ path: '.env' })
 
 const {
 	NODE_ENV,
-	URL: NETLIFY_SITE_URL = 'https://www.antoniothomasjr.com',
+	URL: NETLIFY_SITE_URL = siteMetadata.siteUrl,
 	DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
 	CONTEXT: NETLIFY_ENV = NODE_ENV,
 } = process.env
@@ -27,7 +27,7 @@ module.exports = {
 				env: {
 					production: {
 						policy: [{ userAgent: '*' }],
-						sitemap: `${siteUrl}/sitemap.xml`,
+						sitemap: `${siteUrl}/sitemap/sitemap-index.xml`,
 					},
 					'branch-deploy': {
 						policy: [{ userAgent: '*', disallow: ['/'] }],
@@ -121,7 +121,7 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-react-helmet-canonical-urls`,
 			options: {
-				siteUrl: `https://www.antoniothomasjr.com`,
+				siteUrl: siteUrl,
 			},
 		},
 		{

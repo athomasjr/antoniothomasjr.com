@@ -1,9 +1,12 @@
 module.exports = {
 	title: 'Antonio Thomas',
 	description:
-		'Antonio Thomas is a frontend developer from Fitchburg Wisconsin, this is his personal site.',
-	siteUrl: 'https://www.antoniothomasjr.com',
+		'Antonio Thomas is a frontend developer from Fitchburg Wisconsin, this is his personal website and blog.',
+	siteUrl: 'https://antoniothomasjr.com',
 	image: '/images/family.jpeg',
+	ogLanguage: 'en_US',
+	siteLanguage: 'en',
+
 	// favicon: '/favicon.png',
 
 	keywords: [

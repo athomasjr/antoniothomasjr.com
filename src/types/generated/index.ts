@@ -550,7 +550,10 @@ export enum FileFieldsEnum {
 	ChildrenMdxRawBody = 'childrenMdx___rawBody',
 	ChildrenMdxFileAbsolutePath = 'childrenMdx___fileAbsolutePath',
 	ChildrenMdxFrontmatterTitle = 'childrenMdx___frontmatter___title',
-	ChildrenMdxFrontmatterDate = 'childrenMdx___frontmatter___date',
+	ChildrenMdxFrontmatterDescription = 'childrenMdx___frontmatter___description',
+	ChildrenMdxFrontmatterIsFeatured = 'childrenMdx___frontmatter___isFeatured',
+	ChildrenMdxFrontmatterPublished = 'childrenMdx___frontmatter___published',
+	ChildrenMdxFrontmatterUpdated = 'childrenMdx___frontmatter___updated',
 	ChildrenMdxSlug = 'childrenMdx___slug',
 	ChildrenMdxBody = 'childrenMdx___body',
 	ChildrenMdxExcerpt = 'childrenMdx___excerpt',
@@ -606,7 +609,10 @@ export enum FileFieldsEnum {
 	ChildMdxRawBody = 'childMdx___rawBody',
 	ChildMdxFileAbsolutePath = 'childMdx___fileAbsolutePath',
 	ChildMdxFrontmatterTitle = 'childMdx___frontmatter___title',
-	ChildMdxFrontmatterDate = 'childMdx___frontmatter___date',
+	ChildMdxFrontmatterDescription = 'childMdx___frontmatter___description',
+	ChildMdxFrontmatterIsFeatured = 'childMdx___frontmatter___isFeatured',
+	ChildMdxFrontmatterPublished = 'childMdx___frontmatter___published',
+	ChildMdxFrontmatterUpdated = 'childMdx___frontmatter___updated',
 	ChildMdxSlug = 'childMdx___slug',
 	ChildMdxBody = 'childMdx___body',
 	ChildMdxExcerpt = 'childMdx___excerpt',
@@ -1530,7 +1536,10 @@ export enum MdxFieldsEnum {
 	RawBody = 'rawBody',
 	FileAbsolutePath = 'fileAbsolutePath',
 	FrontmatterTitle = 'frontmatter___title',
-	FrontmatterDate = 'frontmatter___date',
+	FrontmatterDescription = 'frontmatter___description',
+	FrontmatterIsFeatured = 'frontmatter___isFeatured',
+	FrontmatterPublished = 'frontmatter___published',
+	FrontmatterUpdated = 'frontmatter___updated',
 	Slug = 'slug',
 	Body = 'body',
 	Excerpt = 'excerpt',
@@ -1660,10 +1669,20 @@ export type MdxFilterListInput = {
 export type MdxFrontmatter = {
 	__typename?: 'MdxFrontmatter'
 	title: Scalars['String']
-	date?: Maybe<Scalars['Date']>
+	description?: Maybe<Scalars['String']>
+	isFeatured?: Maybe<Scalars['Boolean']>
+	published?: Maybe<Scalars['Date']>
+	updated?: Maybe<Scalars['Date']>
 }
 
-export type MdxFrontmatterDateArgs = {
+export type MdxFrontmatterPublishedArgs = {
+	formatString?: Maybe<Scalars['String']>
+	fromNow?: Maybe<Scalars['Boolean']>
+	difference?: Maybe<Scalars['String']>
+	locale?: Maybe<Scalars['String']>
+}
+
+export type MdxFrontmatterUpdatedArgs = {
 	formatString?: Maybe<Scalars['String']>
 	fromNow?: Maybe<Scalars['Boolean']>
 	difference?: Maybe<Scalars['String']>
@@ -1672,7 +1691,10 @@ export type MdxFrontmatterDateArgs = {
 
 export type MdxFrontmatterFilterInput = {
 	title?: Maybe<StringQueryOperatorInput>
-	date?: Maybe<DateQueryOperatorInput>
+	description?: Maybe<StringQueryOperatorInput>
+	isFeatured?: Maybe<BooleanQueryOperatorInput>
+	published?: Maybe<DateQueryOperatorInput>
+	updated?: Maybe<DateQueryOperatorInput>
 }
 
 export type MdxGroupConnection = {
@@ -2333,6 +2355,8 @@ export enum SiteFieldsEnum {
 	SiteMetadataDescription = 'siteMetadata___description',
 	SiteMetadataSiteUrl = 'siteMetadata___siteUrl',
 	SiteMetadataImage = 'siteMetadata___image',
+	SiteMetadataOgLanguage = 'siteMetadata___ogLanguage',
+	SiteMetadataSiteLanguage = 'siteMetadata___siteLanguage',
 	SiteMetadataKeywords = 'siteMetadata___keywords',
 	SiteMetadataAuthorName = 'siteMetadata___author___name',
 	SiteMetadataAuthorSummary = 'siteMetadata___author___summary',
@@ -2345,7 +2369,6 @@ export enum SiteFieldsEnum {
 	Port = 'port',
 	Host = 'host',
 	FlagsFastDev = 'flags___FAST_DEV',
-	FlagsDevWebpackCache = 'flags___DEV_WEBPACK_CACHE',
 	FlagsParallelSourcing = 'flags___PARALLEL_SOURCING',
 	Polyfill = 'polyfill',
 	PathPrefix = 'pathPrefix',
@@ -2454,13 +2477,11 @@ export type SiteFilterInput = {
 export type SiteFlags = {
 	__typename?: 'SiteFlags'
 	FAST_DEV?: Maybe<Scalars['Boolean']>
-	DEV_WEBPACK_CACHE?: Maybe<Scalars['Boolean']>
 	PARALLEL_SOURCING?: Maybe<Scalars['Boolean']>
 }
 
 export type SiteFlagsFilterInput = {
 	FAST_DEV?: Maybe<BooleanQueryOperatorInput>
-	DEV_WEBPACK_CACHE?: Maybe<BooleanQueryOperatorInput>
 	PARALLEL_SOURCING?: Maybe<BooleanQueryOperatorInput>
 }
 
@@ -3505,6 +3526,8 @@ export type SiteSiteMetadata = {
 	description?: Maybe<Scalars['String']>
 	siteUrl?: Maybe<Scalars['String']>
 	image?: Maybe<Scalars['String']>
+	ogLanguage?: Maybe<Scalars['String']>
+	siteLanguage?: Maybe<Scalars['String']>
 	keywords?: Maybe<Array<Maybe<Scalars['String']>>>
 	author?: Maybe<SiteSiteMetadataAuthor>
 	social?: Maybe<SiteSiteMetadataSocial>
@@ -3526,6 +3549,8 @@ export type SiteSiteMetadataFilterInput = {
 	description?: Maybe<StringQueryOperatorInput>
 	siteUrl?: Maybe<StringQueryOperatorInput>
 	image?: Maybe<StringQueryOperatorInput>
+	ogLanguage?: Maybe<StringQueryOperatorInput>
+	siteLanguage?: Maybe<StringQueryOperatorInput>
 	keywords?: Maybe<StringQueryOperatorInput>
 	author?: Maybe<SiteSiteMetadataAuthorFilterInput>
 	social?: Maybe<SiteSiteMetadataSocialFilterInput>
@@ -3945,6 +3970,8 @@ export type SiteMetadataHookQuery = {
 			keywords?: Maybe<Array<Maybe<string>>>
 			image?: Maybe<string>
 			siteUrl?: Maybe<string>
+			ogLanguage?: Maybe<string>
+			siteLanguage?: Maybe<string>
 			social?: Maybe<{
 				__typename?: 'SiteSiteMetadataSocial'
 				github?: Maybe<{
@@ -3983,10 +4010,15 @@ export type PostBySlugQuery = {
 		id: string
 		slug?: Maybe<string>
 		body: string
+		excerpt: string
+		timeToRead?: Maybe<number>
 		frontmatter?: Maybe<{
 			__typename?: 'MdxFrontmatter'
-			date?: Maybe<any>
 			title: string
+			description?: Maybe<string>
+			published?: Maybe<any>
+			updated?: Maybe<any>
+			isFeatured?: Maybe<boolean>
 		}>
 	}>
 }

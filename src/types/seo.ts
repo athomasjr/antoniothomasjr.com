@@ -4,6 +4,8 @@ export interface ISiteMetaData {
 	keywords: Array<string>
 	image: string
 	siteUrl: string
+	ogLanguage: string
+	siteLanguage: string
 	social: {
 		github: {
 			username: string

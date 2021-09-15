@@ -1,9 +1,8 @@
 import Logo from 'assets/svg/logo.inline.svg'
-import NavLinks from 'components/common/nav-links'
 import { myLinkData } from 'data'
 import { Link as GatsbyLink } from 'gatsby'
 import React from 'react'
-import Social from '../common/social/index'
+import { NavLinks, Social } from '../common'
 import * as styles from './header.module.scss'
 
 export default function Header() {

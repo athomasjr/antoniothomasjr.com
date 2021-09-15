@@ -1,4 +1,4 @@
-import ContactForm from 'components/contact-form'
+import { ContactForm } from 'components'
 import React from 'react'
 import * as styles from './contact.module.scss'
 

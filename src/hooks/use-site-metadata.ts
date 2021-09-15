@@ -28,6 +28,8 @@ export const query = graphql`
 				keywords
 				image
 				siteUrl
+				ogLanguage
+				siteLanguage
 			}
 		}
 	}
