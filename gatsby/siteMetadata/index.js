@@ -6,7 +6,8 @@ module.exports = {
 	image: '/images/family.jpeg',
 	ogLanguage: 'en_US',
 	siteLanguage: 'en',
-
+	lastBuildDate: new Date(Date.now()).toISOString(),
+	siteLocale: `en_US`,
 	// favicon: '/favicon.png',
 
 	keywords: [

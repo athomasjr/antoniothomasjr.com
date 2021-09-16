@@ -67,8 +67,8 @@ module.exports = {
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
-				name: 'content',
-				path: `${__dirname}/content`,
+				name: 'content-2021',
+				path: `${__dirname}/content/2021`,
 			},
 		},
 		`gatsby-plugin-mdx`,

@@ -6,6 +6,7 @@ export interface ISiteMetaData {
 	siteUrl: string
 	ogLanguage: string
 	siteLanguage: string
+	siteLocale: string
 	social: {
 		github: {
 			username: string

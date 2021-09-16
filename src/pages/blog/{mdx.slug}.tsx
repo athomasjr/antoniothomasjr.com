@@ -40,7 +40,6 @@ export const query = graphql`
 				description
 				published(formatString: "MMMM Do, YYYY")
 				updated(formatString: "MMMM Do, YYYY")
-				isFeatured
 			}
 		}
 	}

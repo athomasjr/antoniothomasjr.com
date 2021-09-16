@@ -142,7 +142,7 @@ export default function SEO({
 
 	return (
 		<>
-			<Helmet title={seo.title}>
+			<Helmet titleTemplate={`%s - ${siteMetadata.title}`} title={seo.title}>
 				<html lang={siteMetadata.siteLanguage} />
 				<meta name='description' content={seo.description} />
 				<meta name='image' content={seo.image} />
