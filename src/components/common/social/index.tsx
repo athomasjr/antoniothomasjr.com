@@ -4,8 +4,7 @@ import { FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi'
 import * as styles from './social.module.scss'
 
 export default function Social() {
-	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-	const { social } = useSiteMetadata()!
+	const { social } = useSiteMetadata()
 
 	return (
 		<div className={styles.social_container}>

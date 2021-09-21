@@ -1,4 +1,4 @@
-import { BlogWrapper, SEO } from 'components'
+import { BlogWrapper, InfoWrapper, SEO } from 'components'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
@@ -9,7 +9,7 @@ interface IPostPageProps {
 }
 
 export default function PostPage({ data }: IPostPageProps) {
-	const { body, frontmatter, slug } = data.mdx!
+	const { body, frontmatter, slug, timeToRead } = data.mdx!
 
 	return (
 		<BlogWrapper>
@@ -22,7 +22,15 @@ export default function PostPage({ data }: IPostPageProps) {
 				dateModified={frontmatter?.updated}
 			/>
 			<h1>{frontmatter?.title}</h1>
-			<MDXRenderer>{body}</MDXRenderer>
+			<InfoWrapper
+				timeToRead={timeToRead}
+				author={frontmatter?.author}
+				published={frontmatter?.published}
+			/>
+
+			<MDXRenderer remoteImages={frontmatter?.embeddedImagesRemote}>
+				{body}
+			</MDXRenderer>
 		</BlogWrapper>
 	)
 }
@@ -36,10 +44,16 @@ export const query = graphql`
 			excerpt(truncate: true, pruneLength: 150)
 			timeToRead
 			frontmatter {
+				author
 				title
 				description
 				published(formatString: "MMMM Do, YYYY")
 				updated(formatString: "MMMM Do, YYYY")
+				embeddedImagesRemote {
+					childImageSharp {
+						gatsbyImageData
+					}
+				}
 			}
 		}
 	}

@@ -6,5 +6,5 @@ interface IBlogWrapperProps {
 }
 
 export default function BlogWrapper({ children }: IBlogWrapperProps) {
-	return <div className={styles.blog_wrapper}>{children}</div>
+	return <article className={styles.blog_wrapper}>{children}</article>
 }

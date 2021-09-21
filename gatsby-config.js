@@ -1,5 +1,5 @@
 const path = require('path')
-const siteMetadata = require('./gatsby/siteMetadata/index.js')
+const siteMetadata = require('./site/siteMetadata/index.js')
 require('dotenv').config({ path: '.env' })
 
 const {
@@ -67,8 +67,8 @@ module.exports = {
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
-				name: 'content-2021',
-				path: `${__dirname}/content/2021`,
+				name: 'blog-2021',
+				path: `${__dirname}/content/blog/2021`,
 			},
 		},
 		`gatsby-plugin-mdx`,

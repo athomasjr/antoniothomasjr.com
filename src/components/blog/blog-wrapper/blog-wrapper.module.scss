@@ -1,0 +1,84 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.blog_wrapper {
+	display: flex;
+	flex-direction: column;
+	max-width: 680px;
+	padding: $padding-page-phone;
+	margin: 0 auto;
+
+	h1 {
+		color: $color-headline;
+		margin-bottom: 12px;
+	}
+
+	h2,
+	h3,
+	h4 {
+		color: $color-headline;
+	}
+
+	p,
+	ul,
+	ol {
+		font-size: 1.5rem;
+	}
+
+	ol,
+	ul {
+		padding-left: 1em;
+		list-style-position: outside !important;
+	}
+
+	ol > li {
+		padding-left: 4px;
+		margin-bottom: 4px;
+	}
+
+	ul > li {
+		margin-left: 4px;
+	}
+
+	li::marker {
+		color: $color-tag-white;
+	}
+
+	a {
+		color: $color-highlight;
+		text-decoration: underline;
+	}
+
+	blockquote {
+		padding: 0 8px;
+		color: $color-headline;
+		border-left: 0.3rem solid $color-body;
+		margin-left: 0;
+		display: inline-block;
+		margin-bottom: 24px;
+	}
+
+	@include for-tablet-up {
+		padding: 80px 16px;
+		h1 {
+			font-size: 4rem;
+		}
+		p,
+		ul,
+		ol {
+			font-size: 1.6rem;
+		}
+	}
+
+	@include for-tablet-landscape-up {
+		width: 55%;
+	}
+
+	@include for-laptop-up {
+		p,
+		ul,
+		ol {
+			font-size: 1.8rem;
+		}
+	}
+}

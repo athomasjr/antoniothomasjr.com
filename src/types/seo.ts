@@ -1,7 +1,6 @@
 export interface ISiteMetaData {
 	title: string
 	description: string
-	keywords: Array<string>
 	image: string
 	siteUrl: string
 	ogLanguage: string

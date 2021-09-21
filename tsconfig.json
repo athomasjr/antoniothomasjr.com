@@ -1,5 +1,10 @@
 {
-	"include": ["./src/**/*", "cypress/**/*.ts", "cypress/support/commands.js"],
+	"include": [
+		"./src/**/*",
+		"cypress/**/*.ts",
+		"cypress/support/commands.js",
+		"src/data"
+	],
 	"exclude": ["node_modules", "public", ".cache"],
 	"compilerOptions": {
 		"module": "commonjs",

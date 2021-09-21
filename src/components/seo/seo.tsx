@@ -12,6 +12,7 @@ interface ISeoProps {
 	pathname?: string | null
 	datePublished?: string | null
 	dateModified?: string | null
+	// keywords?: string[] | null
 }
 
 export default function SEO({
@@ -22,7 +23,8 @@ export default function SEO({
 	pathname = null,
 	datePublished = null,
 	dateModified = null,
-}: ISeoProps) {
+}: // keywords = null,
+ISeoProps) {
 	const siteMetadata = useSiteMetadata()
 
 	// const slugWithoutSlashes = () => (isPost ? slug?.replace(/\//g, '') : slug)
@@ -146,6 +148,10 @@ export default function SEO({
 				<html lang={siteMetadata.siteLanguage} />
 				<meta name='description' content={seo.description} />
 				<meta name='image' content={seo.image} />
+				{/* <meta
+					name='keywords'
+					content={keywords ? keywords.join() : siteMetadata.keywords.join()}
+				/> */}
 				{!isArticle && (
 					<script type='application/ld+json'>
 						{JSON.stringify(schemaOrgWebPage)}

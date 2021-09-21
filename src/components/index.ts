@@ -1,4 +1,5 @@
-import BlogWrapper from './blog-wrapper'
+import BlogWrapper from './blog/blog-wrapper'
+import InfoWrapper from './blog/info-container'
 import ContactForm from './contact-form'
 import Footer from './footer'
 import Header from './header'
@@ -18,4 +19,5 @@ export {
 	MobileHeader,
 	ProjectCard,
 	ThankYou,
+	InfoWrapper,
 }

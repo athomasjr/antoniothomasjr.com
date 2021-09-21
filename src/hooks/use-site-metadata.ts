@@ -25,7 +25,6 @@ export const query = graphql`
 					summary
 				}
 				description
-				keywords
 				image
 				siteUrl
 				ogLanguage

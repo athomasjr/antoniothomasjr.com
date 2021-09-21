@@ -404,6 +404,7 @@ export type File = Node & {
 	birthtimeMs?: Maybe<Scalars['Float']>
 	blksize?: Maybe<Scalars['Int']>
 	blocks?: Maybe<Scalars['Int']>
+	url?: Maybe<Scalars['String']>
 	/** Copy file to static directory and return public url to it */
 	publicURL?: Maybe<Scalars['String']>
 	/** Returns all children nodes filtered by type Mdx */
@@ -545,15 +546,97 @@ export enum FileFieldsEnum {
 	BirthtimeMs = 'birthtimeMs',
 	Blksize = 'blksize',
 	Blocks = 'blocks',
+	Url = 'url',
 	PublicUrl = 'publicURL',
 	ChildrenMdx = 'childrenMdx',
 	ChildrenMdxRawBody = 'childrenMdx___rawBody',
 	ChildrenMdxFileAbsolutePath = 'childrenMdx___fileAbsolutePath',
+	ChildrenMdxFrontmatterEmbeddedImagesRemote = 'childrenMdx___frontmatter___embeddedImagesRemote',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteSourceInstanceName = 'childrenMdx___frontmatter___embeddedImagesRemote___sourceInstanceName',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteAbsolutePath = 'childrenMdx___frontmatter___embeddedImagesRemote___absolutePath',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteRelativePath = 'childrenMdx___frontmatter___embeddedImagesRemote___relativePath',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteExtension = 'childrenMdx___frontmatter___embeddedImagesRemote___extension',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteSize = 'childrenMdx___frontmatter___embeddedImagesRemote___size',
+	ChildrenMdxFrontmatterEmbeddedImagesRemotePrettySize = 'childrenMdx___frontmatter___embeddedImagesRemote___prettySize',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteModifiedTime = 'childrenMdx___frontmatter___embeddedImagesRemote___modifiedTime',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteAccessTime = 'childrenMdx___frontmatter___embeddedImagesRemote___accessTime',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteChangeTime = 'childrenMdx___frontmatter___embeddedImagesRemote___changeTime',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteBirthTime = 'childrenMdx___frontmatter___embeddedImagesRemote___birthTime',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteRoot = 'childrenMdx___frontmatter___embeddedImagesRemote___root',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteDir = 'childrenMdx___frontmatter___embeddedImagesRemote___dir',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteBase = 'childrenMdx___frontmatter___embeddedImagesRemote___base',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteExt = 'childrenMdx___frontmatter___embeddedImagesRemote___ext',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteName = 'childrenMdx___frontmatter___embeddedImagesRemote___name',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteRelativeDirectory = 'childrenMdx___frontmatter___embeddedImagesRemote___relativeDirectory',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteDev = 'childrenMdx___frontmatter___embeddedImagesRemote___dev',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteMode = 'childrenMdx___frontmatter___embeddedImagesRemote___mode',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteNlink = 'childrenMdx___frontmatter___embeddedImagesRemote___nlink',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteUid = 'childrenMdx___frontmatter___embeddedImagesRemote___uid',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteGid = 'childrenMdx___frontmatter___embeddedImagesRemote___gid',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteRdev = 'childrenMdx___frontmatter___embeddedImagesRemote___rdev',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteIno = 'childrenMdx___frontmatter___embeddedImagesRemote___ino',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteAtimeMs = 'childrenMdx___frontmatter___embeddedImagesRemote___atimeMs',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteMtimeMs = 'childrenMdx___frontmatter___embeddedImagesRemote___mtimeMs',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteCtimeMs = 'childrenMdx___frontmatter___embeddedImagesRemote___ctimeMs',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteAtime = 'childrenMdx___frontmatter___embeddedImagesRemote___atime',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteMtime = 'childrenMdx___frontmatter___embeddedImagesRemote___mtime',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteCtime = 'childrenMdx___frontmatter___embeddedImagesRemote___ctime',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteBirthtime = 'childrenMdx___frontmatter___embeddedImagesRemote___birthtime',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteBirthtimeMs = 'childrenMdx___frontmatter___embeddedImagesRemote___birthtimeMs',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteBlksize = 'childrenMdx___frontmatter___embeddedImagesRemote___blksize',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteBlocks = 'childrenMdx___frontmatter___embeddedImagesRemote___blocks',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteUrl = 'childrenMdx___frontmatter___embeddedImagesRemote___url',
+	ChildrenMdxFrontmatterEmbeddedImagesRemotePublicUrl = 'childrenMdx___frontmatter___embeddedImagesRemote___publicURL',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteChildrenMdx = 'childrenMdx___frontmatter___embeddedImagesRemote___childrenMdx',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteChildrenImageSharp = 'childrenMdx___frontmatter___embeddedImagesRemote___childrenImageSharp',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteId = 'childrenMdx___frontmatter___embeddedImagesRemote___id',
+	ChildrenMdxFrontmatterEmbeddedImagesRemoteChildren = 'childrenMdx___frontmatter___embeddedImagesRemote___children',
+	ChildrenMdxFrontmatterEmbeddedImagesLocal = 'childrenMdx___frontmatter___embeddedImagesLocal',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalSourceInstanceName = 'childrenMdx___frontmatter___embeddedImagesLocal___sourceInstanceName',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalAbsolutePath = 'childrenMdx___frontmatter___embeddedImagesLocal___absolutePath',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalRelativePath = 'childrenMdx___frontmatter___embeddedImagesLocal___relativePath',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalExtension = 'childrenMdx___frontmatter___embeddedImagesLocal___extension',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalSize = 'childrenMdx___frontmatter___embeddedImagesLocal___size',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalPrettySize = 'childrenMdx___frontmatter___embeddedImagesLocal___prettySize',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalModifiedTime = 'childrenMdx___frontmatter___embeddedImagesLocal___modifiedTime',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalAccessTime = 'childrenMdx___frontmatter___embeddedImagesLocal___accessTime',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalChangeTime = 'childrenMdx___frontmatter___embeddedImagesLocal___changeTime',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalBirthTime = 'childrenMdx___frontmatter___embeddedImagesLocal___birthTime',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalRoot = 'childrenMdx___frontmatter___embeddedImagesLocal___root',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalDir = 'childrenMdx___frontmatter___embeddedImagesLocal___dir',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalBase = 'childrenMdx___frontmatter___embeddedImagesLocal___base',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalExt = 'childrenMdx___frontmatter___embeddedImagesLocal___ext',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalName = 'childrenMdx___frontmatter___embeddedImagesLocal___name',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalRelativeDirectory = 'childrenMdx___frontmatter___embeddedImagesLocal___relativeDirectory',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalDev = 'childrenMdx___frontmatter___embeddedImagesLocal___dev',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalMode = 'childrenMdx___frontmatter___embeddedImagesLocal___mode',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalNlink = 'childrenMdx___frontmatter___embeddedImagesLocal___nlink',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalUid = 'childrenMdx___frontmatter___embeddedImagesLocal___uid',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalGid = 'childrenMdx___frontmatter___embeddedImagesLocal___gid',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalRdev = 'childrenMdx___frontmatter___embeddedImagesLocal___rdev',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalIno = 'childrenMdx___frontmatter___embeddedImagesLocal___ino',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalAtimeMs = 'childrenMdx___frontmatter___embeddedImagesLocal___atimeMs',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalMtimeMs = 'childrenMdx___frontmatter___embeddedImagesLocal___mtimeMs',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalCtimeMs = 'childrenMdx___frontmatter___embeddedImagesLocal___ctimeMs',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalAtime = 'childrenMdx___frontmatter___embeddedImagesLocal___atime',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalMtime = 'childrenMdx___frontmatter___embeddedImagesLocal___mtime',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalCtime = 'childrenMdx___frontmatter___embeddedImagesLocal___ctime',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalBirthtime = 'childrenMdx___frontmatter___embeddedImagesLocal___birthtime',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalBirthtimeMs = 'childrenMdx___frontmatter___embeddedImagesLocal___birthtimeMs',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalBlksize = 'childrenMdx___frontmatter___embeddedImagesLocal___blksize',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalBlocks = 'childrenMdx___frontmatter___embeddedImagesLocal___blocks',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalUrl = 'childrenMdx___frontmatter___embeddedImagesLocal___url',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalPublicUrl = 'childrenMdx___frontmatter___embeddedImagesLocal___publicURL',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalChildrenMdx = 'childrenMdx___frontmatter___embeddedImagesLocal___childrenMdx',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalChildrenImageSharp = 'childrenMdx___frontmatter___embeddedImagesLocal___childrenImageSharp',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalId = 'childrenMdx___frontmatter___embeddedImagesLocal___id',
+	ChildrenMdxFrontmatterEmbeddedImagesLocalChildren = 'childrenMdx___frontmatter___embeddedImagesLocal___children',
 	ChildrenMdxFrontmatterTitle = 'childrenMdx___frontmatter___title',
 	ChildrenMdxFrontmatterDescription = 'childrenMdx___frontmatter___description',
 	ChildrenMdxFrontmatterFeatured = 'childrenMdx___frontmatter___featured',
 	ChildrenMdxFrontmatterPublished = 'childrenMdx___frontmatter___published',
 	ChildrenMdxFrontmatterUpdated = 'childrenMdx___frontmatter___updated',
+	ChildrenMdxFrontmatterAuthor = 'childrenMdx___frontmatter___author',
 	ChildrenMdxSlug = 'childrenMdx___slug',
 	ChildrenMdxBody = 'childrenMdx___body',
 	ChildrenMdxExcerpt = 'childrenMdx___excerpt',
@@ -608,11 +691,92 @@ export enum FileFieldsEnum {
 	ChildrenMdxInternalType = 'childrenMdx___internal___type',
 	ChildMdxRawBody = 'childMdx___rawBody',
 	ChildMdxFileAbsolutePath = 'childMdx___fileAbsolutePath',
+	ChildMdxFrontmatterEmbeddedImagesRemote = 'childMdx___frontmatter___embeddedImagesRemote',
+	ChildMdxFrontmatterEmbeddedImagesRemoteSourceInstanceName = 'childMdx___frontmatter___embeddedImagesRemote___sourceInstanceName',
+	ChildMdxFrontmatterEmbeddedImagesRemoteAbsolutePath = 'childMdx___frontmatter___embeddedImagesRemote___absolutePath',
+	ChildMdxFrontmatterEmbeddedImagesRemoteRelativePath = 'childMdx___frontmatter___embeddedImagesRemote___relativePath',
+	ChildMdxFrontmatterEmbeddedImagesRemoteExtension = 'childMdx___frontmatter___embeddedImagesRemote___extension',
+	ChildMdxFrontmatterEmbeddedImagesRemoteSize = 'childMdx___frontmatter___embeddedImagesRemote___size',
+	ChildMdxFrontmatterEmbeddedImagesRemotePrettySize = 'childMdx___frontmatter___embeddedImagesRemote___prettySize',
+	ChildMdxFrontmatterEmbeddedImagesRemoteModifiedTime = 'childMdx___frontmatter___embeddedImagesRemote___modifiedTime',
+	ChildMdxFrontmatterEmbeddedImagesRemoteAccessTime = 'childMdx___frontmatter___embeddedImagesRemote___accessTime',
+	ChildMdxFrontmatterEmbeddedImagesRemoteChangeTime = 'childMdx___frontmatter___embeddedImagesRemote___changeTime',
+	ChildMdxFrontmatterEmbeddedImagesRemoteBirthTime = 'childMdx___frontmatter___embeddedImagesRemote___birthTime',
+	ChildMdxFrontmatterEmbeddedImagesRemoteRoot = 'childMdx___frontmatter___embeddedImagesRemote___root',
+	ChildMdxFrontmatterEmbeddedImagesRemoteDir = 'childMdx___frontmatter___embeddedImagesRemote___dir',
+	ChildMdxFrontmatterEmbeddedImagesRemoteBase = 'childMdx___frontmatter___embeddedImagesRemote___base',
+	ChildMdxFrontmatterEmbeddedImagesRemoteExt = 'childMdx___frontmatter___embeddedImagesRemote___ext',
+	ChildMdxFrontmatterEmbeddedImagesRemoteName = 'childMdx___frontmatter___embeddedImagesRemote___name',
+	ChildMdxFrontmatterEmbeddedImagesRemoteRelativeDirectory = 'childMdx___frontmatter___embeddedImagesRemote___relativeDirectory',
+	ChildMdxFrontmatterEmbeddedImagesRemoteDev = 'childMdx___frontmatter___embeddedImagesRemote___dev',
+	ChildMdxFrontmatterEmbeddedImagesRemoteMode = 'childMdx___frontmatter___embeddedImagesRemote___mode',
+	ChildMdxFrontmatterEmbeddedImagesRemoteNlink = 'childMdx___frontmatter___embeddedImagesRemote___nlink',
+	ChildMdxFrontmatterEmbeddedImagesRemoteUid = 'childMdx___frontmatter___embeddedImagesRemote___uid',
+	ChildMdxFrontmatterEmbeddedImagesRemoteGid = 'childMdx___frontmatter___embeddedImagesRemote___gid',
+	ChildMdxFrontmatterEmbeddedImagesRemoteRdev = 'childMdx___frontmatter___embeddedImagesRemote___rdev',
+	ChildMdxFrontmatterEmbeddedImagesRemoteIno = 'childMdx___frontmatter___embeddedImagesRemote___ino',
+	ChildMdxFrontmatterEmbeddedImagesRemoteAtimeMs = 'childMdx___frontmatter___embeddedImagesRemote___atimeMs',
+	ChildMdxFrontmatterEmbeddedImagesRemoteMtimeMs = 'childMdx___frontmatter___embeddedImagesRemote___mtimeMs',
+	ChildMdxFrontmatterEmbeddedImagesRemoteCtimeMs = 'childMdx___frontmatter___embeddedImagesRemote___ctimeMs',
+	ChildMdxFrontmatterEmbeddedImagesRemoteAtime = 'childMdx___frontmatter___embeddedImagesRemote___atime',
+	ChildMdxFrontmatterEmbeddedImagesRemoteMtime = 'childMdx___frontmatter___embeddedImagesRemote___mtime',
+	ChildMdxFrontmatterEmbeddedImagesRemoteCtime = 'childMdx___frontmatter___embeddedImagesRemote___ctime',
+	ChildMdxFrontmatterEmbeddedImagesRemoteBirthtime = 'childMdx___frontmatter___embeddedImagesRemote___birthtime',
+	ChildMdxFrontmatterEmbeddedImagesRemoteBirthtimeMs = 'childMdx___frontmatter___embeddedImagesRemote___birthtimeMs',
+	ChildMdxFrontmatterEmbeddedImagesRemoteBlksize = 'childMdx___frontmatter___embeddedImagesRemote___blksize',
+	ChildMdxFrontmatterEmbeddedImagesRemoteBlocks = 'childMdx___frontmatter___embeddedImagesRemote___blocks',
+	ChildMdxFrontmatterEmbeddedImagesRemoteUrl = 'childMdx___frontmatter___embeddedImagesRemote___url',
+	ChildMdxFrontmatterEmbeddedImagesRemotePublicUrl = 'childMdx___frontmatter___embeddedImagesRemote___publicURL',
+	ChildMdxFrontmatterEmbeddedImagesRemoteChildrenMdx = 'childMdx___frontmatter___embeddedImagesRemote___childrenMdx',
+	ChildMdxFrontmatterEmbeddedImagesRemoteChildrenImageSharp = 'childMdx___frontmatter___embeddedImagesRemote___childrenImageSharp',
+	ChildMdxFrontmatterEmbeddedImagesRemoteId = 'childMdx___frontmatter___embeddedImagesRemote___id',
+	ChildMdxFrontmatterEmbeddedImagesRemoteChildren = 'childMdx___frontmatter___embeddedImagesRemote___children',
+	ChildMdxFrontmatterEmbeddedImagesLocal = 'childMdx___frontmatter___embeddedImagesLocal',
+	ChildMdxFrontmatterEmbeddedImagesLocalSourceInstanceName = 'childMdx___frontmatter___embeddedImagesLocal___sourceInstanceName',
+	ChildMdxFrontmatterEmbeddedImagesLocalAbsolutePath = 'childMdx___frontmatter___embeddedImagesLocal___absolutePath',
+	ChildMdxFrontmatterEmbeddedImagesLocalRelativePath = 'childMdx___frontmatter___embeddedImagesLocal___relativePath',
+	ChildMdxFrontmatterEmbeddedImagesLocalExtension = 'childMdx___frontmatter___embeddedImagesLocal___extension',
+	ChildMdxFrontmatterEmbeddedImagesLocalSize = 'childMdx___frontmatter___embeddedImagesLocal___size',
+	ChildMdxFrontmatterEmbeddedImagesLocalPrettySize = 'childMdx___frontmatter___embeddedImagesLocal___prettySize',
+	ChildMdxFrontmatterEmbeddedImagesLocalModifiedTime = 'childMdx___frontmatter___embeddedImagesLocal___modifiedTime',
+	ChildMdxFrontmatterEmbeddedImagesLocalAccessTime = 'childMdx___frontmatter___embeddedImagesLocal___accessTime',
+	ChildMdxFrontmatterEmbeddedImagesLocalChangeTime = 'childMdx___frontmatter___embeddedImagesLocal___changeTime',
+	ChildMdxFrontmatterEmbeddedImagesLocalBirthTime = 'childMdx___frontmatter___embeddedImagesLocal___birthTime',
+	ChildMdxFrontmatterEmbeddedImagesLocalRoot = 'childMdx___frontmatter___embeddedImagesLocal___root',
+	ChildMdxFrontmatterEmbeddedImagesLocalDir = 'childMdx___frontmatter___embeddedImagesLocal___dir',
+	ChildMdxFrontmatterEmbeddedImagesLocalBase = 'childMdx___frontmatter___embeddedImagesLocal___base',
+	ChildMdxFrontmatterEmbeddedImagesLocalExt = 'childMdx___frontmatter___embeddedImagesLocal___ext',
+	ChildMdxFrontmatterEmbeddedImagesLocalName = 'childMdx___frontmatter___embeddedImagesLocal___name',
+	ChildMdxFrontmatterEmbeddedImagesLocalRelativeDirectory = 'childMdx___frontmatter___embeddedImagesLocal___relativeDirectory',
+	ChildMdxFrontmatterEmbeddedImagesLocalDev = 'childMdx___frontmatter___embeddedImagesLocal___dev',
+	ChildMdxFrontmatterEmbeddedImagesLocalMode = 'childMdx___frontmatter___embeddedImagesLocal___mode',
+	ChildMdxFrontmatterEmbeddedImagesLocalNlink = 'childMdx___frontmatter___embeddedImagesLocal___nlink',
+	ChildMdxFrontmatterEmbeddedImagesLocalUid = 'childMdx___frontmatter___embeddedImagesLocal___uid',
+	ChildMdxFrontmatterEmbeddedImagesLocalGid = 'childMdx___frontmatter___embeddedImagesLocal___gid',
+	ChildMdxFrontmatterEmbeddedImagesLocalRdev = 'childMdx___frontmatter___embeddedImagesLocal___rdev',
+	ChildMdxFrontmatterEmbeddedImagesLocalIno = 'childMdx___frontmatter___embeddedImagesLocal___ino',
+	ChildMdxFrontmatterEmbeddedImagesLocalAtimeMs = 'childMdx___frontmatter___embeddedImagesLocal___atimeMs',
+	ChildMdxFrontmatterEmbeddedImagesLocalMtimeMs = 'childMdx___frontmatter___embeddedImagesLocal___mtimeMs',
+	ChildMdxFrontmatterEmbeddedImagesLocalCtimeMs = 'childMdx___frontmatter___embeddedImagesLocal___ctimeMs',
+	ChildMdxFrontmatterEmbeddedImagesLocalAtime = 'childMdx___frontmatter___embeddedImagesLocal___atime',
+	ChildMdxFrontmatterEmbeddedImagesLocalMtime = 'childMdx___frontmatter___embeddedImagesLocal___mtime',
+	ChildMdxFrontmatterEmbeddedImagesLocalCtime = 'childMdx___frontmatter___embeddedImagesLocal___ctime',
+	ChildMdxFrontmatterEmbeddedImagesLocalBirthtime = 'childMdx___frontmatter___embeddedImagesLocal___birthtime',
+	ChildMdxFrontmatterEmbeddedImagesLocalBirthtimeMs = 'childMdx___frontmatter___embeddedImagesLocal___birthtimeMs',
+	ChildMdxFrontmatterEmbeddedImagesLocalBlksize = 'childMdx___frontmatter___embeddedImagesLocal___blksize',
+	ChildMdxFrontmatterEmbeddedImagesLocalBlocks = 'childMdx___frontmatter___embeddedImagesLocal___blocks',
+	ChildMdxFrontmatterEmbeddedImagesLocalUrl = 'childMdx___frontmatter___embeddedImagesLocal___url',
+	ChildMdxFrontmatterEmbeddedImagesLocalPublicUrl = 'childMdx___frontmatter___embeddedImagesLocal___publicURL',
+	ChildMdxFrontmatterEmbeddedImagesLocalChildrenMdx = 'childMdx___frontmatter___embeddedImagesLocal___childrenMdx',
+	ChildMdxFrontmatterEmbeddedImagesLocalChildrenImageSharp = 'childMdx___frontmatter___embeddedImagesLocal___childrenImageSharp',
+	ChildMdxFrontmatterEmbeddedImagesLocalId = 'childMdx___frontmatter___embeddedImagesLocal___id',
+	ChildMdxFrontmatterEmbeddedImagesLocalChildren = 'childMdx___frontmatter___embeddedImagesLocal___children',
 	ChildMdxFrontmatterTitle = 'childMdx___frontmatter___title',
 	ChildMdxFrontmatterDescription = 'childMdx___frontmatter___description',
 	ChildMdxFrontmatterFeatured = 'childMdx___frontmatter___featured',
 	ChildMdxFrontmatterPublished = 'childMdx___frontmatter___published',
 	ChildMdxFrontmatterUpdated = 'childMdx___frontmatter___updated',
+	ChildMdxFrontmatterAuthor = 'childMdx___frontmatter___author',
 	ChildMdxSlug = 'childMdx___slug',
 	ChildMdxBody = 'childMdx___body',
 	ChildMdxExcerpt = 'childMdx___excerpt',
@@ -928,6 +1092,7 @@ export type FileFilterInput = {
 	birthtimeMs?: Maybe<FloatQueryOperatorInput>
 	blksize?: Maybe<IntQueryOperatorInput>
 	blocks?: Maybe<IntQueryOperatorInput>
+	url?: Maybe<StringQueryOperatorInput>
 	publicURL?: Maybe<StringQueryOperatorInput>
 	childrenMdx?: Maybe<MdxFilterListInput>
 	childMdx?: Maybe<MdxFilterInput>
@@ -937,6 +1102,10 @@ export type FileFilterInput = {
 	parent?: Maybe<NodeFilterInput>
 	children?: Maybe<NodeFilterListInput>
 	internal?: Maybe<InternalFilterInput>
+}
+
+export type FileFilterListInput = {
+	elemMatch?: Maybe<FileFilterInput>
 }
 
 export type FileGroupConnection = {
@@ -963,6 +1132,43 @@ export type FloatQueryOperatorInput = {
 	lte?: Maybe<Scalars['Float']>
 	in?: Maybe<Array<Maybe<Scalars['Float']>>>
 	nin?: Maybe<Array<Maybe<Scalars['Float']>>>
+}
+
+export type Frontmatter = {
+	__typename?: 'Frontmatter'
+	embeddedImagesRemote?: Maybe<Array<Maybe<File>>>
+	embeddedImagesLocal?: Maybe<Array<Maybe<File>>>
+	title?: Maybe<Scalars['String']>
+	description?: Maybe<Scalars['String']>
+	featured?: Maybe<Scalars['Boolean']>
+	published?: Maybe<Scalars['Date']>
+	updated?: Maybe<Scalars['Date']>
+	author?: Maybe<Scalars['String']>
+}
+
+export type FrontmatterPublishedArgs = {
+	formatString?: Maybe<Scalars['String']>
+	fromNow?: Maybe<Scalars['Boolean']>
+	difference?: Maybe<Scalars['String']>
+	locale?: Maybe<Scalars['String']>
+}
+
+export type FrontmatterUpdatedArgs = {
+	formatString?: Maybe<Scalars['String']>
+	fromNow?: Maybe<Scalars['Boolean']>
+	difference?: Maybe<Scalars['String']>
+	locale?: Maybe<Scalars['String']>
+}
+
+export type FrontmatterFilterInput = {
+	embeddedImagesRemote?: Maybe<FileFilterListInput>
+	embeddedImagesLocal?: Maybe<FileFilterListInput>
+	title?: Maybe<StringQueryOperatorInput>
+	description?: Maybe<StringQueryOperatorInput>
+	featured?: Maybe<BooleanQueryOperatorInput>
+	published?: Maybe<DateQueryOperatorInput>
+	updated?: Maybe<DateQueryOperatorInput>
+	author?: Maybe<StringQueryOperatorInput>
 }
 
 export enum HeadingsMdx {
@@ -1456,7 +1662,7 @@ export type Mdx = Node & {
 	__typename?: 'Mdx'
 	rawBody: Scalars['String']
 	fileAbsolutePath: Scalars['String']
-	frontmatter?: Maybe<MdxFrontmatter>
+	frontmatter?: Maybe<Frontmatter>
 	slug?: Maybe<Scalars['String']>
 	body: Scalars['String']
 	excerpt: Scalars['String']
@@ -1535,11 +1741,180 @@ export type MdxEdge = {
 export enum MdxFieldsEnum {
 	RawBody = 'rawBody',
 	FileAbsolutePath = 'fileAbsolutePath',
+	FrontmatterEmbeddedImagesRemote = 'frontmatter___embeddedImagesRemote',
+	FrontmatterEmbeddedImagesRemoteSourceInstanceName = 'frontmatter___embeddedImagesRemote___sourceInstanceName',
+	FrontmatterEmbeddedImagesRemoteAbsolutePath = 'frontmatter___embeddedImagesRemote___absolutePath',
+	FrontmatterEmbeddedImagesRemoteRelativePath = 'frontmatter___embeddedImagesRemote___relativePath',
+	FrontmatterEmbeddedImagesRemoteExtension = 'frontmatter___embeddedImagesRemote___extension',
+	FrontmatterEmbeddedImagesRemoteSize = 'frontmatter___embeddedImagesRemote___size',
+	FrontmatterEmbeddedImagesRemotePrettySize = 'frontmatter___embeddedImagesRemote___prettySize',
+	FrontmatterEmbeddedImagesRemoteModifiedTime = 'frontmatter___embeddedImagesRemote___modifiedTime',
+	FrontmatterEmbeddedImagesRemoteAccessTime = 'frontmatter___embeddedImagesRemote___accessTime',
+	FrontmatterEmbeddedImagesRemoteChangeTime = 'frontmatter___embeddedImagesRemote___changeTime',
+	FrontmatterEmbeddedImagesRemoteBirthTime = 'frontmatter___embeddedImagesRemote___birthTime',
+	FrontmatterEmbeddedImagesRemoteRoot = 'frontmatter___embeddedImagesRemote___root',
+	FrontmatterEmbeddedImagesRemoteDir = 'frontmatter___embeddedImagesRemote___dir',
+	FrontmatterEmbeddedImagesRemoteBase = 'frontmatter___embeddedImagesRemote___base',
+	FrontmatterEmbeddedImagesRemoteExt = 'frontmatter___embeddedImagesRemote___ext',
+	FrontmatterEmbeddedImagesRemoteName = 'frontmatter___embeddedImagesRemote___name',
+	FrontmatterEmbeddedImagesRemoteRelativeDirectory = 'frontmatter___embeddedImagesRemote___relativeDirectory',
+	FrontmatterEmbeddedImagesRemoteDev = 'frontmatter___embeddedImagesRemote___dev',
+	FrontmatterEmbeddedImagesRemoteMode = 'frontmatter___embeddedImagesRemote___mode',
+	FrontmatterEmbeddedImagesRemoteNlink = 'frontmatter___embeddedImagesRemote___nlink',
+	FrontmatterEmbeddedImagesRemoteUid = 'frontmatter___embeddedImagesRemote___uid',
+	FrontmatterEmbeddedImagesRemoteGid = 'frontmatter___embeddedImagesRemote___gid',
+	FrontmatterEmbeddedImagesRemoteRdev = 'frontmatter___embeddedImagesRemote___rdev',
+	FrontmatterEmbeddedImagesRemoteIno = 'frontmatter___embeddedImagesRemote___ino',
+	FrontmatterEmbeddedImagesRemoteAtimeMs = 'frontmatter___embeddedImagesRemote___atimeMs',
+	FrontmatterEmbeddedImagesRemoteMtimeMs = 'frontmatter___embeddedImagesRemote___mtimeMs',
+	FrontmatterEmbeddedImagesRemoteCtimeMs = 'frontmatter___embeddedImagesRemote___ctimeMs',
+	FrontmatterEmbeddedImagesRemoteAtime = 'frontmatter___embeddedImagesRemote___atime',
+	FrontmatterEmbeddedImagesRemoteMtime = 'frontmatter___embeddedImagesRemote___mtime',
+	FrontmatterEmbeddedImagesRemoteCtime = 'frontmatter___embeddedImagesRemote___ctime',
+	FrontmatterEmbeddedImagesRemoteBirthtime = 'frontmatter___embeddedImagesRemote___birthtime',
+	FrontmatterEmbeddedImagesRemoteBirthtimeMs = 'frontmatter___embeddedImagesRemote___birthtimeMs',
+	FrontmatterEmbeddedImagesRemoteBlksize = 'frontmatter___embeddedImagesRemote___blksize',
+	FrontmatterEmbeddedImagesRemoteBlocks = 'frontmatter___embeddedImagesRemote___blocks',
+	FrontmatterEmbeddedImagesRemoteUrl = 'frontmatter___embeddedImagesRemote___url',
+	FrontmatterEmbeddedImagesRemotePublicUrl = 'frontmatter___embeddedImagesRemote___publicURL',
+	FrontmatterEmbeddedImagesRemoteChildrenMdx = 'frontmatter___embeddedImagesRemote___childrenMdx',
+	FrontmatterEmbeddedImagesRemoteChildrenMdxRawBody = 'frontmatter___embeddedImagesRemote___childrenMdx___rawBody',
+	FrontmatterEmbeddedImagesRemoteChildrenMdxFileAbsolutePath = 'frontmatter___embeddedImagesRemote___childrenMdx___fileAbsolutePath',
+	FrontmatterEmbeddedImagesRemoteChildrenMdxSlug = 'frontmatter___embeddedImagesRemote___childrenMdx___slug',
+	FrontmatterEmbeddedImagesRemoteChildrenMdxBody = 'frontmatter___embeddedImagesRemote___childrenMdx___body',
+	FrontmatterEmbeddedImagesRemoteChildrenMdxExcerpt = 'frontmatter___embeddedImagesRemote___childrenMdx___excerpt',
+	FrontmatterEmbeddedImagesRemoteChildrenMdxHeadings = 'frontmatter___embeddedImagesRemote___childrenMdx___headings',
+	FrontmatterEmbeddedImagesRemoteChildrenMdxHtml = 'frontmatter___embeddedImagesRemote___childrenMdx___html',
+	FrontmatterEmbeddedImagesRemoteChildrenMdxMdxAst = 'frontmatter___embeddedImagesRemote___childrenMdx___mdxAST',
+	FrontmatterEmbeddedImagesRemoteChildrenMdxTableOfContents = 'frontmatter___embeddedImagesRemote___childrenMdx___tableOfContents',
+	FrontmatterEmbeddedImagesRemoteChildrenMdxTimeToRead = 'frontmatter___embeddedImagesRemote___childrenMdx___timeToRead',
+	FrontmatterEmbeddedImagesRemoteChildrenMdxGatsbyPath = 'frontmatter___embeddedImagesRemote___childrenMdx___gatsbyPath',
+	FrontmatterEmbeddedImagesRemoteChildrenMdxId = 'frontmatter___embeddedImagesRemote___childrenMdx___id',
+	FrontmatterEmbeddedImagesRemoteChildrenMdxChildren = 'frontmatter___embeddedImagesRemote___childrenMdx___children',
+	FrontmatterEmbeddedImagesRemoteChildMdxRawBody = 'frontmatter___embeddedImagesRemote___childMdx___rawBody',
+	FrontmatterEmbeddedImagesRemoteChildMdxFileAbsolutePath = 'frontmatter___embeddedImagesRemote___childMdx___fileAbsolutePath',
+	FrontmatterEmbeddedImagesRemoteChildMdxSlug = 'frontmatter___embeddedImagesRemote___childMdx___slug',
+	FrontmatterEmbeddedImagesRemoteChildMdxBody = 'frontmatter___embeddedImagesRemote___childMdx___body',
+	FrontmatterEmbeddedImagesRemoteChildMdxExcerpt = 'frontmatter___embeddedImagesRemote___childMdx___excerpt',
+	FrontmatterEmbeddedImagesRemoteChildMdxHeadings = 'frontmatter___embeddedImagesRemote___childMdx___headings',
+	FrontmatterEmbeddedImagesRemoteChildMdxHtml = 'frontmatter___embeddedImagesRemote___childMdx___html',
+	FrontmatterEmbeddedImagesRemoteChildMdxMdxAst = 'frontmatter___embeddedImagesRemote___childMdx___mdxAST',
+	FrontmatterEmbeddedImagesRemoteChildMdxTableOfContents = 'frontmatter___embeddedImagesRemote___childMdx___tableOfContents',
+	FrontmatterEmbeddedImagesRemoteChildMdxTimeToRead = 'frontmatter___embeddedImagesRemote___childMdx___timeToRead',
+	FrontmatterEmbeddedImagesRemoteChildMdxGatsbyPath = 'frontmatter___embeddedImagesRemote___childMdx___gatsbyPath',
+	FrontmatterEmbeddedImagesRemoteChildMdxId = 'frontmatter___embeddedImagesRemote___childMdx___id',
+	FrontmatterEmbeddedImagesRemoteChildMdxChildren = 'frontmatter___embeddedImagesRemote___childMdx___children',
+	FrontmatterEmbeddedImagesRemoteChildrenImageSharp = 'frontmatter___embeddedImagesRemote___childrenImageSharp',
+	FrontmatterEmbeddedImagesRemoteChildrenImageSharpGatsbyImageData = 'frontmatter___embeddedImagesRemote___childrenImageSharp___gatsbyImageData',
+	FrontmatterEmbeddedImagesRemoteChildrenImageSharpId = 'frontmatter___embeddedImagesRemote___childrenImageSharp___id',
+	FrontmatterEmbeddedImagesRemoteChildrenImageSharpChildren = 'frontmatter___embeddedImagesRemote___childrenImageSharp___children',
+	FrontmatterEmbeddedImagesRemoteChildImageSharpGatsbyImageData = 'frontmatter___embeddedImagesRemote___childImageSharp___gatsbyImageData',
+	FrontmatterEmbeddedImagesRemoteChildImageSharpId = 'frontmatter___embeddedImagesRemote___childImageSharp___id',
+	FrontmatterEmbeddedImagesRemoteChildImageSharpChildren = 'frontmatter___embeddedImagesRemote___childImageSharp___children',
+	FrontmatterEmbeddedImagesRemoteId = 'frontmatter___embeddedImagesRemote___id',
+	FrontmatterEmbeddedImagesRemoteParentId = 'frontmatter___embeddedImagesRemote___parent___id',
+	FrontmatterEmbeddedImagesRemoteParentChildren = 'frontmatter___embeddedImagesRemote___parent___children',
+	FrontmatterEmbeddedImagesRemoteChildren = 'frontmatter___embeddedImagesRemote___children',
+	FrontmatterEmbeddedImagesRemoteChildrenId = 'frontmatter___embeddedImagesRemote___children___id',
+	FrontmatterEmbeddedImagesRemoteChildrenChildren = 'frontmatter___embeddedImagesRemote___children___children',
+	FrontmatterEmbeddedImagesRemoteInternalContent = 'frontmatter___embeddedImagesRemote___internal___content',
+	FrontmatterEmbeddedImagesRemoteInternalContentDigest = 'frontmatter___embeddedImagesRemote___internal___contentDigest',
+	FrontmatterEmbeddedImagesRemoteInternalDescription = 'frontmatter___embeddedImagesRemote___internal___description',
+	FrontmatterEmbeddedImagesRemoteInternalFieldOwners = 'frontmatter___embeddedImagesRemote___internal___fieldOwners',
+	FrontmatterEmbeddedImagesRemoteInternalIgnoreType = 'frontmatter___embeddedImagesRemote___internal___ignoreType',
+	FrontmatterEmbeddedImagesRemoteInternalMediaType = 'frontmatter___embeddedImagesRemote___internal___mediaType',
+	FrontmatterEmbeddedImagesRemoteInternalOwner = 'frontmatter___embeddedImagesRemote___internal___owner',
+	FrontmatterEmbeddedImagesRemoteInternalType = 'frontmatter___embeddedImagesRemote___internal___type',
+	FrontmatterEmbeddedImagesLocal = 'frontmatter___embeddedImagesLocal',
+	FrontmatterEmbeddedImagesLocalSourceInstanceName = 'frontmatter___embeddedImagesLocal___sourceInstanceName',
+	FrontmatterEmbeddedImagesLocalAbsolutePath = 'frontmatter___embeddedImagesLocal___absolutePath',
+	FrontmatterEmbeddedImagesLocalRelativePath = 'frontmatter___embeddedImagesLocal___relativePath',
+	FrontmatterEmbeddedImagesLocalExtension = 'frontmatter___embeddedImagesLocal___extension',
+	FrontmatterEmbeddedImagesLocalSize = 'frontmatter___embeddedImagesLocal___size',
+	FrontmatterEmbeddedImagesLocalPrettySize = 'frontmatter___embeddedImagesLocal___prettySize',
+	FrontmatterEmbeddedImagesLocalModifiedTime = 'frontmatter___embeddedImagesLocal___modifiedTime',
+	FrontmatterEmbeddedImagesLocalAccessTime = 'frontmatter___embeddedImagesLocal___accessTime',
+	FrontmatterEmbeddedImagesLocalChangeTime = 'frontmatter___embeddedImagesLocal___changeTime',
+	FrontmatterEmbeddedImagesLocalBirthTime = 'frontmatter___embeddedImagesLocal___birthTime',
+	FrontmatterEmbeddedImagesLocalRoot = 'frontmatter___embeddedImagesLocal___root',
+	FrontmatterEmbeddedImagesLocalDir = 'frontmatter___embeddedImagesLocal___dir',
+	FrontmatterEmbeddedImagesLocalBase = 'frontmatter___embeddedImagesLocal___base',
+	FrontmatterEmbeddedImagesLocalExt = 'frontmatter___embeddedImagesLocal___ext',
+	FrontmatterEmbeddedImagesLocalName = 'frontmatter___embeddedImagesLocal___name',
+	FrontmatterEmbeddedImagesLocalRelativeDirectory = 'frontmatter___embeddedImagesLocal___relativeDirectory',
+	FrontmatterEmbeddedImagesLocalDev = 'frontmatter___embeddedImagesLocal___dev',
+	FrontmatterEmbeddedImagesLocalMode = 'frontmatter___embeddedImagesLocal___mode',
+	FrontmatterEmbeddedImagesLocalNlink = 'frontmatter___embeddedImagesLocal___nlink',
+	FrontmatterEmbeddedImagesLocalUid = 'frontmatter___embeddedImagesLocal___uid',
+	FrontmatterEmbeddedImagesLocalGid = 'frontmatter___embeddedImagesLocal___gid',
+	FrontmatterEmbeddedImagesLocalRdev = 'frontmatter___embeddedImagesLocal___rdev',
+	FrontmatterEmbeddedImagesLocalIno = 'frontmatter___embeddedImagesLocal___ino',
+	FrontmatterEmbeddedImagesLocalAtimeMs = 'frontmatter___embeddedImagesLocal___atimeMs',
+	FrontmatterEmbeddedImagesLocalMtimeMs = 'frontmatter___embeddedImagesLocal___mtimeMs',
+	FrontmatterEmbeddedImagesLocalCtimeMs = 'frontmatter___embeddedImagesLocal___ctimeMs',
+	FrontmatterEmbeddedImagesLocalAtime = 'frontmatter___embeddedImagesLocal___atime',
+	FrontmatterEmbeddedImagesLocalMtime = 'frontmatter___embeddedImagesLocal___mtime',
+	FrontmatterEmbeddedImagesLocalCtime = 'frontmatter___embeddedImagesLocal___ctime',
+	FrontmatterEmbeddedImagesLocalBirthtime = 'frontmatter___embeddedImagesLocal___birthtime',
+	FrontmatterEmbeddedImagesLocalBirthtimeMs = 'frontmatter___embeddedImagesLocal___birthtimeMs',
+	FrontmatterEmbeddedImagesLocalBlksize = 'frontmatter___embeddedImagesLocal___blksize',
+	FrontmatterEmbeddedImagesLocalBlocks = 'frontmatter___embeddedImagesLocal___blocks',
+	FrontmatterEmbeddedImagesLocalUrl = 'frontmatter___embeddedImagesLocal___url',
+	FrontmatterEmbeddedImagesLocalPublicUrl = 'frontmatter___embeddedImagesLocal___publicURL',
+	FrontmatterEmbeddedImagesLocalChildrenMdx = 'frontmatter___embeddedImagesLocal___childrenMdx',
+	FrontmatterEmbeddedImagesLocalChildrenMdxRawBody = 'frontmatter___embeddedImagesLocal___childrenMdx___rawBody',
+	FrontmatterEmbeddedImagesLocalChildrenMdxFileAbsolutePath = 'frontmatter___embeddedImagesLocal___childrenMdx___fileAbsolutePath',
+	FrontmatterEmbeddedImagesLocalChildrenMdxSlug = 'frontmatter___embeddedImagesLocal___childrenMdx___slug',
+	FrontmatterEmbeddedImagesLocalChildrenMdxBody = 'frontmatter___embeddedImagesLocal___childrenMdx___body',
+	FrontmatterEmbeddedImagesLocalChildrenMdxExcerpt = 'frontmatter___embeddedImagesLocal___childrenMdx___excerpt',
+	FrontmatterEmbeddedImagesLocalChildrenMdxHeadings = 'frontmatter___embeddedImagesLocal___childrenMdx___headings',
+	FrontmatterEmbeddedImagesLocalChildrenMdxHtml = 'frontmatter___embeddedImagesLocal___childrenMdx___html',
+	FrontmatterEmbeddedImagesLocalChildrenMdxMdxAst = 'frontmatter___embeddedImagesLocal___childrenMdx___mdxAST',
+	FrontmatterEmbeddedImagesLocalChildrenMdxTableOfContents = 'frontmatter___embeddedImagesLocal___childrenMdx___tableOfContents',
+	FrontmatterEmbeddedImagesLocalChildrenMdxTimeToRead = 'frontmatter___embeddedImagesLocal___childrenMdx___timeToRead',
+	FrontmatterEmbeddedImagesLocalChildrenMdxGatsbyPath = 'frontmatter___embeddedImagesLocal___childrenMdx___gatsbyPath',
+	FrontmatterEmbeddedImagesLocalChildrenMdxId = 'frontmatter___embeddedImagesLocal___childrenMdx___id',
+	FrontmatterEmbeddedImagesLocalChildrenMdxChildren = 'frontmatter___embeddedImagesLocal___childrenMdx___children',
+	FrontmatterEmbeddedImagesLocalChildMdxRawBody = 'frontmatter___embeddedImagesLocal___childMdx___rawBody',
+	FrontmatterEmbeddedImagesLocalChildMdxFileAbsolutePath = 'frontmatter___embeddedImagesLocal___childMdx___fileAbsolutePath',
+	FrontmatterEmbeddedImagesLocalChildMdxSlug = 'frontmatter___embeddedImagesLocal___childMdx___slug',
+	FrontmatterEmbeddedImagesLocalChildMdxBody = 'frontmatter___embeddedImagesLocal___childMdx___body',
+	FrontmatterEmbeddedImagesLocalChildMdxExcerpt = 'frontmatter___embeddedImagesLocal___childMdx___excerpt',
+	FrontmatterEmbeddedImagesLocalChildMdxHeadings = 'frontmatter___embeddedImagesLocal___childMdx___headings',
+	FrontmatterEmbeddedImagesLocalChildMdxHtml = 'frontmatter___embeddedImagesLocal___childMdx___html',
+	FrontmatterEmbeddedImagesLocalChildMdxMdxAst = 'frontmatter___embeddedImagesLocal___childMdx___mdxAST',
+	FrontmatterEmbeddedImagesLocalChildMdxTableOfContents = 'frontmatter___embeddedImagesLocal___childMdx___tableOfContents',
+	FrontmatterEmbeddedImagesLocalChildMdxTimeToRead = 'frontmatter___embeddedImagesLocal___childMdx___timeToRead',
+	FrontmatterEmbeddedImagesLocalChildMdxGatsbyPath = 'frontmatter___embeddedImagesLocal___childMdx___gatsbyPath',
+	FrontmatterEmbeddedImagesLocalChildMdxId = 'frontmatter___embeddedImagesLocal___childMdx___id',
+	FrontmatterEmbeddedImagesLocalChildMdxChildren = 'frontmatter___embeddedImagesLocal___childMdx___children',
+	FrontmatterEmbeddedImagesLocalChildrenImageSharp = 'frontmatter___embeddedImagesLocal___childrenImageSharp',
+	FrontmatterEmbeddedImagesLocalChildrenImageSharpGatsbyImageData = 'frontmatter___embeddedImagesLocal___childrenImageSharp___gatsbyImageData',
+	FrontmatterEmbeddedImagesLocalChildrenImageSharpId = 'frontmatter___embeddedImagesLocal___childrenImageSharp___id',
+	FrontmatterEmbeddedImagesLocalChildrenImageSharpChildren = 'frontmatter___embeddedImagesLocal___childrenImageSharp___children',
+	FrontmatterEmbeddedImagesLocalChildImageSharpGatsbyImageData = 'frontmatter___embeddedImagesLocal___childImageSharp___gatsbyImageData',
+	FrontmatterEmbeddedImagesLocalChildImageSharpId = 'frontmatter___embeddedImagesLocal___childImageSharp___id',
+	FrontmatterEmbeddedImagesLocalChildImageSharpChildren = 'frontmatter___embeddedImagesLocal___childImageSharp___children',
+	FrontmatterEmbeddedImagesLocalId = 'frontmatter___embeddedImagesLocal___id',
+	FrontmatterEmbeddedImagesLocalParentId = 'frontmatter___embeddedImagesLocal___parent___id',
+	FrontmatterEmbeddedImagesLocalParentChildren = 'frontmatter___embeddedImagesLocal___parent___children',
+	FrontmatterEmbeddedImagesLocalChildren = 'frontmatter___embeddedImagesLocal___children',
+	FrontmatterEmbeddedImagesLocalChildrenId = 'frontmatter___embeddedImagesLocal___children___id',
+	FrontmatterEmbeddedImagesLocalChildrenChildren = 'frontmatter___embeddedImagesLocal___children___children',
+	FrontmatterEmbeddedImagesLocalInternalContent = 'frontmatter___embeddedImagesLocal___internal___content',
+	FrontmatterEmbeddedImagesLocalInternalContentDigest = 'frontmatter___embeddedImagesLocal___internal___contentDigest',
+	FrontmatterEmbeddedImagesLocalInternalDescription = 'frontmatter___embeddedImagesLocal___internal___description',
+	FrontmatterEmbeddedImagesLocalInternalFieldOwners = 'frontmatter___embeddedImagesLocal___internal___fieldOwners',
+	FrontmatterEmbeddedImagesLocalInternalIgnoreType = 'frontmatter___embeddedImagesLocal___internal___ignoreType',
+	FrontmatterEmbeddedImagesLocalInternalMediaType = 'frontmatter___embeddedImagesLocal___internal___mediaType',
+	FrontmatterEmbeddedImagesLocalInternalOwner = 'frontmatter___embeddedImagesLocal___internal___owner',
+	FrontmatterEmbeddedImagesLocalInternalType = 'frontmatter___embeddedImagesLocal___internal___type',
 	FrontmatterTitle = 'frontmatter___title',
 	FrontmatterDescription = 'frontmatter___description',
 	FrontmatterFeatured = 'frontmatter___featured',
 	FrontmatterPublished = 'frontmatter___published',
 	FrontmatterUpdated = 'frontmatter___updated',
+	FrontmatterAuthor = 'frontmatter___author',
 	Slug = 'slug',
 	Body = 'body',
 	Excerpt = 'excerpt',
@@ -1645,7 +2020,7 @@ export enum MdxFieldsEnum {
 export type MdxFilterInput = {
 	rawBody?: Maybe<StringQueryOperatorInput>
 	fileAbsolutePath?: Maybe<StringQueryOperatorInput>
-	frontmatter?: Maybe<MdxFrontmatterFilterInput>
+	frontmatter?: Maybe<FrontmatterFilterInput>
 	slug?: Maybe<StringQueryOperatorInput>
 	body?: Maybe<StringQueryOperatorInput>
 	excerpt?: Maybe<StringQueryOperatorInput>
@@ -1669,32 +2044,6 @@ export type MdxFilterListInput = {
 export type MdxFrontmatter = {
 	__typename?: 'MdxFrontmatter'
 	title: Scalars['String']
-	description?: Maybe<Scalars['String']>
-	featured?: Maybe<Scalars['Boolean']>
-	published?: Maybe<Scalars['Date']>
-	updated?: Maybe<Scalars['Date']>
-}
-
-export type MdxFrontmatterPublishedArgs = {
-	formatString?: Maybe<Scalars['String']>
-	fromNow?: Maybe<Scalars['Boolean']>
-	difference?: Maybe<Scalars['String']>
-	locale?: Maybe<Scalars['String']>
-}
-
-export type MdxFrontmatterUpdatedArgs = {
-	formatString?: Maybe<Scalars['String']>
-	fromNow?: Maybe<Scalars['Boolean']>
-	difference?: Maybe<Scalars['String']>
-	locale?: Maybe<Scalars['String']>
-}
-
-export type MdxFrontmatterFilterInput = {
-	title?: Maybe<StringQueryOperatorInput>
-	description?: Maybe<StringQueryOperatorInput>
-	featured?: Maybe<BooleanQueryOperatorInput>
-	published?: Maybe<DateQueryOperatorInput>
-	updated?: Maybe<DateQueryOperatorInput>
 }
 
 export type MdxGroupConnection = {
@@ -1852,6 +2201,7 @@ export type QueryFileArgs = {
 	birthtimeMs?: Maybe<FloatQueryOperatorInput>
 	blksize?: Maybe<IntQueryOperatorInput>
 	blocks?: Maybe<IntQueryOperatorInput>
+	url?: Maybe<StringQueryOperatorInput>
 	publicURL?: Maybe<StringQueryOperatorInput>
 	childrenMdx?: Maybe<MdxFilterListInput>
 	childMdx?: Maybe<MdxFilterInput>
@@ -1985,7 +2335,7 @@ export type QueryAllSitePageArgs = {
 export type QueryMdxArgs = {
 	rawBody?: Maybe<StringQueryOperatorInput>
 	fileAbsolutePath?: Maybe<StringQueryOperatorInput>
-	frontmatter?: Maybe<MdxFrontmatterFilterInput>
+	frontmatter?: Maybe<FrontmatterFilterInput>
 	slug?: Maybe<StringQueryOperatorInput>
 	body?: Maybe<StringQueryOperatorInput>
 	excerpt?: Maybe<StringQueryOperatorInput>
@@ -2311,7 +2661,6 @@ export enum SiteFieldsEnum {
 	SiteMetadataSiteLanguage = 'siteMetadata___siteLanguage',
 	SiteMetadataLastBuildDate = 'siteMetadata___lastBuildDate',
 	SiteMetadataSiteLocale = 'siteMetadata___siteLocale',
-	SiteMetadataKeywords = 'siteMetadata___keywords',
 	SiteMetadataAuthorName = 'siteMetadata___author___name',
 	SiteMetadataAuthorSummary = 'siteMetadata___author___summary',
 	SiteMetadataSocialTwitterHandle = 'siteMetadata___social___twitter___handle',
@@ -2879,6 +3228,8 @@ export enum SitePageFieldsEnum {
 	PluginCreatorPluginOptionsOptionsEmitWarning = 'pluginCreator___pluginOptions___options___emitWarning',
 	PluginCreatorPluginOptionsOptionsFailOnError = 'pluginCreator___pluginOptions___options___failOnError',
 	PluginCreatorPluginOptionsOptionsFix = 'pluginCreator___pluginOptions___options___fix',
+	PluginCreatorPluginOptionsOptionsExtensions = 'pluginCreator___pluginOptions___options___extensions',
+	PluginCreatorPluginOptionsOptionsExclude = 'pluginCreator___pluginOptions___options___exclude',
 	PluginCreatorPluginOptionsOffset = 'pluginCreator___pluginOptions___offset',
 	PluginCreatorPluginOptionsSiteUrl = 'pluginCreator___pluginOptions___siteUrl',
 	PluginCreatorPluginOptionsMergeScriptHashes = 'pluginCreator___pluginOptions___mergeScriptHashes',
@@ -3127,6 +3478,8 @@ export enum SitePluginFieldsEnum {
 	PluginOptionsOptionsEmitWarning = 'pluginOptions___options___emitWarning',
 	PluginOptionsOptionsFailOnError = 'pluginOptions___options___failOnError',
 	PluginOptionsOptionsFix = 'pluginOptions___options___fix',
+	PluginOptionsOptionsExtensions = 'pluginOptions___options___extensions',
+	PluginOptionsOptionsExclude = 'pluginOptions___options___exclude',
 	PluginOptionsOffset = 'pluginOptions___offset',
 	PluginOptionsSiteUrl = 'pluginOptions___siteUrl',
 	PluginOptionsMergeScriptHashes = 'pluginOptions___mergeScriptHashes',
@@ -3453,12 +3806,16 @@ export type SitePluginPluginOptionsOptions = {
 	emitWarning?: Maybe<Scalars['Boolean']>
 	failOnError?: Maybe<Scalars['Boolean']>
 	fix?: Maybe<Scalars['Boolean']>
+	extensions?: Maybe<Array<Maybe<Scalars['String']>>>
+	exclude?: Maybe<Array<Maybe<Scalars['String']>>>
 }
 
 export type SitePluginPluginOptionsOptionsFilterInput = {
 	emitWarning?: Maybe<BooleanQueryOperatorInput>
 	failOnError?: Maybe<BooleanQueryOperatorInput>
 	fix?: Maybe<BooleanQueryOperatorInput>
+	extensions?: Maybe<StringQueryOperatorInput>
+	exclude?: Maybe<StringQueryOperatorInput>
 }
 
 export type SitePluginSortInput = {
@@ -3476,7 +3833,6 @@ export type SiteSiteMetadata = {
 	siteLanguage?: Maybe<Scalars['String']>
 	lastBuildDate?: Maybe<Scalars['Date']>
 	siteLocale?: Maybe<Scalars['String']>
-	keywords?: Maybe<Array<Maybe<Scalars['String']>>>
 	author?: Maybe<SiteSiteMetadataAuthor>
 	social?: Maybe<SiteSiteMetadataSocial>
 }
@@ -3508,7 +3864,6 @@ export type SiteSiteMetadataFilterInput = {
 	siteLanguage?: Maybe<StringQueryOperatorInput>
 	lastBuildDate?: Maybe<DateQueryOperatorInput>
 	siteLocale?: Maybe<StringQueryOperatorInput>
-	keywords?: Maybe<StringQueryOperatorInput>
 	author?: Maybe<SiteSiteMetadataAuthorFilterInput>
 	social?: Maybe<SiteSiteMetadataSocialFilterInput>
 }
@@ -3611,7 +3966,6 @@ export type SiteMetadataHookQuery = {
 			__typename?: 'SiteSiteMetadata'
 			title?: Maybe<string>
 			description?: Maybe<string>
-			keywords?: Maybe<Array<Maybe<string>>>
 			image?: Maybe<string>
 			siteUrl?: Maybe<string>
 			ogLanguage?: Maybe<string>
@@ -3658,11 +4012,23 @@ export type PostBySlugQuery = {
 		excerpt: string
 		timeToRead?: Maybe<number>
 		frontmatter?: Maybe<{
-			__typename?: 'MdxFrontmatter'
-			title: string
+			__typename?: 'Frontmatter'
+			author?: Maybe<string>
+			title?: Maybe<string>
 			description?: Maybe<string>
 			published?: Maybe<any>
 			updated?: Maybe<any>
+			embeddedImagesRemote?: Maybe<
+				Array<
+					Maybe<{
+						__typename?: 'File'
+						childImageSharp?: Maybe<{
+							__typename?: 'ImageSharp'
+							gatsbyImageData: any
+						}>
+					}>
+				>
+			>
 		}>
 	}>
 }

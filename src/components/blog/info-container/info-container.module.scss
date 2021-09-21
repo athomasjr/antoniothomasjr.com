@@ -1,0 +1,37 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.info_container {
+	display: flex;
+	color: $color-headline;
+
+	p {
+		font-size: 1.2rem;
+	}
+
+	margin-bottom: 20px;
+}
+
+.img_container {
+	background: $color-highlight;
+	clip-path: circle(35% at 52% 65%);
+	// margin: -16px 25px 0 0;
+	margin-right: 16px;
+	width: 30px;
+	display: inline-block;
+}
+
+.info {
+	p {
+		// margin: 0;
+	}
+
+	p:first-child {
+		margin-bottom: 0;
+	}
+
+	p:nth-child(2) {
+		color: $color-body;
+		margin-top: 0;
+	}
+}
