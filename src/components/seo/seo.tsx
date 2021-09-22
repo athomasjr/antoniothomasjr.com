@@ -7,7 +7,7 @@ import Twitter from './twitter'
 interface ISeoProps {
 	description?: string | null
 	title?: string | null
-	image?: string | null
+	image?: string | null | any
 	isArticle?: boolean
 	pathname?: string | null
 	datePublished?: string | null

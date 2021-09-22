@@ -34,6 +34,11 @@ export const query = graphql`
 				description
 				published(formatString: "MMMM Do, YYYY")
 				updated(formatString: "MMMM Do, YYYY")
+				featuredImage {
+					childImageSharp {
+						gatsbyImageData
+					}
+				}
 				embeddedImagesRemote {
 					childImageSharp {
 						gatsbyImageData

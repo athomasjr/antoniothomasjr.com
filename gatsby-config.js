@@ -72,10 +72,10 @@ module.exports = {
 				path: `${__dirname}/content/blog/2021`,
 			},
 		},
-		`gatsby-plugin-mdx`,
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`,
+		`gatsby-plugin-mdx`,
 		{
 			resolve: 'gatsby-plugin-root-import',
 			options: {
