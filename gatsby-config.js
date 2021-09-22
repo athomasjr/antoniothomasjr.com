@@ -1,6 +1,7 @@
 const path = require('path')
 const siteMetadata = require('./site/siteMetadata/index.js')
 require('dotenv').config({ path: './.env' })
+console.log(process.env.GATSBY_MAILCHIMP_FORM_ACTION)
 
 const {
 	NODE_ENV,
@@ -151,6 +152,7 @@ module.exports = {
 			resolve: 'gatsby-plugin-mailchimp',
 			options: {
 				endpoint: process.env.GATSBY_MAILCHIMP_FORM_ACTION,
+
 				timeout: 3500,
 			},
 		},
