@@ -83,6 +83,7 @@ module.exports = {
 				images: path.join(__dirname, './src/assets/images'),
 				assets: path.join(__dirname, './src/assets'),
 				components: path.join(__dirname, './src/components'),
+				layouts: path.join(__dirname, './src/layouts'),
 				types: path.join(__dirname, './src/types'),
 				styles: path.join(__dirname, './src/styles'),
 				hooks: path.join(__dirname, './src/hooks'),
@@ -144,6 +145,19 @@ module.exports = {
 					'/*': ['Content-Security-Policy: __REPLACE_ME__'],
 				},
 				mergeSecurityHeaders: true,
+			},
+		},
+		{
+			resolve: 'gatsby-plugin-mailchimp',
+			options: {
+				endpoint: process.env.GATSBY_MAILCHIMP_FORM_ACTION,
+				timeout: 3500,
+			},
+		},
+		{
+			resolve: 'gatsby-plugin-manifest',
+			options: {
+				icon: 'src/assets/svg/logo.inline.svg',
 			},
 		},
 	],

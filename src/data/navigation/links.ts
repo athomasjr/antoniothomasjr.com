@@ -2,6 +2,12 @@ import { MyNavLinkData } from 'types'
 
 export const myLinkData: MyNavLinkData[] = [
 	{
+		id: 90980,
+		text: 'Blog',
+		to: '/blog',
+		isAnchor: false,
+	},
+	{
 		id: 96392,
 		text: 'Recent Work',
 		to: '/#recent-work',

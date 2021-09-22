@@ -1,0 +1,14 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.info_stamp {
+	p:first-child {
+		margin-bottom: 0;
+		color: $color-headline;
+	}
+
+	p:nth-child(2) {
+		color: $color-body;
+		margin-top: 0;
+	}
+}

@@ -12,7 +12,6 @@ interface ISeoProps {
 	pathname?: string | null
 	datePublished?: string | null
 	dateModified?: string | null
-	// keywords?: string[] | null
 }
 
 export default function SEO({
@@ -23,14 +22,10 @@ export default function SEO({
 	pathname = null,
 	datePublished = null,
 	dateModified = null,
-}: // keywords = null,
-ISeoProps) {
+}: ISeoProps) {
 	const siteMetadata = useSiteMetadata()
 
 	// const slugWithoutSlashes = () => (isPost ? slug?.replace(/\//g, '') : slug)
-	// const metaKeywords: Maybe<Maybe<string>[]> | undefined =
-	// 	siteMetadata?.keywords
-
 	// const twitterCard = isPost ? 'summary_large_image' : 'summary'
 
 	const seo = {
@@ -148,10 +143,6 @@ ISeoProps) {
 				<html lang={siteMetadata.siteLanguage} />
 				<meta name='description' content={seo.description} />
 				<meta name='image' content={seo.image} />
-				{/* <meta
-					name='keywords'
-					content={keywords ? keywords.join() : siteMetadata.keywords.join()}
-				/> */}
 				{!isArticle && (
 					<script type='application/ld+json'>
 						{JSON.stringify(schemaOrgWebPage)}
@@ -162,6 +153,7 @@ ISeoProps) {
 						{JSON.stringify(schemaArticle)}
 					</script>
 				)}
+				{/* <link rel='icon' href={favicon} /> */}
 				<script type='application/ld+json'>{JSON.stringify(breadcrumb)}</script>
 			</Helmet>
 

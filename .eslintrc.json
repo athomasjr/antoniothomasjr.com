@@ -71,6 +71,7 @@
 		"react/jsx-fragments": "off",
 		"react/no-unescaped-entities": ["off", { "forbid": ["'"] }],
 		"jsx-a11y/label-has-associated-control": "off",
-		"@typescript-eslint/no-non-null-assertion": "off"
+		"@typescript-eslint/no-non-null-assertion": "off",
+		"@typescript-eslint/no-explicit-any": "off"
 	}
 }

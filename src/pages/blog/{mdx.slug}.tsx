@@ -1,6 +1,6 @@
-import { BlogWrapper, InfoWrapper, SEO } from 'components'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { PostLayout } from 'layouts'
 import React from 'react'
 import { PostBySlugQuery } from 'types'
 
@@ -9,29 +9,14 @@ interface IPostPageProps {
 }
 
 export default function PostPage({ data }: IPostPageProps) {
-	const { body, frontmatter, slug, timeToRead } = data.mdx!
+	const { body, frontmatter } = data.mdx!
 
 	return (
-		<BlogWrapper>
-			<SEO
-				isArticle
-				title={frontmatter?.title}
-				pathname={slug}
-				description={frontmatter?.description}
-				datePublished={frontmatter?.published}
-				dateModified={frontmatter?.updated}
-			/>
-			<h1>{frontmatter?.title}</h1>
-			<InfoWrapper
-				timeToRead={timeToRead}
-				author={frontmatter?.author}
-				published={frontmatter?.published}
-			/>
-
+		<PostLayout post={data}>
 			<MDXRenderer remoteImages={frontmatter?.embeddedImagesRemote}>
 				{body}
 			</MDXRenderer>
-		</BlogWrapper>
+		</PostLayout>
 	)
 }
 

@@ -1,19 +1,20 @@
+import { InfoStamp } from 'components'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import { Maybe } from 'types'
 import * as styles from './info-container.module.scss'
 
-interface IInfoWrapperProps {
+interface IInfoContainerProps {
 	author: Maybe<string> | undefined
 	published: Maybe<string> | undefined
 	timeToRead: Maybe<number> | undefined
 }
 
-export default function InfoWrapper({
+export default function InfoContainer({
 	author,
 	published,
 	timeToRead,
-}: IInfoWrapperProps) {
+}: IInfoContainerProps) {
 	return (
 		<div className={styles.info_container}>
 			<div>
@@ -23,10 +24,12 @@ export default function InfoWrapper({
 					className={styles.img_container}
 				/>
 			</div>
-			<div className={styles.info}>
-				<p>{`${author} / ${published}`}</p>
-				<p>{timeToRead} min read</p>
-			</div>
+			<InfoStamp
+				className={styles.info_stamp}
+				author={author}
+				published={published}
+				timeToRead={timeToRead}
+			/>
 		</div>
 	)
 }

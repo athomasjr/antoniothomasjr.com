@@ -1,23 +1,25 @@
-import BlogWrapper from './blog/blog-wrapper'
-import InfoWrapper from './blog/info-container'
+import InfoContainer from './blog/info-container/index'
+import PostCard from './blog/post-card/index'
 import ContactForm from './contact-form'
 import Footer from './footer'
 import Header from './header'
-import Layout from './layout'
 import MobileHeader from './mobile-header'
 import ProjectCard from './project-card'
 import SEO from './seo'
+import SubscribeForm from './subscribe-form'
 import ThankYou from './thank-you'
+import InfoStamp from './blog/info-stamp/index'
 
 export {
-	BlogWrapper,
+	SubscribeForm,
 	ContactForm,
+	PostCard,
+	InfoStamp,
 	Footer,
 	SEO,
 	Header,
-	Layout,
 	MobileHeader,
 	ProjectCard,
 	ThankYou,
-	InfoWrapper,
+	InfoContainer,
 }

@@ -21,13 +21,10 @@
 	display: inline-block;
 }
 
-.info {
-	p {
-		// margin: 0;
-	}
-
+.info_stamp {
 	p:first-child {
 		margin-bottom: 0;
+		color: $color-headline;
 	}
 
 	p:nth-child(2) {

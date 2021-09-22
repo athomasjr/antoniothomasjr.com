@@ -1,0 +1,24 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.blog_layout {
+	display: flex;
+	flex-direction: column;
+	max-width: 680px;
+	padding: $padding-page-phone;
+	margin: 0 auto;
+
+	h1 {
+		margin-bottom: 48px;
+	}
+
+	@include for-tablet-up {
+		padding: $padding-page-tablet;
+	}
+
+	@include for-laptop-up {
+		h1 {
+			font-size: $font-size-laptop-headline;
+		}
+	}
+}

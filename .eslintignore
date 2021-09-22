@@ -7,6 +7,6 @@ gatsby-config.js
 gatsby-browser.js
 gatsby-node.js
 gatsby-srr.js
-gatsby
+site
 src/types/generated/index.ts
 csp-util.js

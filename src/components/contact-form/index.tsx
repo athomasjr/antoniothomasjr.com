@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import * as styles from './contact-form.module.scss'
 
-interface ContactFormInputs {
+interface IContactFormInputs {
 	name: string
 	email: string
 	message: string
@@ -47,12 +47,12 @@ export default function ContactForm() {
 		handleSubmit,
 		reset,
 		formState: { errors, isSubmitting },
-	} = useForm<ContactFormInputs>({
+	} = useForm<IContactFormInputs>({
 		resolver: yupResolver(schema),
 	})
 
 	const onSubmit = async (
-		data: ContactFormInputs,
+		data: IContactFormInputs,
 		e?: React.BaseSyntheticEvent,
 	) => {
 		e?.preventDefault()
