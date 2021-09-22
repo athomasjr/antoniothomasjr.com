@@ -3,4 +3,5 @@ export interface MyNavLinkData {
 	text: string
 	to: string
 	isAnchor: boolean
+	isMobile: boolean
 }

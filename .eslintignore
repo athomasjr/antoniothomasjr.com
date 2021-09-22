@@ -10,3 +10,4 @@ gatsby-srr.js
 site
 src/types/generated/index.ts
 csp-util.js
+typings

@@ -16,7 +16,7 @@
     "serve": "gatsby serve"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
+    "src/**/*.{js,ts,tsx}": [
       "eslint --fix"
     ],
     "*.+(js|jsx|json|yml|yaml|css|less|css|scss |ts|tsx| md|graphql|mdx)": [
