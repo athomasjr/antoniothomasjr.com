@@ -25,6 +25,7 @@
 		color: $color-body;
 		background: $color-bg-1;
 		border-radius: 4px;
+		font-size: 1.8rem;
 
 		&::placeholder,
 		&::-webkit-input-placeholder,
@@ -115,21 +116,22 @@
 }
 
 .error {
-	background-color: $color-tag-red;
+	font-size: 1.6rem;
+	padding: 4px;
 	border-radius: 4px;
-	color: $color-headline;
-	font-size: 1rem;
+	text-align: center;
+	background-color: rgb(255, 249, 242);
+	color: rgb(211, 0, 0);
 
 	@include for-laptop-up {
-		font-size: 1.4rem;
-		padding: 5px 10px;
+		padding: 4px 12px;
 		display: inline-block;
 	}
 }
 
 .message_error {
 	display: flex;
-	border-radius: 5px;
+	border-radius: 4px;
 	color: $color-headline;
 	flex-direction: column;
 	align-items: center;

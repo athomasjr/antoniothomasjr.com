@@ -1,4 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup'
+import classNames from 'classnames'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -14,7 +15,7 @@ const schema = yup.object().shape({
 		.string()
 		.email('Please provide a valid email address.')
 		.trim()
-		.required(),
+		.required(`Oops! A valid email is required.`),
 })
 
 export default function SubscribeForm() {
@@ -59,7 +60,9 @@ export default function SubscribeForm() {
 			<p>
 				Subscribe to get access to new posts and emails about web development.
 			</p>
-			<p>{successMsg}</p>
+			<p className={classNames({ [styles.success]: successMsg })}>
+				{successMsg}
+			</p>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<input
 					disabled={isSubmitSuccessful || isSubmitting}
@@ -74,7 +77,9 @@ export default function SubscribeForm() {
 					Subscribe
 				</button>
 			</form>
-			<p>{errors.email && errors.email?.message}</p>
+			<p className={classNames({ [styles.error]: errors.email })}>
+				{errors.email && errors.email?.message}
+			</p>
 		</div>
 	)
 }

@@ -21,7 +21,7 @@
 	}
 
 	p:first-child {
-		color: $color-highlight;
+		color: $color-highlight-light;
 	}
 
 	@include for-tablet-up {

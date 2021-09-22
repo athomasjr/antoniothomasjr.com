@@ -32,6 +32,7 @@
 		color: $color-body;
 		background: $color-bg-1;
 		margin-bottom: 12px;
+		font-size: 1.8rem;
 
 		&::placeholder,
 		&::-webkit-input-placeholder,
@@ -85,4 +86,21 @@
 	@include for-tablet-up {
 		width: 40%;
 	}
+}
+
+.error {
+	padding: 4px;
+	border-radius: 4px;
+	text-align: center;
+	background-color: rgb(255, 249, 242);
+	color: rgb(211, 0, 0);
+}
+
+.success {
+	width: 400px;
+	padding: 4px;
+	border-radius: 4px;
+	background-color: rgb(236, 255, 216);
+	color: rgb(3, 142, 3);
+	text-align: center;
 }
