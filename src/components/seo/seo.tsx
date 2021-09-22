@@ -12,6 +12,7 @@ interface ISeoProps {
 	pathname?: string | null
 	datePublished?: string | null
 	dateModified?: string | null
+	twitterType?: 'summary_large_image' | 'summary'
 }
 
 export default function SEO({
@@ -22,6 +23,7 @@ export default function SEO({
 	pathname = null,
 	datePublished = null,
 	dateModified = null,
+	twitterType = 'summary',
 }: ISeoProps) {
 	const siteMetadata = useSiteMetadata()
 
@@ -166,112 +168,12 @@ export default function SEO({
 				locale={siteMetadata.ogLanguage}
 			/>
 			<Twitter
+				type={twitterType}
 				title={seo.title}
 				image={seo.image}
 				description={seo.description}
 				handle={siteMetadata.social.twitter.handle}
 			/>
 		</>
-
-		// <Helmet
-		// 	htmlAttributes={{ lang: 'en' }}
-		// 	title={title}
-		// 	defaultTitle={siteMetadata.title}
-		// 	titleTemplate={`%s · ${siteMetadata.title}`}
-		// 	meta={[
-		// 		{
-		// 			name: 'description',
-		// 			content: description || siteMetadata.description,
-		// 		},
-		// 		// {
-		// 		// 	property: `og:title`,
-		// 		// 	content: title || siteMetadata.title,
-		// 		// },
-		// 		// {
-		// 		// 	property: 'og:description',
-		// 		// 	content: description || siteMetadata.description,
-		// 		// },
-		// 		// {
-		// 		// 	property: 'og:url',
-		// 		// 	content: slug
-		// 		// 		? `${siteMetadata.siteUrl}/${slugWithoutSlashes()}/`
-		// 		// 		: siteMetadata.siteUrl,
-		// 		// },
-		// 		// {
-		// 		// 	name: 'twitter:card',
-		// 		// 	content: twitterCard,
-		// 		// },
-		// 		// {
-		// 		// 	property: `og:type`,
-		// 		// 	content: `website`,
-		// 		// },
-		// 		// {
-		// 		// 	property: `og:image`,
-		// 		// 	content: `${siteMetadata.siteUrl}${image || siteMetadata.image}`,
-		// 		// },
-		// 		// {
-		// 		// 	name: 'twitter:title',
-		// 		// 	content: title || siteMetadata.title,
-		// 		// },
-		// 		// {
-		// 		// 	name: 'twitter:description',
-		// 		// 	content: description || siteMetadata.description,
-		// 		// },
-
-		// 		// {
-		// 		// 	name: `twitter:creator`,
-		// 		// 	content: siteMetadata.social.twitter.handle,
-		// 		// },
-		// 		// {
-		// 		// 	name: `twitter:site`,
-		// 		// 	content: siteMetadata.social.twitter.handle,
-		// 		// },
-		// 	].concat(
-		// 		metaKeywords && metaKeywords.length > 0
-		// 			? {
-		// 					name: `keywords`,
-		// 					content: metaKeywords.join(', '),
-		// 			  }
-		// 			: [],
-		// 	)}
-		// 	link={[
-		// 		{
-		// 			rel: 'shortcut icon',
-		// 			type: 'image/png',
-		// 			href: `/favicon.png`,
-		// 		},
-		// 	]}
-		// />
 	)
 }
-
-// export const query = graphql`
-// 	query SEO {
-// 		site {
-// 			siteMetadata {
-// 				description
-// 				siteUrl
-// 				title
-// 				social {
-// 					github {
-// 						username
-// 						url
-// 					}
-// 					linkedin {
-// 						url
-// 						username
-// 					}
-// 					twitter {
-// 						handle
-// 						url
-// 					}
-// 				}
-// 				author {
-// 					name
-// 					summary
-// 				}
-// 				image
-// 			}
-// 		}
-// 	}
-// `

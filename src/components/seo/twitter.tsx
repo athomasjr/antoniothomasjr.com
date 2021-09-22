@@ -10,7 +10,7 @@ interface ITwitterProps {
 }
 
 export default function Twitter({
-	type = 'summary_large_image',
+	type = 'summary',
 	handle = null,
 	title,
 	description,

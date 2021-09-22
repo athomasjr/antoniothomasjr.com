@@ -159,7 +159,8 @@ module.exports = {
 		{
 			resolve: 'gatsby-plugin-manifest',
 			options: {
-				icon: 'src/assets/svg/logo.inline.svg',
+				// icon: 'src/assets/svg/logo.inline.svg',
+				icon: siteMetadata.favicon,
 			},
 		},
 	],

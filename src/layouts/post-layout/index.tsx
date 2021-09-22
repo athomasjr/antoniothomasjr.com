@@ -15,6 +15,7 @@ export default function PostLayout({ children, post }: IBlogWrapperProps) {
 		<article className={styles.blog_wrapper}>
 			<SEO
 				isArticle
+				twitterType='summary_large_image'
 				title={frontmatter?.title}
 				pathname={slug}
 				description={frontmatter?.description}

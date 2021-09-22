@@ -3,22 +3,13 @@ module.exports = {
 	description:
 		'Personal website and blog for Antonio Thomas, a frontend developer from Fitchburg Wisconsin.',
 	siteUrl: 'https://antoniothomasjr.com',
-	image: '/images/family.jpeg',
+	image: '/images/site-banner.png',
 	ogLanguage: 'en_US',
 	siteLanguage: 'en',
 	lastBuildDate: new Date(Date.now()).toISOString(),
 	siteLocale: `en_US`,
-	// favicon: '/favicon.png',
+	favicon: 'src/assets/svg/logo.inline.svg',
 
-	// keywords: [
-	// 	'frontend',
-	// 	'antonio thomas',
-	// 	'developer',
-	// 	'portfolio',
-	// 	'freelance',
-	// 	'antonio',
-	// 	'front-end developer',
-	// ],
 	author: {
 		name: 'Antonio Thomas',
 		summary: 'who lives in Fitchburg Wisconsin as a frontend developer.',
