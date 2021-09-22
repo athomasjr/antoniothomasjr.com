@@ -131,10 +131,10 @@ module.exports = {
 				mergeScriptHashes: false,
 				mergeStyleHashes: false,
 				directives: {
-					'script-src': ` 'self' 'unsafe-inline' 'unsafe-eval' 'script-src-elem'`,
+					'script-src': ` 'self' 'unsafe-inline' 'unsafe-eval'  ${process.env.GATSBY_MAILCHIMP_FORM_ACTION_CSP}`,
 					'style-src': ` 'self' 'unsafe-inline'`,
 					'img-src': `'self' data:;`,
-					'report-to': ` https://antonio.report-uri.com/r/d/csp/wizard`,
+					'report-to': `${process.env.GATSBY_CSP_REPORT_TO}`,
 				},
 			},
 		},
