@@ -156,12 +156,12 @@ module.exports = {
 				timeout: 3500,
 			},
 		},
-		{
-			resolve: 'gatsby-plugin-manifest',
-			options: {
-				icon: 'src/assets/svg/logo.inline.svg',
-			},
-		},
+		// {
+		// 	resolve: 'gatsby-plugin-manifest',
+		// 	options: {
+		// 		icon: 'src/assets/svg/logo.inline.svg',
+		// 	},
+		// },
 	],
 	flags: {
 		FAST_DEV: true,
