@@ -1,7 +1,6 @@
 const path = require('path')
 const siteMetadata = require('./site/siteMetadata/index.js')
 require('dotenv').config({ path: './.env' })
-console.log(process.env.GATSBY_MAILCHIMP_FORM_ACTION)
 
 const {
 	NODE_ENV,

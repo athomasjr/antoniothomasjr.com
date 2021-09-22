@@ -3,12 +3,12 @@ import React from 'react'
 import { PostBySlugQuery } from 'types'
 import * as styles from './blog-wrapper.module.scss'
 
-interface IBlogWrapperProps {
+interface IPostLayoutProps {
 	children: React.ReactNode
 	post: PostBySlugQuery
 }
 
-export default function PostLayout({ children, post }: IBlogWrapperProps) {
+export default function PostLayout({ children, post }: IPostLayoutProps) {
 	const { frontmatter, slug, timeToRead } = post.mdx!
 
 	return (
@@ -16,7 +16,7 @@ export default function PostLayout({ children, post }: IBlogWrapperProps) {
 			<SEO
 				image={
 					post.mdx?.frontmatter?.featuredImage?.childImageSharp?.gatsbyImageData
-						.src
+						.images.fallback.src
 				}
 				isArticle
 				twitterType='summary_large_image'
