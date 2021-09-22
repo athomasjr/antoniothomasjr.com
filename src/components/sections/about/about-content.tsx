@@ -13,7 +13,7 @@ export const aboutContent: AboutContent = {
 			<p>
 				My name is Antonio, and I'm a front-end developer from Wisconsin. I'm
 				also a father, husband, writer, fitness competitor, and "amateur"
-				amateur bass fisherman. <br />
+				amateur bass fisherman, and small-business owner. <br />
 			</p>
 
 			<p>
