@@ -132,10 +132,10 @@ module.exports = {
 				mergeScriptHashes: false,
 				mergeStyleHashes: false,
 				directives: {
-					'script-src': ` 'self' 'unsafe-inline'`,
+					'script-src': ` 'self' 'unsafe-inline' 'unsafe-eval'`,
 					'style-src': ` 'self' 'unsafe-inline'`,
 					'img-src': `'self' data:;`,
-					'report-uri': ` https://antonio.report-uri.com/r/d/csp/wizard`,
+					'report-to': ` https://antonio.report-uri.com/r/d/csp/wizard`,
 				},
 			},
 		},
@@ -156,12 +156,12 @@ module.exports = {
 				timeout: 3500,
 			},
 		},
-		// {
-		// 	resolve: 'gatsby-plugin-manifest',
-		// 	options: {
-		// 		icon: 'src/assets/svg/logo.inline.svg',
-		// 	},
-		// },
+		{
+			resolve: 'gatsby-plugin-manifest',
+			options: {
+				icon: 'src/assets/svg/logo.inline.svg',
+			},
+		},
 	],
 	flags: {
 		FAST_DEV: true,
