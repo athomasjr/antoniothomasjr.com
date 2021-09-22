@@ -10,7 +10,6 @@ interface IBlogIndexProps {
 
 export default function BlogIndexPage({ data }: IBlogIndexProps) {
 	const posts = data.allMdx.nodes
-
 	return (
 		<BlogLayout>
 			{posts.map(post => (
