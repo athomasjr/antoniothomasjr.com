@@ -131,8 +131,9 @@ module.exports = {
 				mergeScriptHashes: false,
 				mergeStyleHashes: false,
 				directives: {
-					'script-src': ` 'self' 'unsafe-inline' 'unsafe-eval'  ${process.env.GATSBY_MAILCHIMP_FORM_ACTION_CSP}`,
+					'script-src': `'self' 'unsafe-inline' 'unsafe-eval'  ${process.env.GATSBY_MAILCHIMP_FORM_ACTION_CSP} https://www.googletagmanager.com`,
 					'style-src': ` 'self' 'unsafe-inline'`,
+					'connect-src': `'self' https://www.google-analytics.com`,
 					'img-src': `'self' data:;`,
 					'report-to': `${process.env.GATSBY_CSP_REPORT_TO}`,
 				},
@@ -158,8 +159,16 @@ module.exports = {
 		{
 			resolve: 'gatsby-plugin-manifest',
 			options: {
-				// icon: 'src/assets/svg/logo.inline.svg',
 				icon: siteMetadata.favicon,
+			},
+		},
+		{
+			resolve: `gatsby-plugin-google-gtag`,
+			options: {
+				trackingIds: [`${process.env.GA_TRACKING_ID}`],
+				pluginConfig: {
+					head: true,
+				},
 			},
 		},
 	],
