@@ -5,7 +5,7 @@ import React from 'react'
 export default function IndexPage() {
 	return (
 		<>
-			<SEO title='Welcome to My Home Page' />
+			<SEO title='Welcome to My Home Page' twitterType='summary_large_image' />
 			<Hero />
 			<RecentWork />
 			<About />
