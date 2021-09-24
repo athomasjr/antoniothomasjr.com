@@ -81,4 +81,19 @@ a {
 	color: inherit;
 }
 
-//* <---------  Utilities ----------->
+//* <---------  SCROLLBAR ----------->
+body::-webkit-scrollbar {
+	width: 12px;
+	background: $color-highlight;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: $color-bg-1;
+	border-radius: 20px;
+	border: 3px solid $color-highlight;
+}
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: $color-bg-1 $color-highlight;
+}
