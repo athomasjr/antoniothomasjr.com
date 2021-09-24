@@ -1,0 +1,43 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.twitter_share {
+	background: $color-bg-2;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-decoration: none !important;
+	padding: 4px 12px;
+	border-radius: 4px;
+	width: 45%;
+	transition: transform 0.3s;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+
+	p {
+		margin: 0;
+	}
+
+	@include for-small-phone-only {
+		width: 60%;
+	}
+
+	@include for-tablet-up {
+		width: 30%;
+	}
+	@include for-tablet-landscape-up {
+		width: 35%;
+	}
+
+	@include for-laptop-up {
+		width: 30%;
+	}
+}
+
+.twitter {
+	padding: 0;
+	font-size: 1.6rem;
+	fill: $color-highlight-light;
+}

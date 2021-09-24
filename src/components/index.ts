@@ -1,5 +1,6 @@
-import InfoContainer from './blog/info-container/index'
-import PostCard from './blog/post-card/index'
+import InfoContainer from './blog/info-container'
+import InfoStamp from './blog/info-stamp'
+import PostCard from './blog/post-card'
 import ContactForm from './contact-form'
 import Footer from './footer'
 import Header from './header'
@@ -8,12 +9,13 @@ import ProjectCard from './project-card'
 import SEO from './seo'
 import SubscribeForm from './subscribe-form'
 import ThankYou from './thank-you'
-import InfoStamp from './blog/info-stamp/index'
+import TwitterShare from './common/twitter-share'
 
 export {
 	SubscribeForm,
 	ContactForm,
 	PostCard,
+	TwitterShare,
 	InfoStamp,
 	Footer,
 	SEO,
