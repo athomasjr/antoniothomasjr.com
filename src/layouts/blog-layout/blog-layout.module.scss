@@ -7,6 +7,7 @@
 	max-width: 680px;
 	padding: $padding-page-phone;
 	margin: 0 auto;
+	gap: 24px;
 	// min-height: 75vh;
 
 	h1 {
@@ -15,6 +16,7 @@
 
 	@include for-tablet-up {
 		padding: $padding-page-tablet;
+		gap: 40px;
 	}
 
 	@include for-laptop-up {

@@ -29,7 +29,7 @@ export default function BlogIndexPage({ data }: IBlogIndexProps) {
 
 export const query = graphql`
 	query BlogIndex {
-		allMdx(sort: { fields: frontmatter___published, order: ASC }) {
+		allMdx(sort: { fields: frontmatter___published, order: DESC }) {
 			nodes {
 				id
 				frontmatter {

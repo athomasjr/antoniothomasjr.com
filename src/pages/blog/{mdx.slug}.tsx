@@ -13,7 +13,9 @@ export default function PostPage({ data }: IPostPageProps) {
 
 	return (
 		<PostLayout post={data}>
-			<MDXRenderer remoteImages={frontmatter?.embeddedImagesRemote}>
+			<MDXRenderer
+				localImages={frontmatter?.embeddedImagesLocal}
+				remoteImages={frontmatter?.embeddedImagesRemote}>
 				{body}
 			</MDXRenderer>
 		</PostLayout>
@@ -39,9 +41,14 @@ export const query = graphql`
 						gatsbyImageData
 					}
 				}
+				embeddedImagesLocal {
+					childImageSharp {
+						gatsbyImageData(quality: 100)
+					}
+				}
 				embeddedImagesRemote {
 					childImageSharp {
-						gatsbyImageData
+						gatsbyImageData(quality: 100)
 					}
 				}
 			}
