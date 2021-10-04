@@ -15,7 +15,8 @@ export default function PostPage({ data }: IPostPageProps) {
 		<PostLayout post={data}>
 			<MDXRenderer
 				localImages={frontmatter?.embeddedImagesLocal}
-				remoteImages={frontmatter?.embeddedImagesRemote}>
+				remoteImages={frontmatter?.embeddedImagesRemote}
+			>
 				{body}
 			</MDXRenderer>
 		</PostLayout>

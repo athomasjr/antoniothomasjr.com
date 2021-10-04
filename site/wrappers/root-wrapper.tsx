@@ -1,6 +1,11 @@
 import React from 'react'
 import Layout from '../../src/layouts/layout'
-
-const rootWrapper = ({ element }) => <Layout>{element}</Layout>
+import { GlobalStyles } from '../../src/styles'
+const rootWrapper = ({ element }) => (
+	<Layout>
+		<GlobalStyles />
+		{element}
+	</Layout>
+)
 
 export default rootWrapper

@@ -16,7 +16,8 @@ export default function ThankYou() {
 		<BackgroundImage
 			alt='collage of thank you images'
 			className={styles.thank_you}
-			{...bgImg}>
+			{...bgImg}
+		>
 			<div>
 				<h1>Thank you!</h1>
 				<p>I've received your message and will get back to you shortly.</p>
@@ -26,7 +27,8 @@ export default function ThankYou() {
 						<a
 							href={site.social.twitter.url}
 							target='_blank'
-							rel='noopener noreferrer'>
+							rel='noopener noreferrer'
+						>
 							follow me on Twitter <span>&rarr;</span>
 						</a>
 					</p>

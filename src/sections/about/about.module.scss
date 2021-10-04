@@ -46,6 +46,11 @@
 		h2 {
 			font-size: $font-size-big-laptop-headline;
 		}
+
+		p {
+			font-size: 2rem;
+			padding: 0 12px;
+		}
 	}
 }
 
@@ -53,6 +58,10 @@
 	order: 1;
 	grid-row: 2/3;
 	grid-column: 1/2;
+
+	@include for-big-laptop-up {
+		// padding: 0 24px;
+	}
 }
 
 .img_container {

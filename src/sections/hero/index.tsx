@@ -9,7 +9,7 @@ export default function Hero() {
 	return (
 		<div className={styles.hero}>
 			<StaticImage
-				src='../../../assets/images/hero7.png'
+				src='../../assets/images/hero7.png'
 				alt='Antonio in a white collared shirt and blue tie with purple background'
 				className={styles.img_container}
 				loading='eager'
@@ -24,7 +24,8 @@ export default function Hero() {
 						transition: { ease: 'easeInOut' },
 					}}
 					whileTap={{ scale: 0.8 }}
-					className={styles.cta}>
+					className={styles.cta}
+				>
 					<span className={styles.waving_hand}>👋🏾</span>
 					<AnchorLink stripHash to='/#contact'>
 						{heroContent.cta}

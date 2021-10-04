@@ -23,9 +23,8 @@ export default function About() {
 					opacity: 0,
 				}}
 				animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
-				transition={{ duration: 1, ease: 'anticipate' }}>
-				{/* <p>{aboutContent.content1}</p>
-				<p>{aboutContent.content2}</p> */}
+				transition={{ duration: 1, ease: 'anticipate' }}
+			>
 				{aboutContent.content}
 			</motion.div>
 			<motion.div
@@ -36,10 +35,11 @@ export default function About() {
 					opacity: 0,
 				}}
 				animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
-				transition={{ duration: 1, ease: 'anticipate', delay: 0.5 }}>
+				transition={{ duration: 1, ease: 'anticipate', delay: 0.5 }}
+			>
 				<StaticImage
 					imgClassName={styles.img_class}
-					src='../../../assets/images/about.jpeg'
+					src='../../assets/images/about.jpeg'
 					alt='Antonio and wife with red barn in the background'
 					loading='lazy'
 				/>

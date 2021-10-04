@@ -1,7 +1,7 @@
-@import 'styles/variables';
-@import 'styles/mixins';
+import styled from 'styled-components'
+import { mediaQueries, COLORS } from 'styles'
 
-.header {
+export const Header = styled.header`
 	display: none;
 	flex-shrink: 0;
 
@@ -13,18 +13,17 @@
 
 			li {
 				font-size: 2rem;
-				margin: auto 30px;
+				margin: auto 24px;
 
 				a {
-					padding: 10px;
-					color: $color-body;
+					padding: 0 8px;
 					position: relative;
 					transition: color 0.3s;
 
 					&:after {
 						content: '';
 						position: absolute;
-						background-color: $color-highlight;
+						background-color: ${COLORS.primary.dark};
 						height: 3px;
 						width: 0;
 						left: 0;
@@ -33,7 +32,7 @@
 					}
 
 					&:hover {
-						color: $color-headline;
+						color: ${COLORS.text.header};
 					}
 
 					&:hover:after {
@@ -44,9 +43,14 @@
 		}
 	}
 
-	@include for-laptop-up {
+	div:first-child {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	${mediaQueries.laptopUp} {
 		padding: 0 150px;
-		background: $color-header-bg;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -54,22 +58,7 @@
 		z-index: 1;
 	}
 
-	@include for-big-laptop-up {
+	${mediaQueries.laptopXlUp} {
 		padding: 0 250px;
 	}
-}
-
-.logo_nav_container {
-	display: flex;
-}
-
-.active {
-	content: '';
-	position: absolute;
-	background-color: $color-highlight;
-	height: 3px;
-	width: 0;
-	left: 0;
-	bottom: -2px;
-	transition: 0.3s;
-}
+`

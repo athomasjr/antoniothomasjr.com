@@ -14,6 +14,7 @@ const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
 module.exports = {
 	siteMetadata,
 	plugins: [
+		`gatsby-plugin-styled-components`,
 		{
 			resolve: `gatsby-plugin-sitemap`,
 			options: {
@@ -83,10 +84,13 @@ module.exports = {
 				images: path.join(__dirname, './src/assets/images'),
 				assets: path.join(__dirname, './src/assets'),
 				components: path.join(__dirname, './src/components'),
+				sections: path.join(__dirname, './src/sections'),
 				layouts: path.join(__dirname, './src/layouts'),
 				types: path.join(__dirname, './src/types'),
 				styles: path.join(__dirname, './src/styles'),
 				hooks: path.join(__dirname, './src/hooks'),
+				lib: path.join(__dirname, './src/lib'),
+				context: path.join(__dirname, './src/context'),
 			},
 		},
 		{

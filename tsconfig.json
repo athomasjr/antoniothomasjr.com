@@ -24,6 +24,7 @@
 		"typeRoots": ["./typings/", "./node_modules/@types"],
 		"types": [
 			"cypress",
+			"styled",
 			"@testing-library/cypress",
 			"scss",
 			"png",

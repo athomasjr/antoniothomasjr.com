@@ -14,7 +14,7 @@ export default function NotFoundContent() {
 
 			<StaticImage
 				className={styles.img_container}
-				src='../../../assets/images/404-img.jpeg'
+				src='../../assets/images/404-img.jpeg'
 				alt='Small dog with glasses looking at laptop'
 			/>
 		</div>

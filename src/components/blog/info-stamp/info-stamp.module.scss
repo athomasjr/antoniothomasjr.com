@@ -3,8 +3,8 @@
 
 .info_stamp {
 	p:first-child {
+		color: $color-highlight-light;
 		margin-bottom: 0;
-		color: $color-headline;
 	}
 
 	p:nth-child(2) {

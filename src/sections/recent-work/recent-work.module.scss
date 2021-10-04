@@ -2,7 +2,7 @@
 @import 'styles/mixins';
 
 .recent_work {
-	background: $color-bg-2;
+	// background: $color-bg-2;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -107,7 +107,7 @@
 }
 
 .card {
-	background: $color-bg-1;
+	background: $color-bg-2;
 	border-radius: 5px;
 	width: 90%;
 	padding: 20px;
@@ -164,7 +164,7 @@
 
 	@include for-laptop-up {
 		z-index: 1;
-		border: solid 8px $color-bg-1;
+		border: solid 16px $color-bg-2;
 		grid-column: 1/2;
 		width: 90%;
 	}

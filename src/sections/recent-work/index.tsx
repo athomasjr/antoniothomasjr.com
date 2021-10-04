@@ -19,7 +19,8 @@ export default function RecentWork() {
 				// style={{ opacity: 0 }}
 				className={classNames(styles.invisible, {
 					[styles.tracking_in_expand_fwd_bottom]: inView,
-				})}>
+				})}
+			>
 				Recent Work
 			</h2>
 			{/* <motion.div
@@ -43,7 +44,8 @@ export default function RecentWork() {
 					className={styles.cta}
 					href={project.url}
 					target='_blank'
-					rel='noopener noreferrer'>
+					rel='noopener noreferrer'
+				>
 					Check it out <span>&rarr;</span>
 				</motion.a>
 			</div>
@@ -55,7 +57,7 @@ export default function RecentWork() {
 					))}
 				</ul>
 			</div>
-			<div className={classNames(styles.circle, styles.big)} />
+			{/* <div className={classNames(styles.circle, styles.big)} /> */}
 		</section>
 	)
 }

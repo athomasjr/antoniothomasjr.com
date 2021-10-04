@@ -73,7 +73,8 @@ export default function SubscribeForm() {
 				<button
 					className={styles.cta}
 					disabled={isSubmitSuccessful || isSubmitting}
-					type='submit'>
+					type='submit'
+				>
 					Subscribe
 				</button>
 			</form>

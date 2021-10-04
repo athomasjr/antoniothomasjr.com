@@ -3,7 +3,7 @@ import '@fontsource/mukta'
 import 'normalize.css'
 import providerWrapper from './site/wrappers/provider-wrapper'
 import rootWrapper from './site/wrappers/root-wrapper'
-import './src/styles/global.scss'
+// import './src/styles/global.scss'
 
 export const wrapPageElement = rootWrapper
 

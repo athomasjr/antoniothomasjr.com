@@ -1,13 +1,13 @@
 import { useSiteMetadata } from 'hooks'
 import React from 'react'
 import { FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi'
-import * as styles from './social.module.scss'
+import * as S from './styles'
 
 export default function Social() {
 	const { social } = useSiteMetadata()
 
 	return (
-		<div className={styles.social_container}>
+		<S.SocialContainer>
 			{social?.twitter?.url && social?.twitter.handle && (
 				<a href={social.twitter.url} target='_blank' rel='noopener noreferrer'>
 					<FiTwitter />
@@ -23,6 +23,6 @@ export default function Social() {
 					<FiGithub />
 				</a>
 			)}
-		</div>
+		</S.SocialContainer>
 	)
 }

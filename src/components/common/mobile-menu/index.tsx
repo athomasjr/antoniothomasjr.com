@@ -1,6 +1,5 @@
-import classNames from 'classnames'
 import React from 'react'
-import * as styles from './mobile-menu.module.scss'
+import * as S from './styles'
 
 interface MobileMenuProps {
 	onClick: () => void
@@ -9,13 +8,10 @@ interface MobileMenuProps {
 
 export default function MobileMenu({ onClick, showNav }: MobileMenuProps) {
 	return (
-		<button
-			onClick={onClick}
-			className={classNames(styles.mobile_menu, { [styles.show_nav]: showNav })}
-			type='button'>
+		<S.MobileMenuButton onClick={onClick} showNav={showNav} type='button'>
 			<div />
 			<div />
 			<div />
-		</button>
+		</S.MobileMenuButton>
 	)
 }

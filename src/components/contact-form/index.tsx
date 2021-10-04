@@ -11,23 +11,26 @@ interface IContactFormInputs {
 	message: string
 }
 
-const schema = yup.object().shape({
-	name: yup
-		.string()
-		.max(20, 'Must be 20 characters or less.')
-		.trim()
-		.required(),
-	email: yup
-		.string()
-		.email('Please provide a valid email address.')
-		.trim()
-		.required(),
-	message: yup
-		.string()
-		.trim()
-		.max(180, 'Must be 180 characters or less.')
-		.required(),
-})
+const schema = yup
+	.object()
+	.shape({
+		name: yup
+			.string()
+			.max(20, 'Must be 20 characters or less.')
+			.trim()
+			.required(),
+		email: yup
+			.string()
+			.email('Please provide a valid email address.')
+			.trim()
+			.required(),
+		message: yup
+			.string()
+			.trim()
+			.max(180, 'Must be 180 characters or less.')
+			.required(),
+	})
+	.required()
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const encode = (data: any) =>
@@ -84,7 +87,8 @@ export default function ContactForm() {
 			data-netlify='true'
 			data-netlify-honeypot='bot-field'
 			onSubmit={handleSubmit(onSubmit)}
-			className={styles.contact_form}>
+			className={styles.contact_form}
+		>
 			<input type='hidden' name='form-name' value='contact' />
 			<div>
 				<input
@@ -125,7 +129,8 @@ export default function ContactForm() {
 			<button
 				className={styles.cta_button}
 				disabled={isSubmitting}
-				type='submit'>
+				type='submit'
+			>
 				send message
 			</button>
 		</form>
@@ -138,7 +143,8 @@ export default function ContactForm() {
 				<button
 					onClick={() => setSubmitError({ error: false, message: '' })}
 					className={styles.cta_button}
-					type='button'>
+					type='button'
+				>
 					Try again
 				</button>
 			</div>

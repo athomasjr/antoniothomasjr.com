@@ -20,7 +20,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 			href={project.url}
 			target='_blank'
 			rel='noopener noreferrer'
-			className={classNames(styles.fade_in, { [styles.appear]: inView })}>
+			className={classNames(styles.fade_in, { [styles.appear]: inView })}
+		>
 			<div className={styles.project_card}>
 				<article>
 					<div className={styles.content}>
