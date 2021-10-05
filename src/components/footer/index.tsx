@@ -1,17 +1,17 @@
 import { Social } from 'components/common'
 import { useSiteMetadata } from 'hooks'
 import React from 'react'
-import * as styles from './footer.module.scss'
+import * as S from './styles'
 
 export default function Footer() {
 	const site = useSiteMetadata()
 	return (
-		<footer className={styles.footer}>
+		<S.Footer>
 			<div>
 				<p>{`Designed and developed by ${site?.author?.name}.`} &copy;</p>
 			</div>
 
 			<Social />
-		</footer>
+		</S.Footer>
 	)
 }

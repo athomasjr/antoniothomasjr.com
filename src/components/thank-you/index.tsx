@@ -1,10 +1,9 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
 import { getImage } from 'gatsby-plugin-image'
 import { convertToBgImage } from 'gbimage-bridge'
 import { useSiteMetadata } from 'hooks'
 import React from 'react'
-import * as styles from './thank-you.module.scss'
+import * as S from './styles'
 
 export default function ThankYou() {
 	const site = useSiteMetadata()
@@ -13,11 +12,7 @@ export default function ThankYou() {
 	const bgImg = convertToBgImage(getImage(img))
 
 	return (
-		<BackgroundImage
-			alt='collage of thank you images'
-			className={styles.thank_you}
-			{...bgImg}
-		>
+		<S.Container alt='collage of thank you images' {...bgImg}>
 			<div>
 				<h1>Thank you!</h1>
 				<p>I've received your message and will get back to you shortly.</p>
@@ -34,7 +29,7 @@ export default function ThankYou() {
 					</p>
 				)}
 			</div>
-		</BackgroundImage>
+		</S.Container>
 	)
 }
 

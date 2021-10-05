@@ -2,7 +2,7 @@ import { InfoStamp } from 'components'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import { Maybe } from 'types'
-import * as styles from './info-container.module.scss'
+import * as S from './styles'
 
 interface IInfoContainerProps {
 	author: Maybe<string> | undefined
@@ -16,20 +16,18 @@ export default function InfoContainer({
 	timeToRead,
 }: IInfoContainerProps) {
 	return (
-		<div className={styles.info_container}>
-			<div>
+		<S.InfoContainer>
+			<S.Image>
 				<StaticImage
 					src='../../../assets/images/hero7.png'
 					alt='Antonio in a white collared shirt and blue tie with purple background'
-					className={styles.img_container}
 				/>
-			</div>
+			</S.Image>
 			<InfoStamp
-				className={styles.info_stamp}
 				author={author}
 				published={published}
 				timeToRead={timeToRead}
 			/>
-		</div>
+		</S.InfoContainer>
 	)
 }

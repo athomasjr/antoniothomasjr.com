@@ -1,9 +1,9 @@
 import React from 'react'
 import { Maybe } from 'types'
+import * as S from './styles'
 
 interface IInfoStampProps {
 	author?: Maybe<string>
-	className?: string
 	published?: Maybe<any>
 	timeToRead?: Maybe<number>
 }
@@ -12,15 +12,14 @@ export default function InfoStamp({
 	author,
 	published,
 	timeToRead,
-	className,
 }: IInfoStampProps) {
 	return (
-		<div className={className}>
+		<S.Container>
 			<p>
 				{author} /&nbsp;<time>{published}</time>
 			</p>
 
 			<p>{timeToRead} min read</p>
-		</div>
+		</S.Container>
 	)
 }

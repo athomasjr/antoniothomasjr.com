@@ -1,10 +1,33 @@
-@import 'styles/variables';
+import styled, { css, StyledProps } from 'styled-components'
+import { COLORS, mediaQueries, SHADOW } from 'styles'
 
-.project_card {
+interface IProjectCardProps {
+	inView: boolean
+}
+
+const appear = ({ inView }: StyledProps<IProjectCardProps>) => {
+	if (inView) {
+		return css`
+			opacity: 1;
+			transform: translateY(0);
+		`
+	}
+	return null
+}
+
+export const ProjectCard = styled.a<IProjectCardProps>`
+	opacity: 0;
+	transition: opacity 250ms ease-in, transform 300ms ease-in;
+	transform: translateY(10%);
+
+	${appear}
+`
+
+export const Project = styled.div`
 	width: 70%;
 	height: 100%;
 	margin: 0 auto 40px;
-	background: $color-bg-2;
+	background: ${COLORS.background.medium};
 	display: flex;
 	flex-direction: column;
 	padding: 32px;
@@ -12,8 +35,8 @@
 
 	p:last-child {
 		padding: 5px;
-		background-color: $color-tag-white;
-		color: $color-headline;
+		background-color: ${COLORS.tag.white};
+		color: ${COLORS.text.header};
 		width: 50%;
 		text-align: center;
 		border-radius: 4px;
@@ -21,7 +44,7 @@
 	}
 
 	h3 {
-		color: $color-headline;
+		color: ${COLORS.text.header};
 	}
 
 	ul {
@@ -33,13 +56,13 @@
 	li {
 		padding: 5px 8px 5px 8px;
 		margin: 0 5px 0 0;
-		background-color: $color-tag-purple;
-		color: $color-headline;
+		background-color: ${COLORS.tag.purple};
+		color: ${COLORS.text.header};
 		border-radius: 4px;
 		text-align: center;
 	}
 
-	@media screen and (min-width: $bp-laptop) {
+	${mediaQueries.laptopXlUp} {
 		width: 100%;
 		padding: 32px 32px 0 32px;
 		margin: 0;
@@ -62,55 +85,44 @@
 		}
 
 		&:hover {
-			.image2_container {
+			div:nth-child(3) {
 				transform: translate(-5%, -5%);
 			}
 		}
 	}
-}
+`
 
-.content {
+export const Content = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	padding: 0 5px;
-	@media screen and (min-width: $bp-laptop) {
+	${mediaQueries.laptopUp} {
 		padding: 0 10px;
 	}
-}
+`
 
-.image1_container {
+export const FirstImage = styled.div`
 	display: none;
-	@media screen and (min-width: $bp-laptop) {
+	${mediaQueries.laptopUp} {
 		display: block;
 		position: absolute;
 		bottom: 0;
 		right: 0;
 		width: 85%;
 	}
-}
+`
 
-.image2_container {
+export const SecondImage = styled.div`
 	margin-top: 15px;
 
-	@media screen and (min-width: $bp-laptop) {
+	${mediaQueries.laptopUp} {
 		margin-top: 0;
 		position: absolute;
 		left: 50px;
 		bottom: 60px;
 		width: 300px;
-		box-shadow: $shadow-project-img;
+		box-shadow: ${SHADOW.project_img};
 		transition: transform 200ms;
 	}
-}
-
-.fade_in {
-	opacity: 0;
-	transition: opacity 250ms ease-in, transform 300ms ease-in;
-	transform: translateY(10%);
-}
-
-.appear {
-	opacity: 1;
-	transform: translateY(0);
-}
+`

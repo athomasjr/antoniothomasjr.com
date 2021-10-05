@@ -1,8 +1,7 @@
-import classNames from 'classnames'
 import { Project } from 'data'
 import React from 'react'
 import { useInView } from 'react-intersection-observer'
-import * as styles from './project-card.module.scss'
+import * as S from './styles'
 
 interface ProjectCardProps {
 	project: Project
@@ -15,16 +14,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 		// threshold: 1,
 	})
 	return (
-		<a
+		<S.ProjectCard
 			ref={inViewRef}
 			href={project.url}
 			target='_blank'
 			rel='noopener noreferrer'
-			className={classNames(styles.fade_in, { [styles.appear]: inView })}
+			inView={inView}
 		>
-			<div className={styles.project_card}>
+			<S.Project>
 				<article>
-					<div className={styles.content}>
+					<S.Content>
 						<h3>{project.title}</h3>
 						<p>{project.description}</p>
 						<ul>
@@ -33,11 +32,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 							))}
 						</ul>
 						<p>{project.responsibility}</p>
-					</div>
-					<div className={styles.image1_container}>{project.image1}</div>
-					<div className={styles.image2_container}>{project.image2}</div>
+					</S.Content>
+					<S.FirstImage>{project.image1}</S.FirstImage>
+					<S.SecondImage>{project.image2}</S.SecondImage>
 				</article>
-			</div>
-		</a>
+			</S.Project>
+		</S.ProjectCard>
 	)
 }

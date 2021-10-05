@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { mediaQueries, COLORS } from 'styles'
+import { COLORS, mediaQueries } from 'styles'
 
 export const Header = styled.header`
 	display: none;

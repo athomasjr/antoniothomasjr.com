@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
 import { COLORS, FONTS } from 'styles'
 
-export const GlobalStyles = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
 ${reset}
 
 
@@ -101,3 +101,5 @@ body::-webkit-scrollbar-thumb {
 }
 
 `
+
+export default GlobalStyles

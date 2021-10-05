@@ -1,21 +1,20 @@
-import classNames from 'classnames'
-import { MobileMenu, NavLinks } from 'components/common'
+import { MobileMenu } from 'components/common'
 import { myLinkData } from 'data'
 import React, { useState } from 'react'
-import * as styles from './mobile-header.module.scss'
+import * as S from './styles'
 
 export default function MobileHeader() {
 	const [showNav, setShowNav] = useState(false)
 
 	return (
-		<header className={styles.mobile_header}>
+		<S.MobileHeader>
 			<MobileMenu showNav={showNav} onClick={() => setShowNav(!showNav)} />
-			<NavLinks
+			<S.MobileNavLinks
 				isMobile
 				onClick={() => setShowNav(!showNav)}
-				className={classNames(styles.nav, { [styles.no_show]: !showNav })}
+				showNav={showNav}
 				linkData={myLinkData}
 			/>
-		</header>
+		</S.MobileHeader>
 	)
 }

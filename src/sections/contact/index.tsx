@@ -1,20 +1,19 @@
 import { ContactForm } from 'components'
 import React from 'react'
-import * as styles from './contact.module.scss'
+import * as S from './styles'
 
 export default function Contact() {
 	return (
-		<section id='contact' className={styles.contact}>
+		<S.Container id='contact'>
 			<div>
-				<h2>Get in touch</h2>
+				<h2>Get in Touch</h2>
 				<p>
 					If you need a developer or want to say hi, send me a message below.
 				</p>
-				{/* <h4>Currently available for freelance work.</h4> */}
 			</div>
 			<div>
 				<ContactForm />
 			</div>
-		</section>
+		</S.Container>
 	)
 }

@@ -2,7 +2,7 @@ import { InfoStamp } from 'components'
 import { Link as GatsbyLink } from 'gatsby'
 import React from 'react'
 import { Maybe } from 'types'
-import * as styles from './post-card.module.scss'
+import * as S from './styles'
 
 interface IPostCardProps {
 	author?: Maybe<string>
@@ -22,19 +22,20 @@ export default function PostCard({
 	slug,
 }: IPostCardProps) {
 	return (
-		<div className={styles.post_card}>
+		<S.PostCard>
 			<article>
 				<GatsbyLink to={`/blog/${slug}`}>
 					<h2>{title}</h2>
-					<InfoStamp
-						className={styles.info_stamp}
-						author={author}
-						timeToRead={timeToRead}
-						published={published}
-					/>
+					<div>
+						<InfoStamp
+							author={author}
+							timeToRead={timeToRead}
+							published={published}
+						/>
+					</div>
 					<p>{description}</p>
 				</GatsbyLink>
 			</article>
-		</div>
+		</S.PostCard>
 	)
 }

@@ -1,14 +1,16 @@
-@import 'styles/variables';
+import BackgroundImage from 'gatsby-background-image'
+import styled from 'styled-components'
+import { COLORS } from 'styles'
 
-.thank_you {
+export const Container = styled(BackgroundImage)`
 	text-align: center;
-	height: 100vh;
+	/* height: 100vh; */
 	background: linear-gradient(rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0.5));
 	opacity: 1 !important;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: $color-headline;
+	color: ${COLORS.text.header};
 
 	div {
 		width: 55%;
@@ -21,14 +23,14 @@
 		justify-content: space-around;
 		align-items: center;
 		text-align: center;
-		background: $color-highlight;
+		background: ${COLORS.primary.dark};
 		border-radius: 4px;
 		margin: 10px 0 0 0;
 		padding: 2px 10px;
 		text-align: center;
 	}
 
-	@media screen and (min-width: $bp-mobile) {
+	/* @media screen and (min-width: $bp-mobile) {
 		div {
 			width: 40%;
 		}
@@ -44,14 +46,14 @@
 			display: inline-block;
 			font-size: 2rem;
 		}
-	}
+	} */
 
-	@media screen and (min-width: $bp-tablet-landscape) {
+	/* @media screen and (min-width: $bp-tablet-landscape) {
 		div {
 			width: 100%;
 		}
-	}
-	@media screen and (min-width: $bp-laptop) {
+	} */
+	/* @media screen and (min-width: $bp-laptop) {
 		div {
 			width: 100%;
 		}
@@ -71,5 +73,5 @@
 				}
 			}
 		}
-	}
-}
+	} */
+`

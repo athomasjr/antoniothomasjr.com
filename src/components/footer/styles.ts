@@ -1,7 +1,7 @@
-@import 'styles/variables';
-@import 'styles/mixins';
+import styled from 'styled-components'
+import { mediaQueries } from 'styles'
 
-.footer {
+export const Footer = styled.footer`
 	display: flex;
 	align-items: center;
 	height: 100px;
@@ -15,7 +15,7 @@
 		font-size: 1rem;
 	}
 
-	@include for-tablet-up {
+	${mediaQueries.tabletUp} {
 		gap: 20px;
 		padding: 0 20px;
 
@@ -24,9 +24,9 @@
 		}
 	}
 
-	@include for-laptop-up {
+	${mediaQueries.laptopUp} {
 		justify-content: space-between;
 		flex-direction: row;
 		padding: 0 100px;
 	}
-}
+`

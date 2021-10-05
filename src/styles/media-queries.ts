@@ -4,19 +4,21 @@ const breakpoints = {
 	xl: 75, // 1200px
 	lg: 62, // 992px
 	md: 48, // 768px
+	mdPhone: 26.6875, // 427px
 	sm: 36, // 576px
 	xsMax: 20.4375, // max 327px
 }
 
 const customMinMediaQuery = (minWidth: number) =>
-	`@media (min-width: ${minWidth}em)`
+	`@media only screen and (min-width: ${minWidth}em)`
 
 const customMaxMediaQuery = (maxWidth: number) =>
-	`@media (max-width: ${maxWidth}em)`
+	`@media only screen and (max-width: ${maxWidth}em)`
 
 export const mediaQueries = {
 	smallOnly: customMaxMediaQuery(breakpoints.xsMax),
 	phoneOnly: customMaxMediaQuery(breakpoints.sm),
+	mdPhoneUp: customMinMediaQuery(breakpoints.mdPhone),
 	tabletUp: customMinMediaQuery(breakpoints.md),
 	tabletLand: customMinMediaQuery(breakpoints.lg),
 	laptopUp: customMinMediaQuery(breakpoints.xl),

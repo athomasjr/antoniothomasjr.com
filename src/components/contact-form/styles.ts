@@ -1,9 +1,10 @@
-@import 'styles/variables';
-@import 'styles/mixins';
+import styled from 'styled-components'
+import { COLORS, FONTS, mediaQueries, PADDING } from 'styles'
 
-.contact_form {
+export const Form = styled.form`
 	display: flex;
 	flex-direction: column;
+	gap: 24px;
 
 	input:-webkit-autofill,
 	input:-webkit-autofill:hover,
@@ -11,33 +12,33 @@
 	textarea:-webkit-autofill,
 	textarea:-webkit-autofill:hover,
 	textarea:-webkit-autofill:focus {
-		-webkit-text-fill-color: $color-headline;
+		-webkit-text-fill-color: ${COLORS.text.header};
 		-webkit-box-shadow: 0 0 0px 1000px #000 inset;
+		box-shadow: 0 0 0px 1000px #000 inset;
 		transition: background-color 5000s ease-in-out 0s;
 	}
 
-	input,
-	textarea {
-		padding: 15px 16px 15px 20px;
+	textarea,
+	input {
+		padding: 16px 16px 16px 20px;
 		width: 100%;
 		border: none;
 		display: block;
-		color: $color-body;
-		background: $color-bg-2;
+		color: ${COLORS.text.light};
+		background: ${COLORS.background.medium};
 		border-radius: 4px;
 		font-size: 1.8rem;
 
 		&::placeholder,
 		&::-webkit-input-placeholder,
 		&::-moz-placeholder {
-			color: $color-body;
 			opacity: 1;
 			font-size: 1.4rem;
 		}
 
 		&:focus {
 			outline: none;
-			border: 1px solid $color-highlight;
+			border: 1px solid ${COLORS.primary.dark};
 		}
 	}
 
@@ -46,17 +47,16 @@
 		resize: none;
 	}
 
-	@include for-tablet-up {
+	${mediaQueries.tabletUp} {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: repeat(3, auto);
 		align-items: start;
-		column-gap: 20px;
-		padding: $padding-page-tablet;
+		padding: ${PADDING.page.tablet};
 
 		input,
 		textarea {
-			padding: 20px 16px 15px 20px;
+			padding: 24px 16px 16px 24px;
 
 			&::placeholder,
 			&::-webkit-input-placeholder,
@@ -70,33 +70,43 @@
 		}
 	}
 
-	@include for-laptop-up {
-		gap: 20px;
+	${mediaQueries.laptopUp} {
 		textarea {
 			height: 150px;
 		}
 	}
 
-	@include for-big-laptop-up {
+	${mediaQueries.laptopXlUp} {
 		input,
 		textarea {
-			padding: 25px 16px 20px 20px;
+			padding: 24px 16px 24px 24px;
 		}
 		textarea {
 			height: 200px;
 		}
 	}
-}
+`
 
-.message_container {
-	@include for-tablet-up {
+export const Textarea = styled.textarea`
+	font-family: ${FONTS.body};
+`
+
+export const Input = styled.input`
+	&::placeholder,
+	&::-webkit-input-placeholder,
+	&::-moz-placeholder {
+		color: ${COLORS.text.light} !important;
+	}
+`
+
+export const MessageContainer = styled.div`
+	${mediaQueries.tabletUp} {
 		grid-area: 2/1/3/3;
 	}
-}
-
-.cta_button {
-	background: $color-highlight;
-	color: $color-headline;
+`
+export const CTA = styled.button`
+	background: ${COLORS.primary.dark};
+	color: ${COLORS.text.header};
 	text-transform: capitalize;
 	border-radius: 4px;
 	border: none;
@@ -104,42 +114,43 @@
 	cursor: pointer;
 	font-size: 1.4rem;
 
-	@include for-tablet-up {
+	${mediaQueries.tabletUp} {
 		font-size: 1.6rem;
 		padding: 15px 0;
 		width: 60%;
 	}
 
-	@include for-big-laptop-up {
+	${mediaQueries.laptopXlUp} {
 		width: 50%;
 	}
-}
+`
 
-.error {
+export const Error = styled.p`
 	font-size: 1.6rem;
 	padding: 4px;
 	border-radius: 4px;
 	text-align: center;
 	background-color: rgb(255, 249, 242);
 	color: rgb(211, 0, 0);
+	margin-top: 16px;
 
-	@include for-laptop-up {
+	${mediaQueries.laptopUp} {
 		padding: 4px 12px;
 		display: inline-block;
 	}
-}
+`
 
-.message_error {
+export const FormErrorMsg = styled.div`
 	display: flex;
 	border-radius: 4px;
-	color: $color-headline;
+	color: ${COLORS.text.header};
 	flex-direction: column;
 	align-items: center;
 	gap: 40px;
 
-	@include for-laptop-up {
+	${mediaQueries.laptopUp} {
 		button {
 			width: 30%;
 		}
 	}
-}
+`

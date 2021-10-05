@@ -1,12 +1,12 @@
 import { ProjectCard } from 'components'
 import { projectData } from 'data'
 import React from 'react'
-import * as styles from './projects.module.scss'
+import * as S from './styles'
 
 export default function Projects() {
 	const projectSection =
 		projectData.length > 1 ? (
-			<section id='work' className={styles.projects}>
+			<S.Container id='work'>
 				<h2>My Work</h2>
 				{projectData.slice(1).map(project => (
 					<ProjectCard
@@ -14,7 +14,7 @@ export default function Projects() {
 						project={project}
 					/>
 				))}
-			</section>
+			</S.Container>
 		) : null
 
 	return projectSection

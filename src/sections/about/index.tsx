@@ -1,9 +1,8 @@
-import { motion } from 'framer-motion'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import { useInView } from 'react-intersection-observer'
 import { aboutContent } from './about-content'
-import * as styles from './about.module.scss'
+import * as S from './styles'
 
 export default function About() {
 	const [inViewRef, inView] = useInView({
@@ -13,10 +12,9 @@ export default function About() {
 	})
 
 	return (
-		<section ref={inViewRef} id='about' className={styles.about}>
+		<S.Container ref={inViewRef} id='about'>
 			{aboutContent.heading}
-			<motion.div
-				className={styles.content}
+			<S.Content
 				initial={{
 					gridColumn: `1/2`,
 					x: '-100%',
@@ -26,9 +24,8 @@ export default function About() {
 				transition={{ duration: 1, ease: 'anticipate' }}
 			>
 				{aboutContent.content}
-			</motion.div>
-			<motion.div
-				className={styles.img_container}
+			</S.Content>
+			<S.ImageContainer
 				initial={{
 					gridColumn: `2/3`,
 					x: '100%',
@@ -38,12 +35,12 @@ export default function About() {
 				transition={{ duration: 1, ease: 'anticipate', delay: 0.5 }}
 			>
 				<StaticImage
-					imgClassName={styles.img_class}
+					style={{ borderRadius: '5px' }}
 					src='../../assets/images/about.jpeg'
 					alt='Antonio and wife with red barn in the background'
 					loading='lazy'
 				/>
-			</motion.div>
-		</section>
+			</S.ImageContainer>
+		</S.Container>
 	)
 }

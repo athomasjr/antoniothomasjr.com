@@ -1,17 +1,17 @@
 import { Footer, Header, MobileHeader } from 'components'
 import React from 'react'
-import * as styles from './layout.module.scss'
+import * as S from './styles'
 
 interface LayoutProps {
 	children: React.ReactNode
 }
 export default function Layout({ children }: LayoutProps) {
 	return (
-		<div className={styles.layout}>
+		<S.Container>
 			<Header />
 			<MobileHeader />
 			<main>{children}</main>
 			<Footer />
-		</div>
+		</S.Container>
 	)
 }

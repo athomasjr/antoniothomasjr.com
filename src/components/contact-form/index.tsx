@@ -3,7 +3,7 @@ import { navigate } from 'gatsby'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
-import * as styles from './contact-form.module.scss'
+import * as S from './styles'
 
 interface IContactFormInputs {
 	name: string
@@ -80,14 +80,13 @@ export default function ContactForm() {
 	}
 
 	const showForm = (
-		<form
+		<S.Form
 			name='contact'
 			method='POST'
 			action='#'
 			data-netlify='true'
 			data-netlify-honeypot='bot-field'
 			onSubmit={handleSubmit(onSubmit)}
-			className={styles.contact_form}
 		>
 			<input type='hidden' name='form-name' value='contact' />
 			<div>
@@ -97,9 +96,7 @@ export default function ContactForm() {
 					placeholder='Your name'
 					{...register('name')}
 				/>
-				<p className={errors.name?.message ? styles.error : ''}>
-					{errors.name?.message}
-				</p>
+				{errors.name?.message && <S.Error>{errors.name?.message}</S.Error>}
 			</div>
 
 			<div>
@@ -109,45 +106,38 @@ export default function ContactForm() {
 					placeholder='you@example.com'
 					{...register('email')}
 				/>
-				<p className={errors.email?.message ? styles.error : ''}>
-					{errors.email?.message}
-				</p>
+				{errors.email?.message && <S.Error>{errors.email?.message}</S.Error>}
 			</div>
 
-			<div className={styles.message_container}>
-				<textarea
+			<S.MessageContainer>
+				<S.Textarea
 					id='message'
 					disabled={isSubmitting}
 					placeholder='Your message'
 					{...register('message')}
 				/>
-				<p className={errors.message?.message ? styles.error : ''}>
-					{errors.message?.message}
-				</p>
-			</div>
+				{errors.message?.message && (
+					<S.Error>{errors.message?.message}</S.Error>
+				)}
+			</S.MessageContainer>
 
-			<button
-				className={styles.cta_button}
-				disabled={isSubmitting}
-				type='submit'
-			>
+			<S.CTA disabled={isSubmitting} type='submit'>
 				send message
-			</button>
-		</form>
+			</S.CTA>
+		</S.Form>
 	)
 
 	if (submitError.error) {
 		return (
-			<div className={styles.message_error}>
+			<S.FormErrorMsg>
 				<p>{submitError.message}</p>
-				<button
+				<S.CTA
 					onClick={() => setSubmitError({ error: false, message: '' })}
-					className={styles.cta_button}
 					type='button'
 				>
 					Try again
-				</button>
-			</div>
+				</S.CTA>
+			</S.FormErrorMsg>
 		)
 	}
 

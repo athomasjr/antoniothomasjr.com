@@ -1,19 +1,19 @@
-@import 'styles/variables';
-@import 'styles/mixins';
+import styled from 'styled-components'
+import { COLORS, FONTS, mediaQueries, PADDING } from 'styles'
 
-.blog_wrapper {
+export const Container = styled.article`
 	display: flex;
 	flex-direction: column;
 	max-width: 680px;
-	padding: $padding-page-phone;
+	padding: ${PADDING.page.phone};
 	margin: 0 auto;
 
 	h1 {
-		color: $color-headline;
+		color: ${COLORS.text.header};
 		margin-bottom: 12px;
 	}
 	h3 {
-		font-family: $font-headline;
+		font-family: ${FONTS.header};
 	}
 
 	h1,
@@ -25,7 +25,7 @@
 	h2,
 	h3,
 	h4 {
-		color: $color-headline;
+		color: ${COLORS.text.header};
 	}
 
 	p,
@@ -50,24 +50,24 @@
 	}
 
 	li::marker {
-		color: $color-tag-white;
+		color: ${COLORS.tag.white};
 	}
 
 	a {
-		color: $color-highlight-light;
+		color: ${COLORS.primary.light};
 		text-decoration: underline;
 	}
 
 	blockquote {
 		padding: 0 8px;
-		color: $color-headline;
-		border-left: 0.3rem solid $color-body;
+		color: ${COLORS.text.header};
+		border-left: 0.3rem solid ${COLORS.text.light};
 		margin-left: 0;
 		display: inline-block;
 		margin-bottom: 24px;
 	}
 
-	@include for-tablet-up {
+	${mediaQueries.tabletUp} {
 		padding: 80px 16px;
 		h1 {
 			font-size: 4rem;
@@ -79,19 +79,19 @@
 		}
 	}
 
-	@include for-tablet-landscape-up {
+	${mediaQueries.tabletLand} {
 		width: 55%;
 	}
 
-	@include for-laptop-up {
+	${mediaQueries.laptopUp} {
 		p,
 		ul,
 		ol {
 			font-size: 1.8rem;
 		}
 	}
-}
+`
 
-.form_container {
+export const FormContainer = styled.div`
 	margin: 16px 0;
-}
+`

@@ -2,7 +2,7 @@ import { InfoContainer, SEO, SubscribeForm, TwitterShare } from 'components'
 import { useSiteMetadata } from 'hooks'
 import React from 'react'
 import { PostBySlugQuery } from 'types'
-import * as styles from './blog-wrapper.module.scss'
+import * as S from './styles'
 
 interface IPostLayoutProps {
 	children: React.ReactNode
@@ -14,7 +14,7 @@ export default function PostLayout({ children, post }: IPostLayoutProps) {
 	const siteMetadata = useSiteMetadata()
 
 	return (
-		<article className={styles.blog_wrapper}>
+		<S.Container>
 			<SEO
 				image={
 					post.mdx?.frontmatter?.featuredImage?.childImageSharp?.gatsbyImageData
@@ -36,10 +36,10 @@ export default function PostLayout({ children, post }: IPostLayoutProps) {
 			/>
 
 			{children}
-			<div className={styles.form_container}>
+			<S.FormContainer>
 				<SubscribeForm />
-			</div>
+			</S.FormContainer>
 			<TwitterShare url={`${siteMetadata.siteUrl}/blog/${slug}`} />
-		</article>
+		</S.Container>
 	)
 }

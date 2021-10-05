@@ -1,22 +1,24 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import classNames from 'classnames'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup'
-import * as styles from './subscribe.module.scss'
+import * as S from './styles'
 
 interface ISubscribeFormInputs {
 	email: string
 }
 
-const schema = yup.object().shape({
-	email: yup
-		.string()
-		.email('Please provide a valid email address.')
-		.trim()
-		.required(`Oops! A valid email is required.`),
-})
+const schema = yup
+	.object()
+	.shape({
+		email: yup
+			.string()
+			.email('Please provide a valid email address.')
+			.trim()
+			.required(`Oops! A valid email is required.`),
+	})
+	.required()
 
 export default function SubscribeForm() {
 	const [successMsg, setSuccessMsg] = useState<string | null>(null)
@@ -55,32 +57,24 @@ export default function SubscribeForm() {
 	}
 
 	return (
-		<div className={styles.subscribe}>
+		<S.Container>
 			<p>Before You Go...</p>
 			<p>
 				Subscribe to get access to new posts and emails about web development.
 			</p>
-			<p className={classNames({ [styles.success]: successMsg })}>
-				{successMsg}
-			</p>
-			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+			<S.Message success>{successMsg}</S.Message>
+			<S.Form onSubmit={handleSubmit(onSubmit)}>
 				<input
 					disabled={isSubmitSuccessful || isSubmitting}
 					placeholder='you@example.com'
 					{...register('email')}
 				/>
 
-				<button
-					className={styles.cta}
-					disabled={isSubmitSuccessful || isSubmitting}
-					type='submit'
-				>
+				<S.Button disabled={isSubmitSuccessful || isSubmitting} type='submit'>
 					Subscribe
-				</button>
-			</form>
-			<p className={classNames({ [styles.error]: errors.email })}>
-				{errors.email && errors.email?.message}
-			</p>
-		</div>
+				</S.Button>
+			</S.Form>
+			<S.Message error>{errors.email && errors.email?.message}</S.Message>
+		</S.Container>
 	)
 }
