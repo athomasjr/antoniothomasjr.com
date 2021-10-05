@@ -30,6 +30,7 @@ export const FONTS = {
 		big_laptop_header: `4rem;`,
 		laptop_header: `3.5rem;`,
 		tablet_header: `3rem;`,
+		sub_sub_heading: 'font-size: 1.953rem;',
 	},
 }
 

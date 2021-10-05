@@ -59,10 +59,8 @@ export default function SubscribeForm() {
 	return (
 		<S.Container>
 			<p>Before You Go...</p>
-			<p>
-				Subscribe to get access to new posts and emails about web development.
-			</p>
-			<S.Message success>{successMsg}</S.Message>
+			<p>Subscribe for access to new posts and emails about web development.</p>
+			{successMsg ? <S.Message success>{successMsg}</S.Message> : null}
 			<S.Form onSubmit={handleSubmit(onSubmit)}>
 				<input
 					disabled={isSubmitSuccessful || isSubmitting}
@@ -74,7 +72,9 @@ export default function SubscribeForm() {
 					Subscribe
 				</S.Button>
 			</S.Form>
-			<S.Message error>{errors.email && errors.email?.message}</S.Message>
+			{errors.email && errors.email?.message ? (
+				<S.Message error>{errors.email?.message}</S.Message>
+			) : null}
 		</S.Container>
 	)
 }

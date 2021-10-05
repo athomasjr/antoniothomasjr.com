@@ -5,13 +5,13 @@ import { COLORS } from 'styles'
 export const TwitterShare = styled.a`
 	background: ${COLORS.background.medium};
 	display: flex;
-
 	align-items: center;
 	text-decoration: none !important;
 	padding: 4px 12px;
 	border-radius: 4px;
 	width: fit-content;
 	transition: transform 0.3s;
+	color: ${COLORS.primary.light};
 
 	&:hover {
 		transform: scale(1.1);

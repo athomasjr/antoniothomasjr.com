@@ -9,9 +9,12 @@ interface IMessageProps {
 const setMessageType = ({ success, error }: StyledProps<IMessageProps>) => {
 	if (success) {
 		return css`
-			width: 400px;
 			background-color: rgb(236, 255, 216);
 			color: rgb(3, 142, 3);
+
+			${mediaQueries.tabletUp} {
+				width: 70%;
+			}
 		`
 	}
 
@@ -19,6 +22,10 @@ const setMessageType = ({ success, error }: StyledProps<IMessageProps>) => {
 		return css`
 			background-color: rgb(255, 249, 242);
 			color: rgb(211, 0, 0);
+
+			${mediaQueries.tabletUp} {
+				width: 70%;
+			}
 		`
 	}
 
@@ -26,10 +33,11 @@ const setMessageType = ({ success, error }: StyledProps<IMessageProps>) => {
 }
 
 export const Container = styled.div`
-	background: ${COLORS.background.medium};
+	/* background: ${COLORS.background.medium}; */
 	width: 100%;
 	border-radius: 4px;
 	padding: 24px;
+	border: 4px solid ${COLORS.background.medium};
 
 	p:first-child {
 		color: ${COLORS.text.header};
@@ -61,16 +69,15 @@ export const Form = styled.form`
 		border: none;
 		border-radius: 4px;
 		color: ${COLORS.text.light};
-		background: ${COLORS.background.dark};
-		margin-bottom: 12px;
-		font-size: 1.8rem;
+		background: ${COLORS.background.medium};
+		margin-bottom: 16px;
+		font-size: 1.6rem;
 
 		&::placeholder,
 		&::-webkit-input-placeholder,
 		&::-moz-placeholder {
 			color: ${COLORS.text.light};
 			opacity: 1;
-			font-size: 1.2rem;
 		}
 
 		&:focus {
@@ -95,13 +102,7 @@ export const Form = styled.form`
 
 		input {
 			margin-bottom: 0;
-			padding: 20px 16px 15px 20px;
-
-			&::placeholder,
-			&::-webkit-input-placeholder,
-			&::-moz-placeholder {
-				font-size: 1.4rem;
-			}
+			padding: 16px;
 		}
 	}
 `
@@ -113,9 +114,9 @@ export const Button = styled.button`
 	background: ${COLORS.primary.dark};
 	color: ${COLORS.text.header};
 	font-weight: 600;
-	font-size: 1.2rem;
 
 	${mediaQueries.tabletUp} {
 		width: 40%;
+		font-size: 1.6rem;
 	}
 `

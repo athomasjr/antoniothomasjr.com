@@ -1,25 +1,44 @@
+import { TwitterShare } from 'components'
 import styled from 'styled-components'
-import { COLORS, FONTS, mediaQueries, PADDING } from 'styles'
+import { COLORS, FONTS, mediaQueries } from 'styles'
 
-export const Container = styled.article`
-	display: flex;
-	flex-direction: column;
-	max-width: 680px;
-	padding: ${PADDING.page.phone};
+export const Title = styled.h1`
+	font-size: 3rem;
+
+	${mediaQueries.tabletUp} {
+		font-size: ${FONTS.size.tablet_header};
+	}
+	${mediaQueries.laptopUp} {
+		font-size: ${FONTS.size.laptop_header};
+	}
+`
+
+export const Article = styled.article`
 	margin: 0 auto;
+	padding: 56px 0;
+	max-width: 90%;
 
-	h1 {
-		color: ${COLORS.text.header};
-		margin-bottom: 12px;
+	${mediaQueries.tabletUp} {
+		width: 672px;
 	}
-	h3 {
-		font-family: ${FONTS.header};
+`
+
+export const Content = styled.div`
+	p,
+	ul,
+	ol {
+		margin-bottom: 24px;
 	}
 
-	h1,
-	h2,
-	h3 {
-		font-weight: 600;
+	li {
+		&::marker {
+			color: ${COLORS.primary.light};
+		}
+	}
+
+	p,
+	li {
+		font-size: 1.6rem;
 	}
 
 	h2,
@@ -28,29 +47,18 @@ export const Container = styled.article`
 		color: ${COLORS.text.header};
 	}
 
-	p,
-	ul,
 	ol {
-		font-size: 1.5rem;
+		list-style: decimal;
+	}
+
+	ul {
+		list-style-type: disc;
 	}
 
 	ol,
 	ul {
-		padding-left: 1em;
-		list-style-position: outside !important;
-	}
-
-	ol > li {
-		padding-left: 4px;
-		margin-bottom: 4px;
-	}
-
-	ul > li {
-		margin-left: 4px;
-	}
-
-	li::marker {
-		color: ${COLORS.tag.white};
+		/* margin-bottom: 16px; */
+		list-style-position: inside;
 	}
 
 	a {
@@ -59,39 +67,24 @@ export const Container = styled.article`
 	}
 
 	blockquote {
-		padding: 0 8px;
-		color: ${COLORS.text.header};
-		border-left: 0.3rem solid ${COLORS.text.light};
-		margin-left: 0;
+		padding: 8px 8px 0;
+		color: ${COLORS.text.light};
+		border-left: 0.3rem solid ${COLORS.background.medium};
 		display: inline-block;
 		margin-bottom: 24px;
-	}
-
-	${mediaQueries.tabletUp} {
-		padding: 80px 16px;
-		h1 {
-			font-size: 4rem;
-		}
-		p,
-		ul,
-		ol {
-			font-size: 1.6rem;
-		}
-	}
-
-	${mediaQueries.tabletLand} {
-		width: 55%;
-	}
-
-	${mediaQueries.laptopUp} {
-		p,
-		ul,
-		ol {
-			font-size: 1.8rem;
-		}
 	}
 `
 
 export const FormContainer = styled.div`
 	margin: 16px 0;
+`
+
+export const TwitterShareContainer = styled.div``
+
+export const StyledTwitterShare = styled(TwitterShare)`
+	${mediaQueries.mdPhoneDown} {
+		margin: 0 auto;
+		width: 100%;
+		justify-content: center;
+	}
 `

@@ -44,21 +44,19 @@ h3,
 h4,
 h5 {
 	margin: 3rem 0 1.38rem;
-	font-weight: 400;
+	font-weight: 600;
 	line-height: 1.3;
+	font-family: ${FONTS.header};
+	color: ${COLORS.text.header};
 }
 
 h1 {
 	margin-top: 0;
 	font-size: 3.052rem;
-	font-family: ${FONTS.header};
-	font-weight: 600;
-	color: ${COLORS.text.header};
 }
 
 h2 {
 	font-size: 2.441rem;
-	font-family: ${FONTS.header};
 }
 
 h3 {

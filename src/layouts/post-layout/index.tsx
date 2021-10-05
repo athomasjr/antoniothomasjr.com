@@ -1,4 +1,4 @@
-import { InfoContainer, SEO, SubscribeForm, TwitterShare } from 'components'
+import { InfoContainer, SEO, SubscribeForm } from 'components'
 import { useSiteMetadata } from 'hooks'
 import React from 'react'
 import { PostBySlugQuery } from 'types'
@@ -14,7 +14,7 @@ export default function PostLayout({ children, post }: IPostLayoutProps) {
 	const siteMetadata = useSiteMetadata()
 
 	return (
-		<S.Container>
+		<S.Article>
 			<SEO
 				image={
 					post.mdx?.frontmatter?.featuredImage?.childImageSharp?.gatsbyImageData
@@ -28,18 +28,17 @@ export default function PostLayout({ children, post }: IPostLayoutProps) {
 				datePublished={frontmatter?.published}
 				dateModified={frontmatter?.updated}
 			/>
-			<h1>{frontmatter?.title}</h1>
+			<S.Title>{frontmatter?.title}</S.Title>
 			<InfoContainer
 				timeToRead={timeToRead}
 				author={frontmatter?.author}
 				published={frontmatter?.published}
 			/>
-
-			{children}
+			<S.Content>{children}</S.Content>
 			<S.FormContainer>
 				<SubscribeForm />
 			</S.FormContainer>
-			<TwitterShare url={`${siteMetadata.siteUrl}/blog/${slug}`} />
-		</S.Container>
+			<S.StyledTwitterShare url={`${siteMetadata.siteUrl}/blog/${slug}`} />
+		</S.Article>
 	)
 }
