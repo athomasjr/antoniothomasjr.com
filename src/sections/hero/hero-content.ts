@@ -5,7 +5,7 @@ export interface HeroContent {
 }
 
 export const heroContent: HeroContent = {
-	heading: `I'm a developer, writer, and creator.`,
-	subHead: `Let's bring creative things to life.`,
+	heading: `I'm a Developer, Writer, and Creator.`,
+	subHead: `Let's Get Creative Together.`,
 	cta: `Contact Antonio`,
 }

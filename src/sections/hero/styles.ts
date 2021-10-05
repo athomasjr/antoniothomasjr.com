@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import styled, { keyframes } from 'styled-components'
-import { COLORS, mediaQueries, PADDING } from 'styles'
+import { COLORS, FONTS, mediaQueries, PADDING } from 'styles'
 
 const wave = keyframes`
 	0% {
@@ -33,7 +33,6 @@ export const Container = styled.div`
 	display: grid;
 	align-items: center;
 	height: 100vh;
-
 	padding: 0 70px;
 
 	${mediaQueries.tabletLand} {
@@ -55,11 +54,15 @@ export const Content = styled.div`
 	h1 {
 		color: ${COLORS.text.header};
 		font-weight: 600;
+		margin-bottom: 16px;
 	}
 
 	h2 {
 		margin: 0 0 20px 0;
 		font-size: 2rem;
+		color: ${COLORS.text.light};
+		font-family: ${FONTS.body};
+		font-weight: 400;
 	}
 
 	${mediaQueries.phoneOnly} {

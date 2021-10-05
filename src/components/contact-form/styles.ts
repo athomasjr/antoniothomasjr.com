@@ -27,13 +27,12 @@ export const Form = styled.form`
 		color: ${COLORS.text.light};
 		background: ${COLORS.background.medium};
 		border-radius: 4px;
-		font-size: 1.8rem;
+		font-size: 1.6rem;
 
 		&::placeholder,
 		&::-webkit-input-placeholder,
 		&::-moz-placeholder {
 			opacity: 1;
-			font-size: 1.4rem;
 		}
 
 		&:focus {
@@ -57,12 +56,6 @@ export const Form = styled.form`
 		input,
 		textarea {
 			padding: 24px 16px 16px 24px;
-
-			&::placeholder,
-			&::-webkit-input-placeholder,
-			&::-moz-placeholder {
-				font-size: 1.6rem;
-			}
 		}
 
 		textarea {
@@ -110,13 +103,13 @@ export const CTA = styled.button`
 	text-transform: capitalize;
 	border-radius: 4px;
 	border: none;
-	padding: 10px 0;
+	padding: 8px 0;
 	cursor: pointer;
-	font-size: 1.4rem;
+	font-size: 1.6rem;
 
 	${mediaQueries.tabletUp} {
 		font-size: 1.6rem;
-		padding: 15px 0;
+		padding: 16px 0;
 		width: 60%;
 	}
 
@@ -126,7 +119,6 @@ export const CTA = styled.button`
 `
 
 export const Error = styled.p`
-	font-size: 1.6rem;
 	padding: 4px;
 	border-radius: 4px;
 	text-align: center;
