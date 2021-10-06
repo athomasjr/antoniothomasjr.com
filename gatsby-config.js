@@ -88,6 +88,7 @@ module.exports = {
 				types: path.join(__dirname, './src/types'),
 				styles: path.join(__dirname, './src/styles'),
 				hooks: path.join(__dirname, './src/hooks'),
+				context: path.join(__dirname, './src/context'),
 			},
 		},
 		{

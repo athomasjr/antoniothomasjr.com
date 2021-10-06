@@ -1,11 +1,14 @@
 import { MDXProvider } from '@mdx-js/react'
 import React from 'react'
+import { ThemeProvider } from '../../src/context/theme'
 import { Header, Highlight } from '../../src/styles'
 
 const MDXComponents = { Highlight, Header }
 
 const providerWrapper = ({ element }) => (
-	<MDXProvider components={MDXComponents}>{element}</MDXProvider>
+	<ThemeProvider>
+		<MDXProvider components={MDXComponents}>{element}</MDXProvider>
+	</ThemeProvider>
 )
 
 export default providerWrapper
