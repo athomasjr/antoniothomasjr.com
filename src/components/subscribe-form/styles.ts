@@ -114,6 +114,7 @@ export const Button = styled.button`
 	background: ${COLORS.primary.dark};
 	color: ${COLORS.text.header};
 	font-weight: 600;
+	cursor: pointer;
 
 	${mediaQueries.tabletUp} {
 		width: 40%;
