@@ -1,6 +1,6 @@
 import Logo from 'assets/svg/logo.inline.svg'
-import { ThemeToggle } from 'components'
-import { useTheme } from 'context/theme'
+// import { ThemeToggle } from 'components'
+// import { useThemeContext } from 'context/theme'
 import { myLinkData } from 'data'
 import { Link as GatsbyLink } from 'gatsby'
 import React from 'react'
@@ -8,7 +8,8 @@ import { NavLinks, Social } from '../common'
 import * as S from './style'
 
 export default function Header() {
-	const { theme, toggleTheme } = useTheme()
+	// const { colorMode, setColorMode } = useThemeContext()
+
 	return (
 		<S.Header>
 			<div>
@@ -17,7 +18,10 @@ export default function Header() {
 				</GatsbyLink>
 				<NavLinks linkData={myLinkData} />
 			</div>
-			<ThemeToggle defaultChecked={theme === 'dark'} onChange={toggleTheme} />
+			{/* <ThemeToggle
+				defaultChecked={colorMode === 'dark'}
+				onChange={() => console.log('hello')}
+			/> */}
 			<Social />
 		</S.Header>
 	)

@@ -1,38 +1,65 @@
-import React, { createContext, useCallback, useContext, useState } from 'react'
-import { ThemeProvider as BaseThemeProvider } from 'styled-components'
-import { darkTheme, lightTheme } from 'styles'
+import React, {
+	createContext,
+	PropsWithChildren,
+	useContext,
+	useEffect,
+	useMemo,
+	useState,
+} from 'react'
+import { COLORS, COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from 'styles'
 
 interface IThemeContext {
-	setThemeString: React.Dispatch<React.SetStateAction<string>>
-	themeString: string
+	colorMode: string | undefined
+	// eslint-disable-next-line no-unused-vars
+	setColorMode: (value: string) => void
 }
 
-const ThemeContext = createContext<IThemeContext | undefined>(undefined)
+export const ThemeContext = createContext<IThemeContext | null>(null)
 
-const ThemeProvider = ({
+export const ThemeProvider = ({
 	children,
-}: React.PropsWithChildren<{ children: React.ReactNode }>) => {
-	const [themeString, setThemeString] = useState('light')
-	const themeObject = themeString === 'dark' ? darkTheme : lightTheme
+}: PropsWithChildren<{ children: React.ReactNode }>) => {
+	const [colorMode, rawSetColorMode] = useState<string | undefined>(undefined)
+
+	useEffect(() => {
+		const root = window.document.documentElement
+
+		// Because colors matter so much for the initial page view, we're
+		// doing a lot of the work in gatsby-ssr. That way it can happen before
+		// the React component tree mounts.
+		const initialColorValue = root.style.getPropertyValue(
+			INITIAL_COLOR_MODE_CSS_PROP,
+		)
+
+		rawSetColorMode(initialColorValue)
+	}, [])
+
+	const contextValue = useMemo(() => {
+		function setColorMode(newValue: string) {
+			const root = window.document.documentElement
+
+			localStorage.setItem(COLOR_MODE_KEY, newValue)
+
+			Object.entries(COLORS).forEach(([name, colorByTheme]) => {
+				const cssVarName = `--color-${name}`
+				// @ts-expect-error not sure why yet
+				root.style.setProperty(cssVarName, colorByTheme[newValue])
+			})
+
+			rawSetColorMode(newValue)
+		}
+
+		return {
+			colorMode,
+			setColorMode,
+		}
+	}, [colorMode, rawSetColorMode])
+
 	return (
-		<ThemeContext.Provider value={{ themeString, setThemeString }}>
-			<BaseThemeProvider theme={themeObject}>{children}</BaseThemeProvider>
+		<ThemeContext.Provider value={contextValue}>
+			{children}
 		</ThemeContext.Provider>
 	)
 }
 
-function useTheme() {
-	const context = useContext(ThemeContext)
-	if (!context) throw new Error('useTheme must be used within a ThemeProvider')
-	const { themeString, setThemeString } = context
-	const toggleTheme = useCallback(() => {
-		if (themeString === 'light') setThemeString('dark')
-		else if (themeString === 'dark') setThemeString('light')
-	}, [themeString, setThemeString])
-	return {
-		theme: themeString,
-		toggleTheme,
-	}
-}
-
-export { ThemeProvider, useTheme }
+export const useThemeContext = (): IThemeContext => useContext(ThemeContext)!
