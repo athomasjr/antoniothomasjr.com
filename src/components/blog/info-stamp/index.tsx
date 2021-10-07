@@ -1,3 +1,4 @@
+import { useTheme } from 'context/theme'
 import React from 'react'
 import { Maybe } from 'types'
 import * as S from './styles'
@@ -13,8 +14,10 @@ export default function InfoStamp({
 	published,
 	timeToRead,
 }: IInfoStampProps) {
+	const { theme } = useTheme()
+
 	return (
-		<S.Container>
+		<S.Container isLight={theme === 'light'}>
 			<p>
 				{author} /&nbsp;<time>{published}</time>
 			</p>

@@ -49,15 +49,7 @@ export const Container = styled.div`
 	}
 `
 
-// .img_container {
-// 	margin-bottom: 100px;
-
-// 	@include for-small-phone-only {
-// 		margin-bottom: 0;
-// 	}
-
-// 	@include for-laptop-up {
-// 		margin: 0 auto;
-// 		width: 60%;
-// 	}
-// }
+export const ImgContainer = styled.div`
+	width: 50%;
+	margin: 0 auto;
+`

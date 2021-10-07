@@ -2,6 +2,10 @@ import { TwitterShare } from 'components'
 import styled from 'styled-components'
 import { COLORS, FONTS, mediaQueries } from 'styles'
 
+interface IContentProps {
+	isLight: boolean
+}
+
 export const Title = styled.h1`
 	font-size: 3rem;
 
@@ -23,7 +27,7 @@ export const Article = styled.article`
 	}
 `
 
-export const Content = styled.div`
+export const Content = styled.div<IContentProps>`
 	p,
 	ul,
 	ol {
@@ -32,7 +36,9 @@ export const Content = styled.div`
 
 	li {
 		&::marker {
-			color: ${COLORS.primary.light};
+			font-weight: 600;
+			color: ${({ isLight }) =>
+				isLight ? COLORS.primary.dark : COLORS.primary.light};
 		}
 	}
 
@@ -62,14 +68,16 @@ export const Content = styled.div`
 	}
 
 	a {
-		color: ${COLORS.primary.light};
+		font-weight: 600;
+		color: ${({ isLight }) =>
+			isLight ? COLORS.primary.dark : COLORS.primary.light};
 		text-decoration: underline;
 	}
 
 	blockquote {
 		padding: 8px 8px 0;
-		color: ${COLORS.text.light};
-		border-left: 0.3rem solid ${COLORS.background.medium};
+		color: ${({ theme }) => theme.body};
+		border-left: 0.3rem solid ${({ theme }) => theme.body};
 		display: inline-block;
 		margin-bottom: 24px;
 	}

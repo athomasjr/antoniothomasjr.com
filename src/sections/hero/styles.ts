@@ -52,7 +52,6 @@ export const Content = styled.div`
 	margin: -148px 0 0 0;
 
 	h1 {
-		color: ${COLORS.text.header};
 		font-weight: 600;
 		margin-bottom: 16px;
 	}
@@ -60,9 +59,9 @@ export const Content = styled.div`
 	h2 {
 		margin: 0 0 20px 0;
 		font-size: 2rem;
-		color: ${COLORS.text.light};
 		font-family: ${FONTS.body};
 		font-weight: 400;
+		color: ${({ theme }) => theme.subHead};
 	}
 
 	${mediaQueries.phoneOnly} {
@@ -113,7 +112,7 @@ export const Hand = styled.span`
 
 export const CTA = styled(motion.div)`
 	display: inline-block;
-	color: ${COLORS.text.header};
+	color: ${({ theme }) => theme.heroCta};
 	font-size: 1.5rem;
 	a {
 		border-bottom: 2px solid ${COLORS.primary.dark};
@@ -132,6 +131,10 @@ export const CTA = styled(motion.div)`
 		margin: 0;
 		transition: all 0.3s ease-in-out;
 	}
+`
+
+export const ImageWrapper = styled.div`
+	filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
 `
 
 export const Image = styled.div`

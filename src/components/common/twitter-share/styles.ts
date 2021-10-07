@@ -1,20 +1,27 @@
 import { FiTwitter } from 'react-icons/fi'
 import styled from 'styled-components'
-import { COLORS } from 'styles'
+import { COLORS, SHADOW } from 'styles'
 
-export const TwitterShare = styled.a`
-	background: ${COLORS.background.medium};
+interface ITwitterShareProps {
+	isLight: boolean
+}
+
+export const TwitterShare = styled.a<ITwitterShareProps>`
+	background: ${({ theme }) => theme.cardBg};
 	display: flex;
 	align-items: center;
 	text-decoration: none !important;
 	padding: 4px 12px;
 	border-radius: 4px;
 	width: fit-content;
-	transition: transform 0.3s;
+	transition: all 0.3s;
 	color: ${COLORS.primary.light};
+	box-shadow: ${SHADOW.card};
+	border: ${({ isLight }) => (isLight ? '2px solid' : '')}${({ isLight }) => (isLight ? COLORS.primary.light : 'none')};
 
 	&:hover {
 		transform: scale(1.1);
+		box-shadow: ${SHADOW.hover};
 	}
 
 	p {

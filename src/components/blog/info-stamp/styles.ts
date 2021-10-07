@@ -1,7 +1,11 @@
 import styled from 'styled-components'
 import { COLORS, mediaQueries } from 'styles'
 
-export const Container = styled.div`
+interface InfoStampProps {
+	isLight: boolean
+}
+
+export const Container = styled.div<InfoStampProps>`
 	p {
 		font-size: 1.2rem;
 		margin-bottom: 0;
@@ -9,7 +13,8 @@ export const Container = styled.div`
 	}
 
 	p:first-child {
-		color: ${COLORS.primary.light};
+		color: ${({ isLight }) =>
+			isLight ? COLORS.primary.dark : COLORS.primary.light};
 	}
 
 	${mediaQueries.tabletUp} {

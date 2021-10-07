@@ -17,7 +17,7 @@ const showNavigation = ({ showNav }: StyledProps<IMobileMenuButtonProps>) => {
 			}
 
 			div:nth-child(3) {
-				transform: translateY(-8px) rotateZ(-45deg);
+				transform: translateY(-6px) rotateZ(-45deg);
 			}
 		`
 	}
@@ -26,18 +26,21 @@ const showNavigation = ({ showNav }: StyledProps<IMobileMenuButtonProps>) => {
 }
 
 export const MobileMenuButton = styled.button<IMobileMenuButtonProps>`
-	position: fixed;
-	right: 0;
-	top: 0;
-	margin: 10px 20px 0 0;
+	/* position: fixed; */
+	/* left: 0; */
+	/* top: 0; */
+	/* margin: 10px 20px 0 0; */
+	/* margin: 0 0 0 8px; */
+
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	width: 4.5rem;
 	height: 4.5rem;
-	padding: 10px 0;
-	border-radius: 50%;
-	background: ${COLORS.background.medium};
+	padding: 12px 0;
+	/* border-radius: 50%; */
+	/* background: ${COLORS.background.medium}; */
+	background: transparent;
 	border: none;
 	cursor: pointer;
 	z-index: 100;
@@ -45,10 +48,9 @@ export const MobileMenuButton = styled.button<IMobileMenuButtonProps>`
 	div {
 		width: 2.5rem;
 		height: 0.29rem;
-		background: ${COLORS.primary.light};
-		border-radius: 5px;
+		background: ${COLORS.primary.dark};
+		/* border-radius: 5px; */
 		transition: opacity 300ms, transform 300ms;
-		margin: 0 auto;
 	}
 
 	${showNavigation}

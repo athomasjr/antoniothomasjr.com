@@ -1,10 +1,17 @@
 import styled from 'styled-components'
-import { COLORS } from 'styles'
+import { COLORS, SHADOW } from 'styles'
 
 export const PostCard = styled.div`
-	background: ${COLORS.background.medium};
+	background: ${({ theme }) => theme.cardBg};
+	box-shadow: ${SHADOW.card};
 	border-radius: 4px;
 	padding: 4px 20px 20px 20px;
+	transition: all 0.3s ease;
+
+	&:hover {
+		transform: scale(1.08);
+		box-shadow: ${SHADOW.hover};
+	}
 
 	h2 {
 		color: ${COLORS.text.header};

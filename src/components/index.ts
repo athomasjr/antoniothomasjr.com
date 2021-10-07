@@ -1,6 +1,8 @@
+import BlogImg from './blog/blog-img'
 import InfoContainer from './blog/info-container'
 import InfoStamp from './blog/info-stamp'
 import PostCard from './blog/post-card'
+import TwitterShare from './common/twitter-share'
 import ContactForm from './contact-form'
 import Footer from './footer'
 import Header from './header'
@@ -9,7 +11,7 @@ import ProjectCard from './project-card'
 import SEO from './seo'
 import SubscribeForm from './subscribe-form'
 import ThankYou from './thank-you'
-import TwitterShare from './common/twitter-share'
+import ThemeToggle from './toggle'
 
 export {
 	SubscribeForm,
@@ -24,4 +26,6 @@ export {
 	ProjectCard,
 	ThankYou,
 	InfoContainer,
+	ThemeToggle,
+	BlogImg,
 }

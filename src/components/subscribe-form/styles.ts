@@ -1,9 +1,20 @@
 import styled, { css, StyledProps } from 'styled-components'
-import { COLORS, FONTS, mediaQueries } from 'styles'
+import { COLORS, FONTS, mediaQueries, SHADOW } from 'styles'
 
 interface IMessageProps {
 	success?: boolean
 	error?: boolean
+}
+
+interface IContainerProps {
+	isLight: boolean
+}
+
+interface IFormProps {
+	isLight: boolean
+}
+interface IButtonProps {
+	isLight: boolean
 }
 
 const setMessageType = ({ success, error }: StyledProps<IMessageProps>) => {
@@ -32,12 +43,16 @@ const setMessageType = ({ success, error }: StyledProps<IMessageProps>) => {
 	return null
 }
 
-export const Container = styled.div`
+export const Container = styled.div<IContainerProps>`
 	/* background: ${COLORS.background.medium}; */
 	width: 100%;
 	border-radius: 4px;
 	padding: 24px;
-	border: 4px solid ${COLORS.background.medium};
+	border: 4px solid
+		${({ isLight }) =>
+			isLight ? COLORS.primary.light : COLORS.background.medium};
+
+	box-shadow: ${({ isLight }) => (isLight ? SHADOW.card : 'none')};
 
 	p:first-child {
 		color: ${COLORS.text.header};
@@ -59,17 +74,18 @@ export const Message = styled.p`
 	${setMessageType};
 `
 
-export const Form = styled.form`
+export const Form = styled.form<IFormProps>`
 	display: flex;
 	flex-direction: column;
 
 	input {
 		width: 100%;
 		padding: 12px 16px;
-		border: none;
+		border: ${({ isLight }) => (isLight ? '1px solid' : '')}${({ isLight }) => (isLight ? COLORS.primary.dark : 'none')};
+
 		border-radius: 4px;
 		color: ${COLORS.text.light};
-		background: ${COLORS.background.medium};
+		background: ${({ theme }) => theme.inputBg};
 		margin-bottom: 16px;
 		font-size: 1.6rem;
 
@@ -89,9 +105,11 @@ export const Form = styled.form`
 	input:-webkit-autofill,
 	input:-webkit-autofill:hover,
 	input:-webkit-autofill:focus {
-		-webkit-text-fill-color: ${COLORS.text.header};
-		-webkit-box-shadow: 0 0 0px 1000px #000 inset;
-		box-shadow: 0 0 0px 1000px #000 inset;
+		-webkit-text-fill-color: ${({ theme }) => theme.body};
+		-webkit-box-shadow: ${SHADOW.card} ${({ theme }) => theme.inputBg} inset;
+
+		box-shadow: ${SHADOW.card} ${({ theme }) => theme.inputBg} inset;
+
 		transition: background-color 5000s ease-in-out 0s;
 	}
 
@@ -107,14 +125,21 @@ export const Form = styled.form`
 	}
 `
 
-export const Button = styled.button`
+export const Button = styled.button<IButtonProps>`
 	padding: 12px 0;
 	border: none;
 	border-radius: 4px;
 	background: ${COLORS.primary.dark};
-	color: ${COLORS.text.header};
+	color: ${COLORS.input};
 	font-weight: 600;
 	cursor: pointer;
+	box-shadow: ${SHADOW.card};
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		box-shadow: ${SHADOW.hover};
+		transform: scale(1.08);
+	}
 
 	${mediaQueries.tabletUp} {
 		width: 40%;

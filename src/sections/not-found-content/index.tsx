@@ -11,11 +11,12 @@ export default function NotFoundContent() {
 				You were probably looking for
 				<GatsbyLink to='/#work'> my work.</GatsbyLink>
 			</p>
-
-			<StaticImage
-				src='../../assets/images/404-img.jpeg'
-				alt='Small dog with glasses looking at laptop'
-			/>
+			<S.ImgContainer>
+				<StaticImage
+					src='../../assets/images/404-img.jpeg'
+					alt='Small dog with glasses looking at laptop'
+				/>
+			</S.ImgContainer>
 		</S.Container>
 	)
 }

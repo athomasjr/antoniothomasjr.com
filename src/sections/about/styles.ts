@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import { COLORS, PADDING, FONTS, mediaQueries } from 'styles'
 import { motion } from 'framer-motion'
+import styled from 'styled-components'
+import { COLORS, FONTS, mediaQueries, PADDING, SHADOW } from 'styles'
 
 export const Container = styled.section`
 	display: flex;
@@ -66,4 +66,5 @@ export const ImageContainer = styled(motion.div)`
 	border-radius: 4px;
 	width: 60%;
 	justify-self: center;
+	box-shadow: ${SHADOW.card};
 `

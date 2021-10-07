@@ -1,4 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useTheme } from 'context/theme'
 import { navigate } from 'gatsby'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -40,6 +41,8 @@ const encode = (data: any) =>
 		.join('&')
 
 export default function ContactForm() {
+	const { theme } = useTheme()
+
 	const [submitError, setSubmitError] = useState({
 		error: false,
 		message: '',
@@ -81,6 +84,7 @@ export default function ContactForm() {
 
 	const showForm = (
 		<S.Form
+			isLight={theme === 'light'}
 			name='contact'
 			method='POST'
 			action='#'

@@ -27,7 +27,8 @@
 			"@testing-library/cypress",
 			"png",
 			"svg",
-			"gatsby-plugin-mailchimp"
+			"gatsby-plugin-mailchimp",
+			"styled"
 		]
 	}
 }

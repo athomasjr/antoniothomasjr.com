@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import styled, { css, keyframes, StyledProps } from 'styled-components'
-import { COLORS, FONTS, mediaQueries, PADDING } from 'styles'
+import { COLORS, FONTS, mediaQueries, PADDING, SHADOW } from 'styles'
 
 interface IHeaderProps {
 	inView: boolean
@@ -98,9 +98,9 @@ export const Image = styled.div`
 
 	${mediaQueries.laptopUp} {
 		z-index: 1;
-		border: solid 16px ${COLORS.background.medium};
 		grid-column: 1/2;
 		width: 90%;
+		box-shadow: ${SHADOW.card};
 	}
 `
 
@@ -163,16 +163,15 @@ export const CTA = styled(motion.a)`
 `
 
 export const Card = styled.div`
-	background: ${COLORS.background.medium};
+	background: ${({ theme }) => theme.cardBg};
 	border-radius: 5px;
 	width: 90%;
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
-	p {
-		color: ${COLORS.text.header};
+	box-shadow: ${SHADOW.card} p {
+		color: ${({ theme }) => theme.header};
 		font-size: 1.5rem;
 	}
 
@@ -186,19 +185,22 @@ export const Card = styled.div`
 		padding: 5px 8px 5px 8px;
 		margin: 0 5px 0 0;
 		background-color: ${COLORS.tag.purple};
-		color: ${COLORS.text.header};
+		color: ${({ theme }) => theme.header};
 
 		border-radius: 4px;
 		text-align: center;
 	}
 
 	${mediaQueries.tabletUp} {
+		ul {
+			gap: 16px;
+		}
 		p {
 			font-size: 2.3rem;
 		}
 		li {
 			font-size: 1.75rem;
-			margin-right: 20px;
+			margin-right: 0;
 		}
 	}
 

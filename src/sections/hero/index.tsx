@@ -7,13 +7,15 @@ import * as S from './styles'
 export default function Hero() {
 	return (
 		<S.Container>
-			<S.Image>
-				<StaticImage
-					src='../../assets/images/hero7.png'
-					alt='Antonio in a white collared shirt and blue tie with purple background'
-					loading='eager'
-				/>
-			</S.Image>
+			<S.ImageWrapper>
+				<S.Image>
+					<StaticImage
+						src='../../assets/images/hero7.png'
+						alt='Antonio in a white collared shirt and blue tie with purple background'
+						loading='eager'
+					/>
+				</S.Image>
+			</S.ImageWrapper>
 			<S.Content>
 				<h1>{heroContent.heading}</h1>
 				<h2>{heroContent.subHead}</h2>

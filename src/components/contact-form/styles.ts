@@ -1,7 +1,23 @@
-import styled from 'styled-components'
-import { COLORS, FONTS, mediaQueries, PADDING } from 'styles'
+import styled, { css, StyledProps } from 'styled-components'
+import { COLORS, FONTS, mediaQueries, PADDING, SHADOW } from 'styles'
 
-export const Form = styled.form`
+interface IFormProps {
+	isLight: boolean
+}
+
+const setFormBorder = ({ isLight }: StyledProps<IFormProps>) => {
+	if (isLight) {
+		return css`
+			border: 1px solid ${COLORS.primary.light};
+		`
+	}
+
+	return css`
+		border: none;
+	`
+}
+
+export const Form = styled.form<IFormProps>`
 	display: flex;
 	flex-direction: column;
 	gap: 24px;
@@ -12,9 +28,10 @@ export const Form = styled.form`
 	textarea:-webkit-autofill,
 	textarea:-webkit-autofill:hover,
 	textarea:-webkit-autofill:focus {
-		-webkit-text-fill-color: ${COLORS.text.header};
-		-webkit-box-shadow: 0 0 0px 1000px #000 inset;
-		box-shadow: 0 0 0px 1000px #000 inset;
+		-webkit-text-fill-color: ${({ theme }) => theme.body};
+		-webkit-box-shadow: ${SHADOW.card} ${({ theme }) => theme.inputBg} inset;
+
+		box-shadow: ${SHADOW.card} ${({ theme }) => theme.inputBg} inset;
 		transition: background-color 5000s ease-in-out 0s;
 	}
 
@@ -22,12 +39,14 @@ export const Form = styled.form`
 	input {
 		padding: 16px 16px 16px 20px;
 		width: 100%;
-		border: none;
 		display: block;
-		color: ${COLORS.text.light};
-		background: ${COLORS.background.medium};
+		color: ${({ theme }) => theme.body};
+		background: ${({ theme }) => theme.inputBg};
 		border-radius: 4px;
 		font-size: 1.6rem;
+		${setFormBorder}
+
+		/* box-shadow: ${SHADOW.card}; */
 
 		&::placeholder,
 		&::-webkit-input-placeholder,
@@ -88,7 +107,7 @@ export const Input = styled.input`
 	&::placeholder,
 	&::-webkit-input-placeholder,
 	&::-moz-placeholder {
-		color: ${COLORS.text.light} !important;
+		color: ${({ theme }) => theme.body} !important;
 	}
 `
 
@@ -99,13 +118,20 @@ export const MessageContainer = styled.div`
 `
 export const CTA = styled.button`
 	background: ${COLORS.primary.dark};
-	color: ${COLORS.text.header};
+	color: ${COLORS.input};
 	text-transform: capitalize;
 	border-radius: 4px;
 	border: none;
 	padding: 8px 0;
 	cursor: pointer;
 	font-size: 1.6rem;
+	box-shadow: ${SHADOW.card};
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		box-shadow: ${SHADOW.hover};
+		transform: scale(1.08);
+	}
 
 	${mediaQueries.tabletUp} {
 		font-size: 1.6rem;

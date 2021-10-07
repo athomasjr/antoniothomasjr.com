@@ -1,4 +1,5 @@
 import { InfoContainer, SEO, SubscribeForm } from 'components'
+import { useTheme } from 'context/theme'
 import { useSiteMetadata } from 'hooks'
 import React from 'react'
 import { PostBySlugQuery } from 'types'
@@ -12,6 +13,7 @@ interface IPostLayoutProps {
 export default function PostLayout({ children, post }: IPostLayoutProps) {
 	const { frontmatter, slug, timeToRead } = post.mdx!
 	const siteMetadata = useSiteMetadata()
+	const { theme } = useTheme()
 
 	return (
 		<S.Article>
@@ -34,7 +36,7 @@ export default function PostLayout({ children, post }: IPostLayoutProps) {
 				author={frontmatter?.author}
 				published={frontmatter?.published}
 			/>
-			<S.Content>{children}</S.Content>
+			<S.Content isLight={theme === 'light'}>{children}</S.Content>
 			<S.FormContainer>
 				<SubscribeForm />
 			</S.FormContainer>

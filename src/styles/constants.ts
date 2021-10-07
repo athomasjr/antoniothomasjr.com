@@ -1,7 +1,12 @@
 export const COLORS = {
+	input: '#eff0f3',
 	text: {
-		light: '#94a1b2',
-		header: '#fffffe',
+		light: '#2a2a2a',
+		dark: '#94a1b2',
+		header: {
+			dark: '#fffffe',
+			light: '#0d0d0d',
+		},
 	},
 	primary: {
 		dark: '#7f5af0',
@@ -10,6 +15,7 @@ export const COLORS = {
 	secondary: '#72757e',
 	tertiary: '#2cb67d',
 	background: {
+		light: '#eff0f3',
 		dark: '#16161a',
 		medium: '#242629',
 	},
