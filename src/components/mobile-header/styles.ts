@@ -22,8 +22,8 @@ const noShow = ({ showNav }: StyledProps<IMobileNavLinksProps>) => {
 }
 
 export const MobileHeader = styled.header`
-	/* position: fixed; */
-	/* top: 0; */
+	position: fixed;
+	top: 0;
 	height: 80px;
 	padding: 0 16px;
 	display: flex;
