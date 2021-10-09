@@ -26,6 +26,7 @@ html {
 
 body {
 	height: 100%;
+	max-width: 100%;
 	/* overflow-x:hidden !important; */
 	overflow: hidden !important;
 	overflow-y: auto !important;
