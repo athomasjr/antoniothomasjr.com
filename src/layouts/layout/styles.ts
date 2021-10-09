@@ -7,10 +7,10 @@ export const Container = styled.div`
 	flex-direction: column;
 
 	main {
-		flex: 1 0 auto;
-		min-height: calc(100vh - 180px);
+		/* min-height: calc(100vh - 180px); */
 
 		${mediaQueries.laptopUp} {
+			flex: 1 0 auto;
 			min-height: calc(100vh - 200px);
 		}
 	}
