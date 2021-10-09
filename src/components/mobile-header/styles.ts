@@ -31,6 +31,7 @@ export const MobileHeader = styled.header`
 	align-items: center;
 	width: 100%;
 	z-index: 2;
+
 	${mediaQueries.laptopUp} {
 		display: none;
 	}
