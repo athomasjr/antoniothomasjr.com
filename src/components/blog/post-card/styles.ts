@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { COLORS, SHADOW } from 'styles'
+import { FONTS, SHADOW } from 'styles'
 
 export const PostCard = styled.div`
-	background: ${({ theme }) => theme.cardBg};
+	background: var(--color-cardBg);
 	box-shadow: ${SHADOW.card};
 	border-radius: 4px;
 	padding: 4px 20px 20px 20px;
@@ -14,8 +14,8 @@ export const PostCard = styled.div`
 	}
 
 	h2 {
-		color: ${COLORS.text.header};
-		font-family: $font-headline;
+		color: var(--color-header);
+		font-family: ${FONTS.header};
 		font-weight: 600;
 	}
 

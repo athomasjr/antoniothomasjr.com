@@ -1,4 +1,4 @@
-import { useTheme } from 'context/theme'
+import { useThemeContext } from 'context/theme'
 import React from 'react'
 import { Maybe } from 'types'
 import * as S from './styles'
@@ -14,10 +14,10 @@ export default function InfoStamp({
 	published,
 	timeToRead,
 }: IInfoStampProps) {
-	const { theme } = useTheme()
+	const { colorMode } = useThemeContext()
 
 	return (
-		<S.Container isLight={theme === 'light'}>
+		<S.Container isLight={colorMode !== 'dark'}>
 			<p>
 				{author} /&nbsp;<time>{published}</time>
 			</p>

@@ -1,6 +1,6 @@
 import { SEO } from 'components'
-import { About, Contact, Hero, Projects, RecentWork } from 'sections'
 import React from 'react'
+import { About, Contact, Hero, Projects, RecentWork } from 'sections'
 
 export default function IndexPage() {
 	return (

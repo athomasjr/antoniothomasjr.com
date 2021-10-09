@@ -50,7 +50,7 @@ export const Content = styled.div<IContentProps>`
 	h2,
 	h3,
 	h4 {
-		color: ${COLORS.text.header};
+		color: var(--color-header);
 	}
 
 	ol {
@@ -76,8 +76,7 @@ export const Content = styled.div<IContentProps>`
 
 	blockquote {
 		padding: 8px 8px 0;
-		color: ${({ theme }) => theme.body};
-		border-left: 0.3rem solid ${({ theme }) => theme.body};
+		border-left: 0.3rem solid;
 		display: inline-block;
 		margin-bottom: 24px;
 	}

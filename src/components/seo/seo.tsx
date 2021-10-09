@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import { useSiteMetadata } from 'hooks'
 import React from 'react'
 import { Helmet } from 'react-helmet'

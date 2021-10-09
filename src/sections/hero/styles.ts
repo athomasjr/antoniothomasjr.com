@@ -61,7 +61,7 @@ export const Content = styled.div`
 		font-size: 2rem;
 		font-family: ${FONTS.body};
 		font-weight: 400;
-		color: ${({ theme }) => theme.subHead};
+		color: var(--color-subHeader);
 	}
 
 	${mediaQueries.phoneOnly} {
@@ -112,7 +112,7 @@ export const Hand = styled.span`
 
 export const CTA = styled(motion.div)`
 	display: inline-block;
-	color: ${({ theme }) => theme.heroCta};
+	color: var(--color-header);
 	font-size: 1.5rem;
 	a {
 		border-bottom: 2px solid ${COLORS.primary.dark};

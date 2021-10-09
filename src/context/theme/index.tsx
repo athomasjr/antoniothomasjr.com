@@ -1,9 +1,8 @@
 import React, {
 	createContext,
 	PropsWithChildren,
+	ReactNode,
 	useContext,
-	useEffect,
-	useMemo,
 	useState,
 } from 'react'
 import { COLORS, COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from 'styles'
@@ -11,22 +10,19 @@ import { COLORS, COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from 'styles'
 interface IThemeContext {
 	colorMode: string | undefined
 	// eslint-disable-next-line no-unused-vars
-	setColorMode: (value: string) => void
+	setColorMode: (newValue: string) => void
 }
 
-export const ThemeContext = createContext<IThemeContext | null>(null)
+export const ThemeContext = createContext<IThemeContext | undefined>(undefined)
 
 export const ThemeProvider = ({
 	children,
-}: PropsWithChildren<{ children: React.ReactNode }>) => {
+}: PropsWithChildren<{ children: ReactNode }>) => {
 	const [colorMode, rawSetColorMode] = useState<string | undefined>(undefined)
 
-	useEffect(() => {
+	React.useEffect(() => {
 		const root = window.document.documentElement
 
-		// Because colors matter so much for the initial page view, we're
-		// doing a lot of the work in gatsby-ssr. That way it can happen before
-		// the React component tree mounts.
 		const initialColorValue = root.style.getPropertyValue(
 			INITIAL_COLOR_MODE_CSS_PROP,
 		)
@@ -34,7 +30,7 @@ export const ThemeProvider = ({
 		rawSetColorMode(initialColorValue)
 	}, [])
 
-	const contextValue = useMemo(() => {
+	const contextValue = React.useMemo(() => {
 		function setColorMode(newValue: string) {
 			const root = window.document.documentElement
 
@@ -42,7 +38,7 @@ export const ThemeProvider = ({
 
 			Object.entries(COLORS).forEach(([name, colorByTheme]) => {
 				const cssVarName = `--color-${name}`
-				// @ts-expect-error not sure why yet
+				// @ts-expect-error not sure why
 				root.style.setProperty(cssVarName, colorByTheme[newValue])
 			})
 
@@ -62,4 +58,4 @@ export const ThemeProvider = ({
 	)
 }
 
-export const useThemeContext = (): IThemeContext => useContext(ThemeContext)!
+export const useThemeContext = () => useContext(ThemeContext)!

@@ -7,7 +7,7 @@ interface ITwitterShareProps {
 }
 
 export const TwitterShare = styled.a<ITwitterShareProps>`
-	background: ${({ theme }) => theme.cardBg};
+	background: var(--color-cardBg);
 	display: flex;
 	align-items: center;
 	text-decoration: none !important;

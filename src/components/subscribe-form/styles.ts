@@ -55,7 +55,7 @@ export const Container = styled.div<IContainerProps>`
 	box-shadow: ${({ isLight }) => (isLight ? SHADOW.card : 'none')};
 
 	p:first-child {
-		color: ${COLORS.text.header};
+		color: var(--color-header);
 		font-family: ${FONTS.header};
 		font-weight: 600;
 		font-size: 1.8rem;
@@ -81,11 +81,17 @@ export const Form = styled.form<IFormProps>`
 	input {
 		width: 100%;
 		padding: 12px 16px;
-		border: ${({ isLight }) => (isLight ? '1px solid' : '')}${({ isLight }) => (isLight ? COLORS.primary.dark : 'none')};
+		border: none;
+
+		${({ isLight }) =>
+			isLight &&
+			css`
+				border: 1px solid ${COLORS.primary.dark};
+			`}
 
 		border-radius: 4px;
 		color: ${COLORS.text.light};
-		background: ${({ theme }) => theme.inputBg};
+		background: var(--color-input);
 		margin-bottom: 16px;
 		font-size: 1.6rem;
 
@@ -105,10 +111,10 @@ export const Form = styled.form<IFormProps>`
 	input:-webkit-autofill,
 	input:-webkit-autofill:hover,
 	input:-webkit-autofill:focus {
-		-webkit-text-fill-color: ${({ theme }) => theme.body};
-		-webkit-box-shadow: ${SHADOW.card} ${({ theme }) => theme.inputBg} inset;
+		-webkit-text-fill-color: var(--color-text);
+		-webkit-box-shadow: ${SHADOW.card} var(--color-input) inset;
 
-		box-shadow: ${SHADOW.card} ${({ theme }) => theme.inputBg} inset;
+		box-shadow: ${SHADOW.card} var(--color-input) inset;
 
 		transition: background-color 5000s ease-in-out 0s;
 	}
@@ -130,7 +136,7 @@ export const Button = styled.button<IButtonProps>`
 	border: none;
 	border-radius: 4px;
 	background: ${COLORS.primary.dark};
-	color: ${COLORS.input};
+	color: ${COLORS.input.light};
 	font-weight: 600;
 	cursor: pointer;
 	box-shadow: ${SHADOW.card};

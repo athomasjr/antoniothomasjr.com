@@ -27,10 +27,10 @@ html {
 body {
 	font-family: ${FONTS.body};
 	position: relative;
-	background:${({ theme }) => theme.bg};
+	background-color: var(--color-background);
 	line-height: 1.75;
 	font-weight: 400;
-	color:${({ theme }) => theme.body}
+	color: var(--color-text);
 }
 
 p {
@@ -47,7 +47,8 @@ h5 {
 	font-weight: 600;
 	line-height: 1.3;
 	font-family: ${FONTS.header};
-	color: ${({ theme }) => theme.header};
+	color: var(--color-header);
+
 }
 
 h1 {

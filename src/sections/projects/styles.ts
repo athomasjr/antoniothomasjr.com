@@ -7,7 +7,7 @@ export const Container = styled.section`
 	align-items: center;
 
 	h2 {
-		color: ${COLORS.text.header};
+		color: ${COLORS.header.light};
 		margin: 50px 0;
 	}
 

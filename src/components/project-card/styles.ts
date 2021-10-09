@@ -1,5 +1,5 @@
 import styled, { css, StyledProps } from 'styled-components'
-import { COLORS, mediaQueries, SHADOW } from 'styles'
+import { COLORS, mediaQueries, SHADOW, TAG_COLORS } from 'styles'
 
 interface IProjectCardProps {
 	inView: boolean
@@ -35,8 +35,8 @@ export const Project = styled.div`
 
 	p:last-child {
 		padding: 5px;
-		background-color: ${COLORS.tag.white};
-		color: ${COLORS.text.header};
+		background-color: ${TAG_COLORS.white};
+		color: ${COLORS.header.light};
 		width: 50%;
 		text-align: center;
 		border-radius: 4px;
@@ -44,7 +44,7 @@ export const Project = styled.div`
 	}
 
 	h3 {
-		color: ${COLORS.text.header};
+		color: ${COLORS.header.light};
 	}
 
 	ul {
@@ -56,8 +56,8 @@ export const Project = styled.div`
 	li {
 		padding: 5px 8px 5px 8px;
 		margin: 0 5px 0 0;
-		background-color: ${COLORS.tag.purple};
-		color: ${COLORS.text.header};
+		background-color: ${TAG_COLORS.purple};
+		color: ${COLORS.header.light};
 		border-radius: 4px;
 		text-align: center;
 	}

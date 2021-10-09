@@ -9,14 +9,14 @@ export const Container = styled.div`
 	margin-top: 40px;
 	h1 {
 		font-size: 2.5rem;
-		color: ${COLORS.text.header};
+		color: var(--color-header);
 	}
 
 	p {
 		font-size: 1.6rem;
 
 		a {
-			color: ${COLORS.text.header};
+			color: var(--color-text);
 			border-bottom: 1px solid ${COLORS.primary.dark};
 		}
 	}

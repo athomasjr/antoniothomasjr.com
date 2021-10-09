@@ -10,10 +10,10 @@ export const Container = styled(BackgroundImage)`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: ${COLORS.text.header.dark};
+	color: ${COLORS.header.dark};
 
 	h1 {
-		color: ${COLORS.text.header.dark};
+		color: ${COLORS.header.dark};
 	}
 
 	div {

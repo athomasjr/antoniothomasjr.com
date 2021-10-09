@@ -1,4 +1,5 @@
 import Logo from 'assets/svg/logo.inline.svg'
+import { ThemeToggle } from 'components'
 // import { ThemeToggle } from 'components'
 // import { useThemeContext } from 'context/theme'
 import { myLinkData } from 'data'
@@ -18,10 +19,7 @@ export default function Header() {
 				</GatsbyLink>
 				<NavLinks linkData={myLinkData} />
 			</div>
-			{/* <ThemeToggle
-				defaultChecked={colorMode === 'dark'}
-				onChange={() => console.log('hello')}
-			/> */}
+			<ThemeToggle />
 			<Social />
 		</S.Header>
 	)

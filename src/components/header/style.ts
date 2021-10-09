@@ -32,7 +32,7 @@ export const Header = styled.header`
 					}
 
 					&:hover {
-						color: ${COLORS.text.header};
+						color: var(--color-header);
 					}
 
 					&:hover:after {

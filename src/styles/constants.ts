@@ -1,32 +1,72 @@
 export const COLORS = {
-	input: '#eff0f3',
 	text: {
-		light: '#2a2a2a',
 		dark: '#94a1b2',
-		header: {
-			dark: '#fffffe',
-			light: '#0d0d0d',
-		},
+		light: '#2a2a2a',
+	},
+	header: {
+		dark: '#fffffe',
+		light: '#0d0d0d',
+	},
+	background: {
+		light: '#eff0f3',
+		medium: '#242629',
+		dark: '#16161a',
+	},
+	input: {
+		light: '#eff0f3',
+		dark: '#242629',
 	},
 	primary: {
 		dark: '#7f5af0',
 		light: '#a88ff5',
 	},
-	secondary: '#72757e',
-	tertiary: '#2cb67d',
-	background: {
+	cardBg: {
 		light: '#eff0f3',
-		dark: '#16161a',
-		medium: '#242629',
+		dark: '#242629',
 	},
-	tag: {
-		purple: '#7f5af088',
-		black: '#16161a88',
-		green: '#2cb67d88',
-		white: '#fffffe30',
-		red: '#ff000060',
+	subHeader: {
+		dark: '#94a1b2',
+		light: '#2a2a2a',
 	},
 }
+
+export const TAG_COLORS = {
+	purple: '#7f5af088',
+	black: '#16161a88',
+	green: '#2cb67d88',
+	white: '#fffffe30',
+	red: '#ff000060',
+}
+
+// export const COLORS = {
+// 	input: '#eff0f3',
+// 	text: {
+// 		light: '#2a2a2a',
+// 		dark: '#94a1b2',
+// 		header: {
+// 			dark: '#fffffe',
+// 			light: '#0d0d0d',
+// 		},
+// 	},
+// 	primary: {
+// 		dark: '#7f5af0',
+// 		light: '#a88ff5',
+// 	},
+// 	secondary: '#72757e',
+// 	tertiary: '#2cb67d',
+// 	background: {
+// 		light: '#eff0f3',
+// 		dark: '#16161a',
+// 		medium: '#242629',
+// 	},
+// 	tag: {
+// 		purple: '#7f5af088',
+// 		black: '#16161a88',
+// 		green: '#2cb67d88',
+// 		white: '#fffffe30',
+// 		red: '#ff000060',
+// 	},
+// }
 
 export const FONTS = {
 	body: 'Mukta',

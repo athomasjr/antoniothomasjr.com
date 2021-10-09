@@ -28,10 +28,10 @@ export const Form = styled.form<IFormProps>`
 	textarea:-webkit-autofill,
 	textarea:-webkit-autofill:hover,
 	textarea:-webkit-autofill:focus {
-		-webkit-text-fill-color: ${({ theme }) => theme.body};
-		-webkit-box-shadow: ${SHADOW.card} ${({ theme }) => theme.inputBg} inset;
+		-webkit-text-fill-color: var(--color-text);
+		-webkit-box-shadow: ${SHADOW.card} var(--color-input) inset;
 
-		box-shadow: ${SHADOW.card} ${({ theme }) => theme.inputBg} inset;
+		box-shadow: ${SHADOW.card} var(--color-input) inset;
 		transition: background-color 5000s ease-in-out 0s;
 	}
 
@@ -40,8 +40,8 @@ export const Form = styled.form<IFormProps>`
 		padding: 16px 16px 16px 20px;
 		width: 100%;
 		display: block;
-		color: ${({ theme }) => theme.body};
-		background: ${({ theme }) => theme.inputBg};
+		color: var(--color-text);
+		background: var(--color-input);
 		border-radius: 4px;
 		font-size: 1.6rem;
 		${setFormBorder}
@@ -107,7 +107,7 @@ export const Input = styled.input`
 	&::placeholder,
 	&::-webkit-input-placeholder,
 	&::-moz-placeholder {
-		color: ${({ theme }) => theme.body} !important;
+		color: var(--color-text) !important;
 	}
 `
 
@@ -118,7 +118,7 @@ export const MessageContainer = styled.div`
 `
 export const CTA = styled.button`
 	background: ${COLORS.primary.dark};
-	color: ${COLORS.input};
+	color: ${COLORS.input.light};
 	text-transform: capitalize;
 	border-radius: 4px;
 	border: none;
@@ -161,7 +161,7 @@ export const Error = styled.p`
 export const FormErrorMsg = styled.div`
 	display: flex;
 	border-radius: 4px;
-	color: ${COLORS.text.header};
+	color: ${COLORS.header.light};
 	flex-direction: column;
 	align-items: center;
 	gap: 40px;

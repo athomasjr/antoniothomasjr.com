@@ -44,7 +44,7 @@ export const MobileNavLinks = styled(NavLinks)`
 	right: 0;
 	transition: transform 300ms;
 	transform: translateX(0);
-	background-color: ${({ theme }) => theme.bg};
+	background-color: var(--color-background);
 	${noShow}
 
 	ul {

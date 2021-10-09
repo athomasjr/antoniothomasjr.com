@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { COLORS, FONTS, mediaQueries, PADDING } from 'styles'
+import { COLORS, FONTS, mediaQueries, PADDING, TAG_COLORS } from 'styles'
 
 export const Container = styled.section`
 	display: flex;
@@ -8,12 +8,12 @@ export const Container = styled.section`
 	text-align: center;
 	gap: 30px;
 	h2 {
-		color: ${COLORS.text.header};
+		color: var(--color-header);
 	}
 
 	h4 {
-		background-color: ${COLORS.tag.purple};
-		color: ${COLORS.text.header};
+		background-color: ${TAG_COLORS.purple};
+		color: ${COLORS.header.light};
 		padding: 5px 10px;
 		border-radius: 4px;
 		display: inline-block;

@@ -3,7 +3,7 @@ import { COLORS } from 'styles'
 
 export const InfoContainer = styled.div`
 	display: flex;
-	color: ${COLORS.text.header};
+	color: ${COLORS.header.light};
 	align-items: center;
 
 	p {

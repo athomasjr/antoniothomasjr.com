@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
-import { COLORS, FONTS, mediaQueries, PADDING, SHADOW } from 'styles'
+import { FONTS, mediaQueries, PADDING, SHADOW } from 'styles'
 
 export const Container = styled.section`
 	display: flex;
@@ -10,7 +10,7 @@ export const Container = styled.section`
 	align-items: center;
 	gap: 40px;
 	h2 {
-		color: ${COLORS.text.header};
+		color: var(--color-header);
 		font-family: ${FONTS.header};
 		font-weight: 600;
 	}

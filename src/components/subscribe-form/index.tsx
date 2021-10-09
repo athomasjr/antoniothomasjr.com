@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useTheme } from 'context/theme'
+import { useThemeContext } from 'context/theme'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -22,7 +22,7 @@ const schema = yup
 	.required()
 
 export default function SubscribeForm() {
-	const { theme } = useTheme()
+	const { colorMode } = useThemeContext()
 	const [successMsg, setSuccessMsg] = useState<string | null>(null)
 
 	const {
@@ -59,11 +59,11 @@ export default function SubscribeForm() {
 	}
 
 	return (
-		<S.Container isLight={theme === 'light'}>
+		<S.Container isLight={colorMode !== 'dark'}>
 			<p>Before You Go...</p>
 			<p>Subscribe for access to new posts and emails about web development.</p>
 			{successMsg ? <S.Message success>{successMsg}</S.Message> : null}
-			<S.Form isLight={theme === 'light'} onSubmit={handleSubmit(onSubmit)}>
+			<S.Form isLight={colorMode !== 'dark'} onSubmit={handleSubmit(onSubmit)}>
 				<input
 					disabled={isSubmitSuccessful || isSubmitting}
 					placeholder='you@example.com'
@@ -71,7 +71,7 @@ export default function SubscribeForm() {
 				/>
 
 				<S.Button
-					isLight={theme === 'light'}
+					isLight={colorMode !== 'dark'}
 					disabled={isSubmitSuccessful || isSubmitting}
 					type='submit'
 				>

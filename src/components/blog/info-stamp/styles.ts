@@ -17,6 +17,10 @@ export const Container = styled.div<InfoStampProps>`
 			isLight ? COLORS.primary.dark : COLORS.primary.light};
 	}
 
+	p:nth-child(2) {
+		color: var(--color-text);
+	}
+
 	${mediaQueries.tabletUp} {
 		p {
 			font-size: 1.5rem;

@@ -1,6 +1,13 @@
 import { motion } from 'framer-motion'
 import styled, { css, keyframes, StyledProps } from 'styled-components'
-import { COLORS, FONTS, mediaQueries, PADDING, SHADOW } from 'styles'
+import {
+	COLORS,
+	FONTS,
+	mediaQueries,
+	PADDING,
+	SHADOW,
+	TAG_COLORS,
+} from 'styles'
 
 interface IHeaderProps {
 	inView: boolean
@@ -46,7 +53,7 @@ export const Container = styled.section`
 	width: 100%;
 
 	h2 {
-		color: ${COLORS.text.header};
+		color: var(--color-header);
 		font-family: ${FONTS.header};
 		font-weight: 600;
 	}
@@ -117,7 +124,7 @@ export const Info = styled.div`
 	}
 
 	h3 {
-		color: ${COLORS.text.header};
+		color: var(--color-header);
 		font-size: 2rem;
 	}
 
@@ -142,7 +149,7 @@ export const CTA = styled(motion.a)`
 	align-self: start;
 	border-bottom: 1px solid ${COLORS.primary.dark};
 	font-size: 1.5rem;
-	color: ${COLORS.text.header};
+	color: var(--color-header);
 
 	${mediaQueries.tabletUp} {
 		font-size: 2rem;
@@ -163,7 +170,7 @@ export const CTA = styled(motion.a)`
 `
 
 export const Card = styled.div`
-	background: ${({ theme }) => theme.cardBg};
+	background: var(--color-cardBg);
 	border-radius: 5px;
 	width: 90%;
 	padding: 20px;
@@ -171,7 +178,7 @@ export const Card = styled.div`
 	flex-direction: column;
 	align-items: center;
 	box-shadow: ${SHADOW.card} p {
-		color: ${({ theme }) => theme.header};
+		color: var(--color-header);
 		font-size: 1.5rem;
 	}
 
@@ -184,8 +191,8 @@ export const Card = styled.div`
 	li {
 		padding: 5px 8px 5px 8px;
 		margin: 0 5px 0 0;
-		background-color: ${COLORS.tag.purple};
-		color: ${({ theme }) => theme.header};
+		background-color: ${TAG_COLORS.purple};
+		color: var(--color-header);
 
 		border-radius: 4px;
 		text-align: center;
