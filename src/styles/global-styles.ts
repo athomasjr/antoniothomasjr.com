@@ -85,7 +85,7 @@ a {
 
 
 
-	body::-webkit-scrollbar {
+	/* body::-webkit-scrollbar {
 		width: 12px;
 		background: ${COLORS.primary.dark};
 	}
@@ -99,7 +99,7 @@ a {
 	* {
 		scrollbar-width: thin;
 		scrollbar-color: ${COLORS.background.dark} ${COLORS.primary.dark};
-	}
+	} */
 
 
 
