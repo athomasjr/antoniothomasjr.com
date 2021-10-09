@@ -25,6 +25,7 @@ html {
 }
 
 body {
+	overflow-x:hidden !important;
 		overflow: hidden !important;
 	overflow-y: auto !important;
 	font-family: ${FONTS.body};
