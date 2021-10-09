@@ -14,7 +14,6 @@ const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
 module.exports = {
 	siteMetadata,
 	plugins: [
-		`gatsby-plugin-styled-components`,
 		{
 			resolve: `gatsby-plugin-sitemap`,
 			options: {
@@ -173,6 +172,7 @@ module.exports = {
 				},
 			},
 		},
+		`gatsby-plugin-styled-components`,
 	],
 	flags: {
 		// FAST_DEV: true,
