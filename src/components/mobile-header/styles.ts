@@ -24,12 +24,13 @@ const noShow = ({ showNav }: StyledProps<IMobileNavLinksProps>) => {
 export const MobileHeader = styled.header`
 	/* position: fixed; */
 	/* top: 0; */
+	height: 80px;
+	padding: 0 16px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
 	z-index: 2;
-	padding: 16px;
 	${mediaQueries.laptopUp} {
 		display: none;
 	}

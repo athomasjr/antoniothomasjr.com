@@ -83,21 +83,26 @@ a {
 }
 
 
-body::-webkit-scrollbar {
-	width: 12px;
-	background: ${COLORS.primary.dark};
-}
 
-body::-webkit-scrollbar-thumb {
-	background-color: ${COLORS.background.dark};
-	border-radius: 20px;
-	border: 3px solid ${COLORS.primary.dark};
-}
 
-* {
-	scrollbar-width: thin;
-	scrollbar-color: ${COLORS.background.dark} ${COLORS.primary.dark};
-}
+	body::-webkit-scrollbar {
+		width: 12px;
+		background: ${COLORS.primary.dark};
+	}
+
+	body::-webkit-scrollbar-thumb {
+		background-color: ${COLORS.background.dark};
+		border-radius: 20px;
+		border: 3px solid ${COLORS.primary.dark};
+	}
+
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: ${COLORS.background.dark} ${COLORS.primary.dark};
+	}
+
+
+
 
 `
 
