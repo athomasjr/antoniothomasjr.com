@@ -21,9 +21,9 @@ const Sun = styled(FiSun)`
 export default function ThemeToggle() {
 	const { colorMode, setColorMode } = useContext(ThemeContext)!
 
-	if (!colorMode) {
-		return null
-	}
+	// if (!colorMode) {
+	// 	return null
+	// }
 
 	return (
 		<Toggle

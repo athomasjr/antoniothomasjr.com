@@ -7,6 +7,10 @@ interface IMobileNavLinksProps {
 	isLight: boolean
 }
 
+interface IToggleContainerProps {
+	showNav: boolean
+}
+
 const noShow = ({ showNav }: StyledProps<IMobileNavLinksProps>) => {
 	if (!showNav) {
 		return css`
@@ -25,13 +29,14 @@ export const MobileHeader = styled.header`
 	align-items: center;
 	width: 100%;
 	z-index: 2;
-	padding: 15px;
+	padding: 16px;
 	${mediaQueries.laptopUp} {
 		display: none;
 	}
 `
 
 export const MobileNavLinks = styled(NavLinks)`
+	position: fixed;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -39,7 +44,6 @@ export const MobileNavLinks = styled(NavLinks)`
 	text-align: center;
 	height: 100vh;
 	width: 100%;
-	position: absolute;
 	top: 0;
 	right: 0;
 	transition: transform 300ms;
@@ -58,10 +62,10 @@ export const MobileNavLinks = styled(NavLinks)`
 		font-size: 2rem;
 	}
 `
-
-export const ToggleContainer = styled.div`
-	/* position: fixed; */
-	/* top: 0; */
-	/* right: 0; */
-	/* margin: 16px 8px 0 0; */
+export const ToggleContainer = styled.div<IToggleContainerProps>`
+	${({ showNav }) =>
+		showNav &&
+		css`
+			display: none;
+		`}
 `

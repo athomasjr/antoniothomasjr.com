@@ -8,6 +8,9 @@ interface IMobileMenuButtonProps {
 const showNavigation = ({ showNav }: StyledProps<IMobileMenuButtonProps>) => {
 	if (showNav) {
 		return css`
+			position: fixed;
+			top: 16px;
+
 			div:first-child {
 				transform: translateY(8px) rotateZ(45deg);
 			}
@@ -26,20 +29,13 @@ const showNavigation = ({ showNav }: StyledProps<IMobileMenuButtonProps>) => {
 }
 
 export const MobileMenuButton = styled.button<IMobileMenuButtonProps>`
-	/* position: fixed; */
-	/* left: 0; */
-	/* top: 0; */
-	/* margin: 10px 20px 0 0; */
-	/* margin: 0 0 0 8px; */
-
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	width: 4.5rem;
 	height: 4.5rem;
 	padding: 12px 0;
-	/* border-radius: 50%; */
-	/* background: ${COLORS.background.medium}; */
+
 	background: transparent;
 	border: none;
 	cursor: pointer;
@@ -49,7 +45,6 @@ export const MobileMenuButton = styled.button<IMobileMenuButtonProps>`
 		width: 2.5rem;
 		height: 0.29rem;
 		background: ${COLORS.primary.dark};
-		/* border-radius: 5px; */
 		transition: opacity 300ms, transform 300ms;
 	}
 

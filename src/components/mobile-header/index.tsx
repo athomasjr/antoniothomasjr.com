@@ -12,7 +12,7 @@ export default function MobileHeader() {
 	return (
 		<S.MobileHeader>
 			<MobileMenu showNav={showNav} onClick={() => setShowNav(!showNav)} />
-			<S.ToggleContainer>
+			<S.ToggleContainer showNav={showNav}>
 				<ThemeToggle />
 			</S.ToggleContainer>
 			<S.MobileNavLinks
