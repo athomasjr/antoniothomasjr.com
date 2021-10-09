@@ -26,7 +26,7 @@ html {
 
 body {
 	font-family: ${FONTS.body};
-	position: relative;
+	/* position: relative; */
 	background-color: var(--color-background);
 	line-height: 1.75;
 	font-weight: 400;
