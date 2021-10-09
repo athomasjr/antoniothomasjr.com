@@ -22,12 +22,12 @@ html {
 html {
 	box-sizing: border-box;
 	font-size: 62.5%;
-	overflow-x:hidden !important;
 }
 
 body {
-	overflow-x:hidden !important;
-		overflow: hidden !important;
+	height: 100%;
+	/* overflow-x:hidden !important; */
+	overflow: hidden !important;
 	overflow-y: auto !important;
 	font-family: ${FONTS.body};
 	position: relative;
