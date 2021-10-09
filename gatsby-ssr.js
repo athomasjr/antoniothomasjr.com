@@ -65,8 +65,8 @@ const FallbackStyles = () => {
 }
 
 export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
-	setHeadComponents([<FallbackStyles key='foo' />])
-	setPreBodyComponents([<MagicScriptTag key='bar' />])
+	// setHeadComponents([<FallbackStyles key='foo' />])
+	// setPreBodyComponents([<MagicScriptTag key='bar' />])
 }
 
 export const wrapRootElement = providerWrapper
