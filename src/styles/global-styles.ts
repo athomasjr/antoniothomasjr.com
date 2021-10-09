@@ -15,8 +15,8 @@ ${reset}
 
 body,
 html {
-	overflow: hidden !important;
-	overflow-y: auto !important;
+	/* overflow: hidden !important; */
+	/* overflow-y: auto !important; */
 }
 
 html {
