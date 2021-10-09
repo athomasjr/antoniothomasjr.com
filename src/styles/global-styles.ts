@@ -25,11 +25,10 @@ html {
 }
 
 body {
-	height: 100%;
-	max-width: 100%;
-	/* overflow-x:hidden !important; */
+	/* max-width: 100%;
+	overflow-x:hidden !important;
 	overflow: hidden !important;
-	overflow-y: auto !important;
+	overflow-y: auto !important; */
 	font-family: ${FONTS.body};
 	position: relative;
 	background-color: var(--color-background);
