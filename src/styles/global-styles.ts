@@ -13,11 +13,11 @@ ${reset}
 }
 
 
-body,
+/* body,
 html {
 	overflow: hidden !important;
 	overflow-y: auto !important;
-}
+} */
 
 html {
 	box-sizing: border-box;
@@ -25,6 +25,8 @@ html {
 }
 
 body {
+		overflow: hidden !important;
+	overflow-y: auto !important;
 	font-family: ${FONTS.body};
 	/* position: relative; */
 	background-color: var(--color-background);
