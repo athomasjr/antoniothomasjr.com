@@ -1,3 +1,4 @@
+import { ThemeToggle } from 'components'
 import { MobileMenu } from 'components/common'
 import { useThemeContext } from 'context/theme'
 import { myLinkData } from 'data'
@@ -11,9 +12,9 @@ export default function MobileHeader() {
 	return (
 		<S.MobileHeader>
 			<MobileMenu showNav={showNav} onClick={() => setShowNav(!showNav)} />
-			{/* <S.ToggleContainer showNav={showNav}>
+			<S.ToggleContainer showNav={showNav}>
 				<ThemeToggle />
-			</S.ToggleContainer> */}
+			</S.ToggleContainer>
 			<S.MobileNavLinks
 				isLight={colorMode !== 'dark'}
 				isMobile
