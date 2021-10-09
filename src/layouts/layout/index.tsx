@@ -1,4 +1,4 @@
-import { Footer, Header } from 'components'
+import { Footer, Header, MobileHeader } from 'components'
 import React from 'react'
 import * as S from './styles'
 
@@ -9,7 +9,7 @@ export default function Layout({ children }: LayoutProps) {
 	return (
 		<S.Container>
 			<Header />
-			{/* <MobileHeader /> */}
+			<MobileHeader />
 			<main>{children}</main>
 			<Footer />
 		</S.Container>
