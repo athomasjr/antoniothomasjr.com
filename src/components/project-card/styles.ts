@@ -122,7 +122,7 @@ export const SecondImage = styled.div`
 		left: 50px;
 		bottom: 60px;
 		width: 300px;
-		box-shadow: ${SHADOW.project_img};
+		/* box-shadow: ${SHADOW.project_img}; */
 		transition: transform 200ms;
 	}
 `

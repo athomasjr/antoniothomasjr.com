@@ -1,6 +1,6 @@
 import { FiTwitter } from 'react-icons/fi'
 import styled from 'styled-components'
-import { COLORS, mediaQueries, SHADOW } from 'styles'
+import { COLORS, ELEVATIONS, mediaQueries } from 'styles'
 
 interface ITwitterShareProps {
 	isLight: boolean
@@ -16,7 +16,7 @@ export const TwitterShare = styled.a<ITwitterShareProps>`
 	width: fit-content;
 	transition: all 0.3s;
 	color: ${COLORS.primary.light};
-	box-shadow: ${SHADOW.card};
+	box-shadow: ${ELEVATIONS.small};
 	border: ${({ isLight }) => (isLight ? '2px solid' : '')}${({ isLight }) => (isLight ? COLORS.primary.light : 'none')};
 
 	p {
@@ -26,7 +26,7 @@ export const TwitterShare = styled.a<ITwitterShareProps>`
 	${mediaQueries.laptopUp} {
 		&:hover {
 			transform: scale(1.1);
-			box-shadow: ${SHADOW.hover};
+			box-shadow: ${ELEVATIONS.medium};
 		}
 	}
 `

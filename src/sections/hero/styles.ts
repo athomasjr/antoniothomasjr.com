@@ -134,21 +134,28 @@ export const CTA = styled(motion.div)`
 `
 
 export const ImageWrapper = styled.div`
-	filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+	filter: drop-shadow(1px 2px 2px hsl(var(--color-shadow) / 0.333))
+		drop-shadow(2px 4px 4px hsl(var(--color-shadow) / 0.333))
+		drop-shadow(3px 6px 6px hsl(var(--color-shadow) / 0.333));
 `
 
 export const Image = styled.div`
 	background: ${COLORS.primary.dark};
 	clip-path: circle(35% at 52% 65%);
-	width: 50%;
-	margin: 0 auto;
+	width: 70%;
+	margin: -96px auto 0;
 
 	${mediaQueries.smallOnly} {
 		margin-bottom: 96px;
 	}
 
+	${mediaQueries.tabletUp} {
+		width: 50%;
+	}
+
 	${mediaQueries.tabletLand} {
-		width: 30%;
+		width: 40%;
+		margin-top: 0;
 	}
 
 	${mediaQueries.laptopUp} {

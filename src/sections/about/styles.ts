@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
-import { FONTS, mediaQueries, PADDING, SHADOW } from 'styles'
+import { ELEVATIONS, FONTS, mediaQueries, PADDING } from 'styles'
 
 export const Container = styled.section`
 	display: flex;
@@ -64,7 +64,7 @@ export const ImageContainer = styled(motion.div)`
 	grid-row: 2/3;
 	grid-column: 2/3;
 	border-radius: 4px;
-	width: 60%;
+	width: 90%;
 	justify-self: center;
-	box-shadow: ${SHADOW.card};
+	box-shadow: ${ELEVATIONS.small};
 `

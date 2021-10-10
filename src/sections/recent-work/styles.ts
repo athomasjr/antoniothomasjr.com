@@ -2,10 +2,10 @@ import { motion } from 'framer-motion'
 import styled, { css, keyframes, StyledProps } from 'styled-components'
 import {
 	COLORS,
+	ELEVATIONS,
 	FONTS,
 	mediaQueries,
 	PADDING,
-	SHADOW,
 	TAG_COLORS,
 } from 'styles'
 
@@ -98,7 +98,7 @@ export const Header = styled.h2`
 
 export const Image = styled.div`
 	border-radius: 5px;
-
+	box-shadow: ${ELEVATIONS.medium};
 	${mediaQueries.tabletLand} {
 		width: 70%;
 	}
@@ -107,7 +107,6 @@ export const Image = styled.div`
 		z-index: 1;
 		grid-column: 1/2;
 		width: 90%;
-		box-shadow: ${SHADOW.card};
 	}
 `
 
@@ -177,7 +176,8 @@ export const Card = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	box-shadow: ${SHADOW.card} p {
+	box-shadow: ${ELEVATIONS.small};
+	p {
 		color: var(--color-header);
 		font-size: 1.5rem;
 	}

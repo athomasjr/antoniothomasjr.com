@@ -1,5 +1,12 @@
 import styled, { css, StyledProps } from 'styled-components'
-import { COLORS, FONTS, mediaQueries, PADDING, SHADOW } from 'styles'
+import {
+	COLORS,
+	ELEVATIONS,
+	FONTS,
+	mediaQueries,
+	PADDING,
+	SHADOW,
+} from 'styles'
 
 interface IFormProps {
 	isLight: boolean
@@ -28,10 +35,10 @@ export const Form = styled.form<IFormProps>`
 	textarea:-webkit-autofill,
 	textarea:-webkit-autofill:hover,
 	textarea:-webkit-autofill:focus {
-		-webkit-text-fill-color: var(--color-text);
-		-webkit-box-shadow: ${SHADOW.card} var(--color-input) inset;
+		/* -webkit-text-fill-color: var(--color-text); */
+		/* -webkit-box-shadow: ${SHADOW.card} var(--color-input) inset; */
 
-		box-shadow: ${SHADOW.card} var(--color-input) inset;
+		/* box-shadow: ${SHADOW.card} var(--color-input) inset; */
 		transition: background-color 5000s ease-in-out 0s;
 	}
 
@@ -46,7 +53,8 @@ export const Form = styled.form<IFormProps>`
 		font-size: 1.6rem;
 		${setFormBorder}
 
-		/* box-shadow: ${SHADOW.card}; */
+		box-shadow: ${ELEVATIONS.small};
+		transition: all 0.3s ease-in-out;
 
 		&::placeholder,
 		&::-webkit-input-placeholder,
@@ -57,6 +65,8 @@ export const Form = styled.form<IFormProps>`
 		&:focus {
 			outline: none;
 			border: 1px solid ${COLORS.primary.dark};
+			box-shadow: ${ELEVATIONS.medium};
+			transform: scale(1.02);
 		}
 	}
 
@@ -125,7 +135,7 @@ export const CTA = styled.button`
 	padding: 8px 0;
 	cursor: pointer;
 	font-size: 1.6rem;
-	box-shadow: ${SHADOW.card};
+	box-shadow: ${ELEVATIONS.small};
 	transition: all 0.3s ease-in-out;
 
 	${mediaQueries.tabletUp} {
@@ -136,7 +146,7 @@ export const CTA = styled.button`
 
 	${mediaQueries.laptopUp} {
 		&:hover {
-			box-shadow: ${SHADOW.hover};
+			box-shadow: ${ELEVATIONS.medium};
 			transform: scale(1.08);
 		}
 	}

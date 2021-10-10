@@ -10,7 +10,7 @@ export const SocialContainer = styled.div`
 	line-height: 0;
 
 	a {
-		transition: color 0.3s, transform 0.3s;
+		transition: color 0.3s, transform 0.3s ease-in-out;
 
 		&:hover {
 			color: ${COLORS.primary.dark};
