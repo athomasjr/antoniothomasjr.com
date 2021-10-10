@@ -142,13 +142,15 @@ export const Button = styled.button<IButtonProps>`
 	box-shadow: ${SHADOW.card};
 	transition: all 0.3s ease-in-out;
 
-	&:hover {
-		box-shadow: ${SHADOW.hover};
-		transform: scale(1.08);
-	}
-
 	${mediaQueries.tabletUp} {
 		width: 40%;
 		font-size: 1.6rem;
+	}
+
+	${mediaQueries.laptopUp} {
+		&:hover {
+			box-shadow: ${SHADOW.hover};
+			transform: scale(1.08);
+		}
 	}
 `

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { FONTS, SHADOW } from 'styles'
+import { FONTS, mediaQueries, SHADOW } from 'styles'
 
 export const PostCard = styled.div`
 	background: var(--color-cardBg);
@@ -7,11 +7,6 @@ export const PostCard = styled.div`
 	border-radius: 4px;
 	padding: 4px 20px 20px 20px;
 	transition: all 0.3s ease;
-
-	&:hover {
-		transform: scale(1.08);
-		box-shadow: ${SHADOW.hover};
-	}
 
 	h2 {
 		color: var(--color-header);
@@ -21,5 +16,12 @@ export const PostCard = styled.div`
 
 	div {
 		margin-bottom: 16px;
+	}
+
+	${mediaQueries.laptopUp} {
+		&:hover {
+			transform: scale(1.08);
+			box-shadow: ${SHADOW.hover};
+		}
 	}
 `

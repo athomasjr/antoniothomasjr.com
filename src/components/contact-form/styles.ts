@@ -128,17 +128,18 @@ export const CTA = styled.button`
 	box-shadow: ${SHADOW.card};
 	transition: all 0.3s ease-in-out;
 
-	&:hover {
-		box-shadow: ${SHADOW.hover};
-		transform: scale(1.08);
-	}
-
 	${mediaQueries.tabletUp} {
 		font-size: 1.6rem;
 		padding: 16px 0;
 		width: 60%;
 	}
 
+	${mediaQueries.laptopUp} {
+		&:hover {
+			box-shadow: ${SHADOW.hover};
+			transform: scale(1.08);
+		}
+	}
 	${mediaQueries.laptopXlUp} {
 		width: 50%;
 	}
