@@ -39,7 +39,7 @@ body {
 
 p {
 	margin-bottom: 1.2rem;
-	font-size: 2rem;
+	font-size: 1.8rem;
 }
 
 h1,

@@ -1,0 +1,413 @@
+---
+title: How to Make Blazing Fast Portfolio Websites With SEO Support
+description: Whether you have a portfolio or have a few projects needing a home, I'll give you a glimpse into what I used to make my site FAST with SEO support.
+featured: true
+published: 2021-10-14
+updated: 2021-10-14
+author: Antonio Thomas
+featuredImage: fast-portfolios.jpeg
+---
+
+You might be familiar with developer portfolios, especially if you're getting started in web development.
+
+Your portfolio will display your work, experience, skills, and contact information. All in a centralized location to reach potential clients or employers.
+
+You can find many articles that outline what you should include. It all comes down to what you want to display. While I would suggest including at least:
+
+- An accessible method of contact via a contact form or listed contact information
+- About section or page
+- Image of yourself
+- A project section with different projects or your best work—quality, not quantity
+- Responsive design
+
+I cover what you should or shouldn't include in your portfolio.
+
+It's your site, so feel free to get creative. One of the most common features is a blog, like the one you are reading now 😁 — thanks for the support 🙏🏿
+
+Whether you have a portfolio or have a few projects needing a home, I'll give you a glimpse into what I used to make my site FAST with SEO support.
+
+<PostCovers
+topics={[
+  `Is a developer portfolio a must? Why or why not. If yes, when?`,
+  `The tools used to build my website and why I chose them.`,
+  `What's next for antoniothomasjr.com?`
+]}
+intendedFor='This article covers parts of React, CSS, and SCSS. It is intended for an audience with a basic understanding of these topics.'
+/>
+
+## Do You Need a Portfolio
+
+When I started learning web development, I read many articles about the importance of a portfolio. The more I read, the more evident it became that it was a need—at least, that's what I thought.
+
+Naturally, I set out to wow the world with my work. Oh wait, but I don't have any work to show 🤔 ; oh well, let's design one anyway.
+
+The stress of forcing it got me into trouble early on. I restarted my portfolios at least 20 times—maybe more. Here I was fresh out of "tutorial hell" and back into the fire of "portfolio hell"—yeah, I'm making it a thing.
+
+I couldn't settle on a design, or I couldn't agree on a language. Maybe this time, I decided I was not too fond of the framework I used, so I started over.
+
+It went from something exciting to something I avoided. It gave me anxiety—how would I ever finish it?
+
+But I digress...
+
+The point is, it is good to have a portfolio site, yes. But, the most important thing is learning how to build projects. Once you have a few, you'll be excited to show them off. Then pull some of the skills you learned from those projects, and inject them into your portfolio.
+
+Building a portfolio will also help you learn faster. Your portfolio is a project just like any other, so you will pick up new skills and techniques by making one.
+
+My portfolio is like a child (we're just moving past the toddler phase 😁). I feed it with information, teach it new techniques I learn, nurture it, and we'll both grow together. When I started working on this version, I was excited and still am, so I'm telling you about it in this post. Don't get stuck in "portfolio hell" because everyone else has one.
+
+
+### Where to Start
+
+So you decided to start building your developer portfolio but don't know where to start.
+
+Which languages and frameworks should you use?
+
+There are many tools available, but when decided, there are a few things to keep in mind when researching:
+
+- Performance
+- Search Engine Optimization (SEO)
+- Style and Design
+
+<Highlight>Performance</Highlight>
+
+Your site's speed is one of the most critical features for user experience (UX).
+
+[Google's research](https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks/) shows a correlation between first load and bounce rate. Bounce rate is the percentage of users that leave your site without visiting another page.
+
+- 1s-3s, the probability of bounce rate increases 32%
+- 1s-5s, the probability of bounce rate increases 90%
+- 1s-6s, the probability of bounce rate increases 106%
+
+The percentages continue to increase from there. We have to serve our sites to the client fast.
+
+<Highlight>Search Engin Optimization (SEO)</Highlight>
+
+SEO is essential to any website attempting to generate traffic, including your portfolio.
+
+It improves traffic to your site by enhancing its visibility in search results. The better your SEO, the higher you'll rank.
+
+Building your portfolio's ranking takes time, but we'll learn how to hit the ground running.
+
+<Highlight>Style and Design</Highlight>
+
+Your project's design is a way to display your skill, so you should put time and effort into it. That is especially true for front-end developers. I'll be covering the different tools I used to style my portfolio later.
+
+I built this website and blog with Gatsby, a React framework. There are different methods of styling Gatsby apps.
+
+Three of the most popular options:
+
+- CSS modules
+- Sass/Scss
+- CSS-in-JS
+
+I recently converted my site to styled-components. It was a great decision, but we'll talk more about that later.
+
+### So, Why Gatsby
+
+[GatsbyJS](https://www.gatsbyjs.com/) is a [React](https://reactjs.org/) framework that allows you to develop fast and secure websites. Gatsby 4 is in beta and now allows static site generation (SSG), deferred Static generation (DSG), and server-side rendering (SSR).
+
+A few of Gatsby's key features include:
+
+- Great Performance and speed
+- Rich plugin ecosystem
+- The ability to source data from anywhere
+- The ability to access that data via GraphQL queries
+- Amazing image optimization
+
+<Highlight>What was I looking to solve?</Highlight>
+
+I knew I wanted to use React. It already solves many problems for developing websites and applications. The downside in my case is that it does its work client-side and sends the client an empty HTML file.
+
+So, my portfolio would be affected in the following two ways:
+
+1. The client would have to wait for the JS bundle to download before seeing my content. Depending on service or internet speed, that could result in a poor user experience.
+2. Because it ships an empty HTML file until the JS bundle downloads, there's nothing for web crawlers to index, resulting in poor SEO.
+
+I had two problems to solve. I wanted the ability to improve SEO and increase traffic to my site.
+
+Also, I knew that I would add a blog and needed my potential audience to find my articles.
+
+Through research, I was able to narrow my solutions down to a few options:
+
+1. Use React and develop a server-side solution. I could then pre-render data in an HTML file. Hydrate on the front-end so React could take over after the initial render.
+
+I explored this option with one of my first attempts. Working through this implementation was great for learning. It allowed me to dive into Webpack, hydration, and several other requirements of SSR and React.
+
+2. Use one of the libraries already solving these problems.
+
+I opted for option number two. Gatsby and Next are two of the most popular options. While Next was more than capable of solving these issues, I decided to move forward with Gatsby.
+
+I found Gatsby intuitively easier to learn and get started. The extensive plugin library and GraphQL data layer made the decision pretty easy for me. Sometimes it comes down to what you like.
+
+### Styling My Portfolio
+
+Once I decided to move forward with Gatsby, the focus shifted to designing my site.
+
+I mentioned earlier that there are many ways to style Gatsby applications.
+
+Gatsby has CSS support out of the box.
+
+```tsx
+import React from "react"
+// Import your CSS file
+import "../styles/index.css"
+
+export default function IndexPage() {
+  return <div>Hello World!</div>
+}
+```
+
+You can import global style sheets, but the recommended method is using modules.
+
+```css title=component.module.css
+.component {
+  color: red;
+}
+```
+
+```tsx title=component.tsx
+import React from 'react'
+import * as styles from './comonent.module.css'
+
+export default function Component() {
+  return (
+    <div className={styles.component}>
+    hello world!
+    </div>
+  )
+}
+```
+
+
+A similar option for styles is using Scss and Scss modules, which I used for the first version of this site. Scss is a superset of CSS, allowing you to use CSS while taking advantage of the power of Scss.
+
+The [Scss syntax](https://sass-lang.com/documentation/syntax/comments#in-scss) is slightly different from CSS, but the functionality of modules works the same.
+
+These styles worked fine. But as I planned for and added new features, they became difficult to manage.
+
+I managed dynamic styles with the library classnames. That often led to messy code, and I wanted to keep my components clean, so I looked for a less verbose solution.
+
+As I started adding dark-mode to the site, I knew I needed a better solution. That led to the transition to styled-components.
+
+[<Highlight>Why styled-components</Highlight>](https://styled-components.com/)
+
+Styled-Components handles code splitting and monitors components rendering.
+
+It autogenerates unique classnames for your styles—no classname conflicts to manage.
+
+Like CSS/Scss modules, styled-components are component scoped. That helps keep your project modular and scalable—just the solution I needed. If I need to make a change or deletion, I know exactly where to find my styles.
+
+```tsx
+import styled from 'styled-components'
+
+const Title = styled.h1`
+color:red;
+`
+
+
+export default function HelloWorld() {
+  return <Title>Hello World!</Title>;
+}
+```
+
+A significant benefit to me and why I made that change before adding dark-mode are props. You can manage dynamic styling with props or using the ThemeProvider.
+
+```tsx
+import styled from 'styled-components'
+
+interface ITitleProps {
+  isLight?: boolean;
+}
+
+const Title = styled.h1<ITitleProps>`
+color:${({isLight})=> isLight ? 'white' : 'black'};
+`
+
+
+export default function HelloWorld() {
+  return <Title isLight>Hello World!</Title>;
+}
+```
+
+
+Most importantly, you are writing CSS or Scss code with the power of template literals. Yet, you still have the option to use style objects, which sometimes comes in handy.
+
+
+### Adding SEO Support
+
+There's no point in building a developer portfolio if it won't gain traction, at least in my case. So SEO was a priority.
+
+Gatsby pre-renders your site into HTML, CSS, and JavaScript at build time. A CDN can then serve your finished website to the client. That's the fastest way to serve your site to users.
+
+With the help of a few plugins, we can leverage the speed of Gatsby to improve our SEO.
+
+
+<Highlight>Plugins to cover at a glance</Highlight>
+
+- gatsby-plugin-sitemap
+- gatsby-plugin-robots-txt
+- gatsby-plugin-react-helmet
+- gatsby-plugin-react-helmet-canonical-urls
+- gatsby-plugin-google-gtag
+
+
+[<Highlight>gatsby-plugin-sitemap</Highlight>](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sitemap)
+
+This plugin will create a sitemap for your Gatsby website. Sitemaps let are essential for SEO. They let crawlers know that your site is available to be crawled and directs them to your most important pages.
+
+<Header>Install the plugin</Header>
+
+```bash
+npm install gatsby-plugin-sitemap
+```
+
+<Header>Add it to your config file</Header>
+
+```javascript title=gatsby-config.js
+{
+siteMetadata: {
+  siteUrl: `https://www.example.com`,
+},
+plugins: [`gatsby-plugin-sitemap`]
+}
+```
+
+
+
+[<Highlight>gatsby-plugin-robots-txt</Highlight>](https://github.com/mdreizin/gatsby-plugin-robots-txt)
+
+This plugin will create a robot.txt for your site, telling crawlers which URLs they can access.
+
+
+<Header>Install</Header>
+
+```bash
+npm install gatsby-plugin-robots-txt
+```
+
+<Header>Add it to your config file</Header>
+
+
+```javascript title=gatsby-config.js
+{
+  siteMetadata: {
+    siteUrl: `https://www.yoursite.com`,
+  },
+  plugins: ['gatsby-plugin-robots-txt']
+}
+```
+
+
+[<Highlight>gatsby-plugin-react-helmet</Highlight>](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-react-helmet)
+
+
+This plugin is essential for adding SEO support to your gatsby site. It adds support for "[server rendering data added](https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet) with [React Helmet](https://github.com/nfl/react-helmet)."
+
+<Header>Install</Header>
+
+```bash
+npm install gatsby-plugin-react-helmet react-helmet
+```
+
+<Header>Add it to your config file</Header>
+
+
+```javascript title=gatsby-config.js
+{
+  plugins: [`gatsby-plugin-react-helmet`]
+}
+```
+
+
+React helmet allows you to inject metadata into your document head, like your page title.
+
+```tsx title=seo.tsx
+import React from 'react'
+import {Helmet} from 'react-helmet'
+
+export default function SEO() {
+  return (
+    <Helmet>
+      <title>Hello World!</title>
+    </Helmet>
+  )
+}
+```
+
+
+There are many things you can accomplish with React Helmet. For a deeper look, I suggest checking out Gatsby's documentation on SEO components.
+
+> Check it out 👉🏿 [Adding SEO Components](https://www.gatsbyjs.com/docs/add-seo-component/)
+
+
+[<Highlight>gatsby-plugin-react-helmet-canonical-urls</Highlight>](https://github.com/NickCis/gatsby-plugin-react-helmet-canonical-urls)
+
+This plugin adds canonical links to your pages using React Helmet.
+
+Canonical URLs point search engines to the single source of truth, the original place of publication.
+
+<Header>Install</Header>
+
+```bash
+npm install gatsby-plugin-react-helmet gatsby-plugin-react-helmet-canonical-urls
+```
+
+<Header>Add it to your config file</Header>
+
+
+```javascript title=gatsby-config.js
+{
+  plugins: [
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: `https://www.example.com`,
+      },
+    },
+  ]
+}
+```
+
+
+[<Highlight>gatsby-plugin-google-gtag</Highlight>](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-google-gtag)
+
+This plugin makes adding [Google Analytics](https://marketingplatform.google.com/about/analytics/) to your site simple.
+
+Google Analytics doesn't directly impact SEO. However, it will allow you to examine traffic data for your site. That will enable you to make the necessary adjustments to increase traffic, tying all the plugins together for better SEO support.
+
+<Header>Install</Header>
+
+```bash
+npm install gatsby-plugin-google-gtag
+```
+
+<Header>Add it to your config file</Header>
+
+
+```javascript title=gatsby-config.js
+{
+  plugins: [
+    {
+			resolve: `gatsby-plugin-google-gtag`,
+			options: {
+				trackingIds: ["GA-TRACKING_ID"],
+				pluginConfig: {
+					head: true,
+				},
+			},
+		},
+  ]
+}
+```
+
+If you haven't added any of these plugins to your site, I would highly suggest giving them a try.
+
+
+### What's Next for [antoniothomasjr.com](https://antoniothomasjr.com/)
+
+With the speed and flexibility that Gatsby ships with, there are many features you can add to your site.
+
+The current features in the works for this site include a goal tracker and integrating Twitter's API 🤷🏿‍♂️.
+
+If you haven't started your portfolio website, check out Gatsby; you'll have some fun, if nothing else.

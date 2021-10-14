@@ -28,6 +28,7 @@ export const Article = styled.article`
 `
 
 export const Content = styled.div<IContentProps>`
+	margin-bottom: 16px;
 	p,
 	ul,
 	ol {
@@ -44,7 +45,7 @@ export const Content = styled.div<IContentProps>`
 
 	p,
 	li {
-		font-size: 1.6rem;
+		font-size: 1.8rem;
 	}
 
 	h2,
@@ -80,10 +81,14 @@ export const Content = styled.div<IContentProps>`
 		display: inline-block;
 		margin-bottom: 24px;
 	}
+
+	${mediaQueries.tabletUp} {
+		margin-bottom: 48px;
+	}
 `
 
 export const FormContainer = styled.div`
-	margin: 16px 0;
+	margin: 0 0 16px 0;
 `
 
 export const TwitterShareContainer = styled.div``

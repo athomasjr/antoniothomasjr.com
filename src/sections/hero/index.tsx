@@ -1,7 +1,6 @@
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
-import { heroContent } from './hero-content'
 import * as S from './styles'
 
 export default function Hero() {
@@ -17,8 +16,22 @@ export default function Hero() {
 				</S.Image>
 			</S.ImageWrapper>
 			<S.Content>
-				<h1>{heroContent.heading}</h1>
-				<h2>{heroContent.subHead}</h2>
+				<h1>
+					Developer, Writer{' '}
+					<S.Amp
+						animate={{ rotate: -30 }}
+						transition={{
+							delay: 1,
+							type: 'spring',
+							bounce: 0.5,
+						}}
+					>
+						&amp;
+					</S.Amp>
+					<br />
+					Creator
+				</h1>
+				<h2>Let's Get Creative Together</h2>
 				<S.CTA
 					whileHover={{
 						scale: 1.1,
@@ -29,7 +42,7 @@ export default function Hero() {
 				>
 					<S.Hand>👋🏾</S.Hand>
 					<AnchorLink stripHash to='/#contact'>
-						{heroContent.cta}
+						Contact Antonio
 					</AnchorLink>
 				</S.CTA>
 			</S.Content>

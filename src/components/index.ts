@@ -1,7 +1,9 @@
 import BlogImg from './blog/blog-img'
+import Code from './blog/code'
 import InfoContainer from './blog/info-container'
 import InfoStamp from './blog/info-stamp'
 import PostCard from './blog/post-card'
+import PostCovers from './blog/post-covers'
 import TwitterShare from './common/twitter-share'
 import ContactForm from './contact-form'
 import Footer from './footer'
@@ -28,4 +30,6 @@ export {
 	InfoContainer,
 	ThemeToggle,
 	BlogImg,
+	PostCovers,
+	Code,
 }

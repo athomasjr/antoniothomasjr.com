@@ -33,6 +33,11 @@ export const COLORS = {
 		light: '225deg 14% 50%',
 		dark: '240deg 8% 0%',
 	},
+
+	codeBg: {
+		dark: 'hsl(231,14%,18%)',
+		light: 'hsl(0,0%,100%)',
+	},
 }
 
 export const TAG_COLORS = {

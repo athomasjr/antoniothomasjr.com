@@ -29,6 +29,11 @@ const wave = keyframes`
 	}
 `
 
+export const Amp = styled(motion.span)`
+	color: ${COLORS.primary.dark};
+	display: inline-block;
+`
+
 export const Container = styled.div`
 	display: grid;
 	align-items: center;

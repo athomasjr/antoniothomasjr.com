@@ -1,9 +1,10 @@
 import styled from 'styled-components'
-import { COLORS, mediaQueries } from 'styles'
+import { COLORS, ELEVATIONS, mediaQueries } from 'styles'
 
 export const Header = styled.header`
 	display: none;
 	flex-shrink: 0;
+	/* box-shadow: ${ELEVATIONS.small}; */
 
 	nav {
 		ul {
