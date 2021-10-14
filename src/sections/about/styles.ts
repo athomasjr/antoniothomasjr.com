@@ -48,7 +48,7 @@ export const Container = styled.section`
 		}
 
 		p {
-			font-size: 2rem;
+			/* font-size: 2rem; */
 			padding: 0 12px;
 		}
 	}
@@ -67,4 +67,8 @@ export const ImageContainer = styled(motion.div)`
 	width: 90%;
 	justify-self: center;
 	box-shadow: ${ELEVATIONS.small};
+
+	${mediaQueries.laptopUp} {
+		width: 80%;
+	}
 `
