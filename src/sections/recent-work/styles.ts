@@ -206,7 +206,7 @@ export const Card = styled.div`
 			font-size: 2.3rem;
 		}
 		li {
-			font-size: 1.75rem;
+			font-size: 1.8rem;
 			margin-right: 0;
 		}
 	}

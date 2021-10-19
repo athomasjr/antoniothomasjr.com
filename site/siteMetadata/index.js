@@ -1,7 +1,6 @@
 module.exports = {
 	title: 'Antonio Thomas',
-	description:
-		'Personal website and blog for Antonio Thomas, a frontend developer from Fitchburg Wisconsin.',
+	description: `Hi, I'm Antonio, a front-end developer, and writer from Wisconsin. My content covers working with front-end technologies such as  React, Gatsby, and Next.`,
 	siteUrl: 'https://antoniothomasjr.com',
 	image: '/images/site-banner.png',
 	ogLanguage: 'en_US',

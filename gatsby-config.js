@@ -1,6 +1,6 @@
 const path = require('path')
-const siteMetadata = require('./site/siteMetadata/index.js')
 require('dotenv').config({ path: './.env' })
+const siteMetadata = require('./site/siteMetadata')
 
 const {
 	NODE_ENV,
