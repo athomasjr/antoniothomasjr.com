@@ -29,10 +29,8 @@ export default function ScrollTop() {
 	}, [])
 
 	return (
-		<S.Container isVisible={isVisible}>
-			<button type='button' onClick={scrollToTop}>
-				<FiChevronUp aria-hidden='true' />
-			</button>
-		</S.Container>
+		<S.Button aria-hidden='true' isVisible={isVisible} onClick={scrollToTop}>
+			<FiChevronUp />
+		</S.Button>
 	)
 }
