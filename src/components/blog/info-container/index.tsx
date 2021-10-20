@@ -1,4 +1,4 @@
-import { InfoStamp } from 'components'
+import { InfoStamp } from 'components/blog'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import { Maybe } from 'types'

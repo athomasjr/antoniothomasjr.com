@@ -1,6 +1,6 @@
-import { NavLinks } from 'components/common'
 import styled, { css, StyledProps } from 'styled-components'
 import { mediaQueries } from 'styles'
+import NavLinks from '../nav-links'
 
 interface IMobileNavLinksProps {
 	showNav: boolean

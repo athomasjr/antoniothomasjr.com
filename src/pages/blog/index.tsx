@@ -1,4 +1,4 @@
-import { PostCard } from 'components'
+import { PostCard } from 'components/blog'
 import { graphql } from 'gatsby'
 import { BlogLayout } from 'layouts'
 import React from 'react'

@@ -1,35 +1,33 @@
-import BlogImg from './blog/blog-img'
-import Code from './blog/code'
-import InfoContainer from './blog/info-container'
-import InfoStamp from './blog/info-stamp'
-import PostCard from './blog/post-card'
-import PostCovers from './blog/post-covers'
-import TwitterShare from './common/twitter-share'
 import ContactForm from './contact-form'
 import Footer from './footer'
 import Header from './header'
 import MobileHeader from './mobile-header'
+import MobileMenu from './mobile-menu'
+import MyLink from './my-link'
+import NavLinks from './nav-links'
 import ProjectCard from './project-card'
+import ScrollTop from './scroll-top'
 import SEO from './seo'
+import Social from './social'
 import SubscribeForm from './subscribe-form'
 import ThankYou from './thank-you'
 import ThemeToggle from './toggle'
+import TwitterShare from './twitter-share'
 
 export {
 	SubscribeForm,
 	ContactForm,
-	PostCard,
 	TwitterShare,
-	InfoStamp,
 	Footer,
-	SEO,
 	Header,
 	MobileHeader,
 	ProjectCard,
 	ThankYou,
-	InfoContainer,
 	ThemeToggle,
-	BlogImg,
-	PostCovers,
-	Code,
+	MobileMenu,
+	MyLink,
+	NavLinks,
+	Social,
+	SEO,
+	ScrollTop,
 }

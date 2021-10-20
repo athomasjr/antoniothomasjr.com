@@ -75,22 +75,8 @@ module.exports = {
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-mdx`,
-		{
-			resolve: 'gatsby-plugin-root-import',
-			options: {
-				'~': path.join(__dirname, './src'),
-				pages: path.join(__dirname, './src/pages'),
-				images: path.join(__dirname, './src/assets/images'),
-				assets: path.join(__dirname, './src/assets'),
-				components: path.join(__dirname, './src/components'),
-				sections: path.join(__dirname, './src/sections'),
-				layouts: path.join(__dirname, './src/layouts'),
-				types: path.join(__dirname, './src/types'),
-				styles: path.join(__dirname, './src/styles'),
-				hooks: path.join(__dirname, './src/hooks'),
-				context: path.join(__dirname, './src/context'),
-			},
-		},
+		'gatsby-plugin-root-import',
+
 		{
 			resolve: 'gatsby-plugin-react-svg',
 			options: {

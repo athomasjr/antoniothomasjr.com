@@ -1,4 +1,4 @@
-import { InfoStamp } from 'components'
+import { InfoStamp } from 'components/blog'
 import { Link as GatsbyLink } from 'gatsby'
 import React from 'react'
 import { Maybe } from 'types'

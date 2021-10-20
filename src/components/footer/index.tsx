@@ -1,4 +1,4 @@
-import { Social } from 'components/common'
+import { Social } from 'components'
 import { useSiteMetadata } from 'hooks'
 import React from 'react'
 import * as S from './styles'

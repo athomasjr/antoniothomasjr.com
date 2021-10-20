@@ -1,7 +1,7 @@
 import { MDXProvider } from '@mdx-js/react'
 import { preToCodeBlock } from 'mdx-utils'
 import React from 'react'
-import { BlogImg, Code, PostCovers } from '../../src/components'
+import { BlogImg, Code, PostCovers } from '../../src/components/blog'
 import { ThemeProvider } from '../../src/context/theme'
 import { Header, Highlight } from '../../src/styles'
 

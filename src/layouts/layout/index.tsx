@@ -1,4 +1,4 @@
-import { Footer, Header, MobileHeader } from 'components'
+import { Footer, Header, MobileHeader, ScrollTop } from 'components'
 import React from 'react'
 import * as S from './styles'
 
@@ -7,11 +7,14 @@ interface LayoutProps {
 }
 export default function Layout({ children }: LayoutProps) {
 	return (
-		<S.Container>
-			<Header />
-			<MobileHeader />
-			<main>{children}</main>
-			<Footer />
-		</S.Container>
+		<>
+			<S.Container>
+				<Header />
+				<MobileHeader />
+				<main>{children}</main>
+				<Footer />
+			</S.Container>
+			<ScrollTop />
+		</>
 	)
 }

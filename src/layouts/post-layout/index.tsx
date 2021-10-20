@@ -1,4 +1,5 @@
-import { InfoContainer, SEO, SubscribeForm } from 'components'
+import { SEO, SubscribeForm } from 'components'
+import { InfoContainer } from 'components/blog'
 import { useThemeContext } from 'context/theme'
 import { useSiteMetadata } from 'hooks'
 import React from 'react'

@@ -1,11 +1,8 @@
 import Logo from 'assets/svg/logo.inline.svg'
-import { ThemeToggle } from 'components'
-// import { ThemeToggle } from 'components'
-// import { useThemeContext } from 'context/theme'
+import { NavLinks, Social, ThemeToggle } from 'components'
 import { myLinkData } from 'data'
 import { Link as GatsbyLink } from 'gatsby'
 import React from 'react'
-import { NavLinks, Social } from '../common'
 import * as S from './style'
 
 export default function Header() {
