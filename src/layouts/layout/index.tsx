@@ -8,7 +8,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
 	return (
 		<>
-			<S.Container>
+			<S.Container id='top'>
 				<Header />
 				<MobileHeader />
 				<main>{children}</main>

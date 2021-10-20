@@ -1,3 +1,4 @@
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import styled, { css } from 'styled-components'
 import { COLORS, ELEVATIONS, mediaQueries } from 'styles'
 
@@ -5,7 +6,7 @@ interface IContainerProps {
 	isVisible: boolean
 }
 
-export const Button = styled.div<IContainerProps>`
+export const Button = styled(AnchorLink)<IContainerProps>`
 	position: fixed;
 	bottom: 12px;
 	right: 12px;

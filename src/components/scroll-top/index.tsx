@@ -13,13 +13,6 @@ export default function ScrollTop() {
 		}
 	}
 
-	const scrollToTop = () => {
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth',
-		})
-	}
-
 	useEffect(() => {
 		window.addEventListener('scroll', toggleVisibility)
 
@@ -29,8 +22,8 @@ export default function ScrollTop() {
 	}, [])
 
 	return (
-		<S.Button aria-hidden='true' isVisible={isVisible} onClick={scrollToTop}>
-			<FiChevronUp />
+		<S.Button stripHash isVisible={isVisible} to='/#top'>
+			<FiChevronUp aria-hidden='true' />
 		</S.Button>
 	)
 }
