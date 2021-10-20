@@ -13,8 +13,8 @@ export default function Layout({ children }: LayoutProps) {
 				<MobileHeader />
 				<main>{children}</main>
 				<Footer />
+				<ScrollTop />
 			</S.Container>
-			<ScrollTop />
 		</>
 	)
 }
