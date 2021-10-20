@@ -5,6 +5,13 @@ import * as S from './styles'
 export default function ScrollTop() {
 	const [isVisible, setIsVisible] = useState(false)
 
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		})
+	}
+
 	const toggleVisibility = () => {
 		if (window.pageYOffset > 300) {
 			setIsVisible(true)
@@ -22,8 +29,8 @@ export default function ScrollTop() {
 	}, [])
 
 	return (
-		<S.Button stripHash isVisible={isVisible} to='/#top'>
-			<FiChevronUp aria-hidden='true' />
+		<S.Button aria-hidden='true' isVisible={isVisible} onClick={scrollToTop}>
+			<FiChevronUp />
 		</S.Button>
 	)
 }
