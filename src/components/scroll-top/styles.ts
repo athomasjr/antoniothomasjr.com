@@ -8,8 +8,8 @@ interface IContainerProps {
 
 export const Button = styled(AnchorLink)<IContainerProps>`
 	position: fixed;
-	bottom: 12px;
-	right: 12px;
+	bottom: 16px;
+	right: 16px;
 
 	opacity: 1;
 	transition: opacity 0.3s ease-in;
