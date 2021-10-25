@@ -110,13 +110,27 @@ export const Image = styled.div`
 	}
 `
 
+export const InfoContainer = styled.div`
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	${mediaQueries.tabletLand} {
+		align-items: center;
+		gap: 48px;
+	}
+
+	${mediaQueries.laptopUp} {
+		gap: 0;
+	}
+`
+
 export const Info = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 	padding: 20px;
-	margin-bottom: 30px;
 
 	p {
 		margin-bottom: 35px;
@@ -138,9 +152,14 @@ export const Info = styled.div`
 	}
 
 	${mediaQueries.laptopUp} {
+		align-self: start;
 		width: 100%;
 		align-items: flex-start;
-		padding: 15px;
+		padding: 0 15px;
+
+		h3 {
+			margin-top: 0;
+		}
 	}
 `
 
@@ -155,6 +174,7 @@ export const CTA = styled(motion.a)`
 	}
 
 	${mediaQueries.laptopUp} {
+		margin-bottom: 0;
 		font-size: 1.85rem;
 		span {
 			display: inline-block;
@@ -171,29 +191,31 @@ export const CTA = styled(motion.a)`
 export const Card = styled.div`
 	background: var(--color-cardBg);
 	border-radius: 5px;
-	width: 90%;
+	width: 100%;
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	box-shadow: ${ELEVATIONS.small};
+
 	p {
 		color: var(--color-header);
 		font-size: 1.5rem;
+		text-transform: capitalize;
 	}
 
 	ul {
 		list-style: none;
 		display: flex;
 		padding: 0;
+		gap: 8px;
 	}
 
 	li {
+		text-transform: capitalize;
 		padding: 5px 8px 5px 8px;
-		margin: 0 5px 0 0;
 		background-color: ${TAG_COLORS.purple};
 		color: var(--color-header);
-
 		border-radius: 4px;
 		text-align: center;
 	}
@@ -212,11 +234,12 @@ export const Card = styled.div`
 	}
 
 	${mediaQueries.tabletLand} {
-		width: 60%;
+		width: 70%;
 	}
 
 	${mediaQueries.laptopUp} {
-		grid-column: 2/3;
 		width: 100%;
+		align-self: flex-end;
+		margin-top: auto;
 	}
 `

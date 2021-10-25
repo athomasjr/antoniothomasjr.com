@@ -1,6 +1,6 @@
 import { SEO } from 'components'
 import React from 'react'
-import { About, Contact, Hero, Projects, RecentWork } from 'sections'
+import { About, Contact, Hero, RecentWork } from 'sections'
 
 export default function IndexPage() {
 	return (
@@ -9,7 +9,6 @@ export default function IndexPage() {
 			<Hero />
 			<RecentWork />
 			<About />
-			<Projects />
 			<Contact />
 		</>
 	)

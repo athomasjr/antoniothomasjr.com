@@ -13,7 +13,7 @@ export default function NotFoundContent() {
 			</p>
 			<S.ImgContainer>
 				<StaticImage
-					src='../../assets/images/404-img.jpeg'
+					src='../../images/404-img.jpeg'
 					alt='Small dog with glasses looking at laptop'
 				/>
 			</S.ImgContainer>
