@@ -3,7 +3,8 @@
 		"./src/**/*",
 		"cypress/**/*.ts",
 		"cypress/support/commands.js",
-		"src/data"
+		"src/data",
+		"site/wrappers/*"
 	],
 	"exclude": ["node_modules", "public", ".cache"],
 	"compilerOptions": {
@@ -27,7 +28,8 @@
 			"@testing-library/cypress",
 			"png",
 			"svg",
-			"gatsby-plugin-mailchimp"
+			"gatsby-plugin-mailchimp",
+			"mdx-utils"
 		]
 	}
 }

@@ -1,4 +1,5 @@
 import { MDXProvider } from '@mdx-js/react'
+import { WrapRootElementBrowserArgs } from 'gatsby'
 import { preToCodeBlock } from 'mdx-utils'
 import React from 'react'
 import { BlogImg, Code, PostCovers } from '../../src/components/blog'
@@ -6,7 +7,7 @@ import { ThemeProvider } from '../../src/context/theme'
 import { Header, Highlight } from '../../src/styles'
 
 const MDXComponents = {
-	pre: preProps => {
+	pre: (preProps: any) => {
 		const props = preToCodeBlock(preProps)
 		if (props) {
 			return <Code {...props} />
@@ -19,7 +20,7 @@ const MDXComponents = {
 	PostCovers,
 }
 
-const providerWrapper = ({ element }) => (
+const providerWrapper = ({ element }: WrapRootElementBrowserArgs) => (
 	<ThemeProvider>
 		<MDXProvider components={MDXComponents}>{element}</MDXProvider>
 	</ThemeProvider>

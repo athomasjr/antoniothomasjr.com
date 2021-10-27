@@ -61,6 +61,11 @@ const setContent = ({ language }: StyledProps<IGatsbyHighlightProps>) => {
 			content: 'tsx';
 		`
 	}
+	if (language === 'jsx') {
+		return css`
+			content: 'jsx';
+		`
+	}
 
 	return null
 }

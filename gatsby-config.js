@@ -68,7 +68,7 @@ module.exports = {
 			resolve: 'gatsby-source-filesystem',
 			options: {
 				name: 'blog-2021',
-				path: `${__dirname}/content/blog/2021`,
+				path: `${__dirname}/content/blog/2021/`,
 			},
 		},
 		`gatsby-plugin-image`,
