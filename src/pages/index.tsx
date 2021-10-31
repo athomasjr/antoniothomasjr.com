@@ -1,11 +1,17 @@
+import loadable from '@loadable/component'
 import { SEO } from 'components'
 import React from 'react'
-import { About, Contact, Hero, RecentWork } from 'sections'
+import { About, Hero, RecentWork } from 'sections'
+
+const Contact = loadable(() => import('sections/contact'))
 
 export default function IndexPage() {
 	return (
 		<>
-			<SEO title='Welcome to My Home Page' twitterType='summary_large_image' />
+			<SEO
+				title='Web Developer &amp; Writer'
+				twitterType='summary_large_image'
+			/>
 			<Hero />
 			<RecentWork />
 			<About />

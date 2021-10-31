@@ -159,6 +159,9 @@ module.exports = {
 			},
 		},
 		`gatsby-plugin-styled-components`,
+		`gatsby-plugin-webpack-bundle-analyser-v2`,
+		`gatsby-plugin-perf-budgets`,
+		`gatsby-plugin-loadable-components-ssr`,
 	],
 	flags: {
 		// FAST_DEV: true,

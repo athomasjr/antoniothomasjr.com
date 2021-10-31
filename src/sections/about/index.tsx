@@ -36,7 +36,7 @@ export default function About() {
 			>
 				<StaticImage
 					style={{ borderRadius: '5px' }}
-					src='../../images/about.jpeg'
+					src='../../images/about-update.jpeg'
 					alt='Antonio and wife with red barn in the background'
 					loading='lazy'
 				/>

@@ -1,10 +1,13 @@
-import { SEO, SubscribeForm } from 'components'
+import loadable from '@loadable/component'
+import { SEO } from 'components'
 import { InfoContainer } from 'components/blog'
 import { useThemeContext } from 'context/theme'
 import { useSiteMetadata } from 'hooks'
 import React from 'react'
 import { PostBySlugQuery } from 'types'
 import * as S from './styles'
+
+const SubscribeForm = loadable(() => import('components/subscribe-form'))
 
 interface IPostLayoutProps {
 	children: React.ReactNode

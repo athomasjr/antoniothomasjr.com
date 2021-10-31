@@ -17,7 +17,7 @@ export default function Hero() {
 			</S.ImageWrapper>
 			<S.Content>
 				<h1>
-					Developer, Writer{' '}
+					Web Developer&nbsp;
 					<S.Amp
 						animate={{ rotate: -30 }}
 						transition={{
@@ -29,9 +29,9 @@ export default function Hero() {
 						&amp;
 					</S.Amp>
 					<br />
-					Creator
+					Writer
 				</h1>
-				<h2>Let's Get Creative Together</h2>
+				<h2>I Help Bring Dreams to Life</h2>
 				<S.CTA
 					whileHover={{
 						scale: 1.1,

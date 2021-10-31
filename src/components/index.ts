@@ -5,7 +5,6 @@ import MobileHeader from './mobile-header'
 import MobileMenu from './mobile-menu'
 import MyLink from './my-link'
 import NavLinks from './nav-links'
-import ProjectCard from './project-card'
 import ScrollTop from './scroll-top'
 import SEO from './seo'
 import Social from './social'
@@ -21,7 +20,6 @@ export {
 	Footer,
 	Header,
 	MobileHeader,
-	ProjectCard,
 	ThankYou,
 	ThemeToggle,
 	MobileMenu,

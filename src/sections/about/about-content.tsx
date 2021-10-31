@@ -11,16 +11,17 @@ export const aboutContent: AboutContent = {
 	content: (
 		<>
 			<p>
-				My name is Antonio, and I'm a front-end developer from Wisconsin. I'm
-				also a father, husband, writer, fitness competitor, and "amateur"
-				amateur bass fisherman, and small-business owner. <br />
+				My name is Antonio, and I'm a self-taught web developer and writer from
+				Wisconsin. I'm also a father, husband, fitness competitor, "amateur"
+				amateur bass fisherman, and small-business owner... Phew, that was a
+				mouth full 😅
 			</p>
 
 			<p>
 				My journey into web development is fascinating; let's say the travel
 				wasn't a direct route. However, the motivation to bring creative thought
 				to life has always been there (creative writing major ✋🏾), and those
-				skill sets have certainly transferred over. <br />
+				skill sets have certainly transferred over.
 			</p>
 
 			<p>

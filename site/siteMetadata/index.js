@@ -7,7 +7,7 @@ module.exports = {
 	siteLanguage: 'en',
 	lastBuildDate: new Date(Date.now()).toISOString(),
 	siteLocale: `en_US`,
-	favicon: 'src/assets/svg/logo.inline.svg',
+	favicon: 'src/images/cartoon-profile.png',
 
 	author: {
 		name: 'Antonio Thomas',

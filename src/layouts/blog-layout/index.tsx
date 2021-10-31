@@ -9,8 +9,11 @@ interface IBlogLayoutProps {
 export default function BlogLayout({ children }: IBlogLayoutProps) {
 	return (
 		<S.Container>
-			<SEO title='Blog' />
-			<h1>Posts</h1>
+			<SEO
+				title='Blog'
+				description='This is where I share the details and experiences of my journey in web development.'
+			/>
+			<h1>All Blog Posts</h1>
 			{children}
 		</S.Container>
 	)
