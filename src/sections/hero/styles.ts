@@ -54,7 +54,7 @@ export const Container = styled.div`
 `
 
 export const Content = styled.div`
-	margin: -148px 0 0 0;
+	margin: -148px auto 0;
 
 	h1 {
 		font-weight: 600;
@@ -80,7 +80,7 @@ export const Content = styled.div`
 	}
 
 	${mediaQueries.mdPhoneUp} {
-		margin: -248px 0 0 0;
+		margin-top: -248px;
 	}
 
 	${mediaQueries.tabletUp} {
