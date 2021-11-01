@@ -84,6 +84,8 @@ export const Content = styled.div`
 	}
 
 	${mediaQueries.tabletUp} {
+		margin: -248px auto 0;
+
 		h1 {
 			font-size: 3.5rem;
 		}
