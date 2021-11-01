@@ -1,6 +1,6 @@
 import { PostCard } from 'components/blog'
 import { graphql } from 'gatsby'
-import { BlogLayout } from 'layouts'
+import BlogLayout from 'layouts/blog-layout'
 import React from 'react'
 import { BlogIndexQuery } from '../../types/generated/index'
 

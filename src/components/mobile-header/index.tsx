@@ -1,4 +1,5 @@
-import { MobileMenu, ThemeToggle } from 'components'
+import MobileMenu from 'components/mobile-menu'
+import ThemeToggle from 'components/theme-toggle'
 import { useThemeContext } from 'context/theme'
 import { myLinkData } from 'data'
 import React, { useState } from 'react'

@@ -1,6 +1,8 @@
-import { ContactForm } from 'components'
+import loadable from '@loadable/component'
 import React from 'react'
 import * as S from './styles'
+
+const ContactForm = loadable(() => import('components/contact-form'))
 
 export default function Contact() {
 	return (

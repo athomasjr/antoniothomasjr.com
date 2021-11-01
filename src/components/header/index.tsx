@@ -1,5 +1,7 @@
 import Logo from 'assets/svg/logo.inline.svg'
-import { NavLinks, Social, ThemeToggle } from 'components'
+import NavLinks from 'components/nav-links'
+import Social from 'components/social'
+import ThemeToggle from 'components/theme-toggle'
 import { myLinkData } from 'data'
 import { Link as GatsbyLink } from 'gatsby'
 import React from 'react'

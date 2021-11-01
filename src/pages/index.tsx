@@ -1,5 +1,5 @@
 import loadable from '@loadable/component'
-import { SEO } from 'components'
+import SEO from 'components/seo'
 import React from 'react'
 import { About, Hero, RecentWork } from 'sections'
 

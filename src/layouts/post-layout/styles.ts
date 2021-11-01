@@ -1,4 +1,4 @@
-import { TwitterShare } from 'components'
+import TwitterShare from 'components/twitter-share'
 import styled from 'styled-components'
 import { COLORS, FONTS, mediaQueries } from 'styles'
 

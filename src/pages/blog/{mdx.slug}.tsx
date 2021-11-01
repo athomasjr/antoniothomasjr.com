@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { PostLayout } from 'layouts'
+import PostLayout from 'layouts/post-layout'
 import React from 'react'
 import { PostBySlugQuery } from 'types'
 

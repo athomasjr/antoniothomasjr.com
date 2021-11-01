@@ -1,4 +1,4 @@
-import { SEO } from 'components'
+import SEO from 'components/seo'
 import React from 'react'
 import * as S from './styles'
 

@@ -1,10 +1,8 @@
-import NotFoundContent from 'sections/not-found-content'
+import loadable from '@loadable/component'
 import React from 'react'
 
-export default function NotFound() {
-	return (
-		<>
-			<NotFoundContent />
-		</>
-	)
-}
+const NotFoundContent = loadable(() => import('sections/not-found-content'))
+
+const NotFound = () => <NotFoundContent />
+
+export default NotFound

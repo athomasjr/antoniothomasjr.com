@@ -1,6 +1,8 @@
-import { ThankYou } from 'components'
+import loadable from '@loadable/component'
 import React from 'react'
 
-export default function Thanks() {
-	return <ThankYou />
-}
+const ThankYou = loadable(() => import('components/thank-you'))
+
+const Thanks = () => <ThankYou />
+
+export default Thanks

@@ -1,6 +1,6 @@
 import loadable from '@loadable/component'
-import { SEO } from 'components'
 import { InfoContainer } from 'components/blog'
+import SEO from 'components/seo'
 import { useThemeContext } from 'context/theme'
 import { useSiteMetadata } from 'hooks'
 import React from 'react'
