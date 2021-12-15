@@ -1,4 +1,5 @@
 import React from 'react'
+import { SectionTitle } from 'styles/typography'
 
 export interface AboutContent {
 	heading: JSX.Element
@@ -6,7 +7,7 @@ export interface AboutContent {
 }
 
 export const aboutContent: AboutContent = {
-	heading: <h2>My Story</h2>,
+	heading: <SectionTitle>My Story</SectionTitle>,
 
 	content: (
 		<>

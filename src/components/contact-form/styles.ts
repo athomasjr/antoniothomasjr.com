@@ -1,12 +1,5 @@
 import styled, { css, StyledProps } from 'styled-components'
-import {
-	COLORS,
-	ELEVATIONS,
-	FONTS,
-	mediaQueries,
-	PADDING,
-	SHADOW,
-} from 'styles'
+import { COLORS, ELEVATIONS, FONTS, mediaQueries, PADDING } from 'styles'
 
 interface IFormProps {
 	isLight: boolean
@@ -35,10 +28,6 @@ export const Form = styled.form<IFormProps>`
 	textarea:-webkit-autofill,
 	textarea:-webkit-autofill:hover,
 	textarea:-webkit-autofill:focus {
-		/* -webkit-text-fill-color: var(--color-text); */
-		/* -webkit-box-shadow: ${SHADOW.card} var(--color-input) inset; */
-
-		/* box-shadow: ${SHADOW.card} var(--color-input) inset; */
 		transition: background-color 5000s ease-in-out 0s;
 	}
 
