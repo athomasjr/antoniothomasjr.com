@@ -8,6 +8,7 @@ import {
 	PADDING,
 	TAG_COLORS,
 } from 'styles'
+import { SectionTitle } from 'styles/typography'
 
 interface IHeaderProps {
 	inView: boolean
@@ -52,17 +53,17 @@ export const Container = styled.section`
 	gap: 20px;
 	width: 100%;
 
-	h2 {
+	/* h2 {
 		color: var(--color-header);
 		font-family: ${FONTS.header};
 		font-weight: 600;
-	}
+	} */
 
 	${mediaQueries.tabletUp} {
 		padding: ${PADDING.page.tablet};
-		h2 {
+		/* h2 {
 			font-size: ${FONTS.size.tablet_header};
-		}
+		} */
 	}
 
 	${mediaQueries.laptopUp} {
@@ -89,7 +90,7 @@ export const Container = styled.section`
 	}
 `
 
-export const Header = styled.h2`
+export const Header = styled(SectionTitle)`
 	${mediaQueries.tabletUp} {
 		opacity: 0;
 		${showHeader}

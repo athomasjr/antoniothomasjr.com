@@ -13,7 +13,9 @@ export default function RecentWork() {
 
 	return (
 		<S.Container id='recent-work' ref={inViewRef}>
-			<S.Header inView={inView}>Recent Work</S.Header>
+			<S.Header inView={inView}>
+				Recent <span>Work</span>
+			</S.Header>
 
 			<S.Image>{project.image}</S.Image>
 			<S.InfoContainer>

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
+import { BaseContainer } from 'layouts/utils/base-container'
 import styled, { keyframes } from 'styled-components'
-import { COLORS, FONTS, mediaQueries, PADDING } from 'styles'
+import { COLORS, FONTS, mediaQueries } from 'styles'
 
 const wave = keyframes`
 	0% {
@@ -34,22 +35,13 @@ export const Amp = styled(motion.span)`
 	display: inline-block;
 `
 
-export const Container = styled.div`
+export const Container = styled(BaseContainer)`
 	display: grid;
 	align-items: center;
 	height: 100vh;
-	padding: 0 70px;
-
-	${mediaQueries.tabletLand} {
-		padding: ${PADDING.page.laptop};
-	}
 
 	${mediaQueries.laptopUp} {
 		grid-template-columns: 1.5fr 1fr;
-	}
-
-	${mediaQueries.laptopXlUp} {
-		padding: ${PADDING.page.laptopXL};
 	}
 `
 
