@@ -1,7 +1,12 @@
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 
-type Technology = 'React' | 'Gatsby' | 'Sass/Scss' | 'styled-components'
+type Technology =
+	| 'React'
+	| 'Gatsby'
+	| 'Sass/Scss'
+	| 'styled-components'
+	| 'Svelte'
 type Responsibility = 'Full design & development' | 'development'
 
 export interface Project {
@@ -15,6 +20,21 @@ export interface Project {
 }
 
 export const projectData: Project[] = [
+	{
+		title: 'Lotus Solutions',
+		description:
+			'Web development services for small to medium-size businesses; change how your customers define "experience" because they deserve it.',
+		stack: ['Svelte', 'Sass/Scss'],
+		responsibility: 'development',
+		image: (
+			<StaticImage
+				src='../../images/projects/lotussolutions/lotusprojectimg.png'
+				alt='Lotus Solutions website header section'
+				style={{ borderRadius: '4px' }}
+			/>
+		),
+		url: 'https://www.lotussolutions.io',
+	},
 	{
 		title: 'Krazy Kats Club',
 		description:
