@@ -99,7 +99,9 @@ export const Header = styled(SectionTitle)`
 
 export const Image = styled.div`
 	border-radius: 5px;
-	box-shadow: ${ELEVATIONS.medium};
+	filter: drop-shadow(1px 2px 2px hsl(var(--color-shadow) / 0.333))
+		drop-shadow(2px 4px 4px hsl(var(--color-shadow) / 0.333))
+		drop-shadow(3px 6px 6px hsl(var(--color-shadow) / 0.333));
 	${mediaQueries.tabletLand} {
 		width: 70%;
 	}

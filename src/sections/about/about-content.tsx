@@ -7,7 +7,11 @@ export interface AboutContent {
 }
 
 export const aboutContent: AboutContent = {
-	heading: <SectionTitle>My Story</SectionTitle>,
+	heading: (
+		<SectionTitle>
+			My <span>Story</span>
+		</SectionTitle>
+	),
 
 	content: (
 		<>
