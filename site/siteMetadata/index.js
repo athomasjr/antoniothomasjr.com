@@ -2,7 +2,7 @@ module.exports = {
 	title: 'Antonio Thomas',
 	description: `Hi, I'm Antonio, a self-taught developer and writer from Wisconsin. My content covers using development technologies such as  React, Gatsby, Next, and others.`,
 	siteUrl: 'https://antoniothomasjr.com',
-	image: '/images/ogimage.jpeg',
+	image: '/images/ogimage.gif',
 	ogLanguage: 'en_US',
 	siteLanguage: 'en',
 	lastBuildDate: new Date(Date.now()).toISOString(),
