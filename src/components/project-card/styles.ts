@@ -12,6 +12,7 @@ export const ProjectCard = styled(motion.div)`
 	background: var(--color-cardBg);
 	padding: 16px;
 	box-shadow: ${ELEVATIONS.medium};
+	border-radius: 4px;
 
 	${mediaQueries.tabletLand} {
 		width: 45%;
