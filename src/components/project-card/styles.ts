@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import { ELEVATIONS, mediaQueries } from 'styles'
+import { COLORS } from '../../styles/constants'
 
 export const ProjectCard = styled(motion.div)`
-	/* gap: 24px; */
+	gap: 24px;
+	position: relative;
 	justify-content: space-between;
 	display: flex;
 	flex-direction: column;
@@ -13,11 +15,23 @@ export const ProjectCard = styled(motion.div)`
 
 	${mediaQueries.tabletLand} {
 		width: 45%;
-		min-height: 420px;
+		min-height: 500px;
+		max-height: 500px;
 	}
 	${mediaQueries.laptopUp} {
-		min-height: 500px;
+		min-height: 560px;
+		max-height: 560px;
 	}
+`
+
+export const HoverInfoCard = styled.div`
+	z-index: 1;
+	position: absolute;
+	background: red;
+	width: 100%;
+	top: 0;
+	left: 0;
+	bottom: 70%;
 `
 
 export const ImageContainer = styled.div`
@@ -28,8 +42,24 @@ export const ImageContainer = styled.div`
 `
 
 export const InfoContainer = styled.div`
+	margin-bottom: 16px;
+
 	h3 {
 		margin-top: 0;
+	}
+
+	p {
+		margin-bottom: 16px;
+	}
+`
+
+export const Stack = styled.ul`
+	display: flex;
+	gap: 8px;
+
+	svg {
+		color: ${COLORS.primary.dark};
+		font-size: 3rem;
 	}
 `
 

@@ -6,6 +6,7 @@ import { FiGithub } from 'react-icons/fi'
 import {
 	SiGatsby,
 	SiGraphql,
+	SiJamstack,
 	SiMongodb,
 	SiNextdotjs,
 	SiStyledcomponents,
@@ -26,6 +27,7 @@ export default function Skills() {
 		{ Icon: SiGatsby, text: 'Gatbsy' },
 		{ Icon: SiNextdotjs, text: 'Next.js' },
 		{ Icon: SiSvelte, text: 'Svelte' },
+		{ Icon: SiJamstack, text: 'Jamstack' },
 		{ Icon: FaNodeJs, text: 'Node' },
 		{ Icon: SiGraphql, text: 'GraphQL' },
 		{ Icon: SiMongodb, text: 'MongoDB' },

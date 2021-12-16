@@ -31,7 +31,7 @@ export default function Hero() {
 					<br />
 					Writer
 				</h1>
-				<h2>I Help Bring Dreams to Life</h2>
+				<h2>I Create Lasting Web Experiences</h2>
 				<S.CTA
 					whileHover={{
 						scale: 1.1,

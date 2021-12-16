@@ -1,13 +1,6 @@
 import { motion } from 'framer-motion'
 import styled, { css, keyframes, StyledProps } from 'styled-components'
-import {
-	COLORS,
-	ELEVATIONS,
-	FONTS,
-	mediaQueries,
-	PADDING,
-	TAG_COLORS,
-} from 'styles'
+import { COLORS, ELEVATIONS, FONTS, mediaQueries, PADDING } from 'styles'
 import { SectionTitle } from 'styles/typography'
 
 interface IHeaderProps {
@@ -53,17 +46,8 @@ export const Container = styled.section`
 	gap: 20px;
 	width: 100%;
 
-	/* h2 {
-		color: var(--color-header);
-		font-family: ${FONTS.header};
-		font-weight: 600;
-	} */
-
 	${mediaQueries.tabletUp} {
 		padding: ${PADDING.page.tablet};
-		/* h2 {
-			font-size: ${FONTS.size.tablet_header};
-		} */
 	}
 
 	${mediaQueries.laptopUp} {
@@ -214,25 +198,14 @@ export const Card = styled.div`
 		gap: 8px;
 	}
 
-	li {
-		text-transform: capitalize;
-		padding: 5px 8px 5px 8px;
-		background-color: ${TAG_COLORS.purple};
-		color: var(--color-header);
-		border-radius: 4px;
-		text-align: center;
+	svg {
+		color: ${COLORS.primary.dark};
+		font-size: 3rem;
 	}
 
 	${mediaQueries.tabletUp} {
-		ul {
-			gap: 16px;
-		}
 		p {
 			font-size: 2.3rem;
-		}
-		li {
-			font-size: 1.8rem;
-			margin-right: 0;
 		}
 	}
 
