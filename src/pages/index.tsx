@@ -7,7 +7,7 @@ const Contact = loadable(() => import('sections/contact'))
 const About = loadable(() => import('sections/about'))
 const RecentWork = loadable(() => import('sections/recent-work'))
 const Skills = loadable(() => import('sections/skills'))
-// const Projects = loadable(() => import('sections/projects'))
+const Projects = loadable(() => import('sections/projects'))
 
 const IndexPage = () => (
 	<>
@@ -16,7 +16,7 @@ const IndexPage = () => (
 		<Skills />
 		<About />
 		<RecentWork />
-		{/* <Projects /> */}
+		<Projects />
 		<Contact />
 	</>
 )

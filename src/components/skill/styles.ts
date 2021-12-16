@@ -1,7 +1,8 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import { COLORS, ELEVATIONS, mediaQueries } from 'styles'
 
-export const Skill = styled.div`
+export const Skill = styled(motion.div)`
 	background: var(--color-cardBg);
 	width: 80px;
 	height: 80px;
