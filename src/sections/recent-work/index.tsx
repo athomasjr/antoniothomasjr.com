@@ -41,8 +41,8 @@ export default function RecentWork() {
 				<S.Card>
 					<p>{project.responsibility}</p>
 					<ul>
-						{project.stack.map(tech => (
-							<li key={`${project.title}-${tech}`}>{tech}</li>
+						{project.stack.map(icon => (
+							<li>{icon}</li>
 						))}
 					</ul>
 				</S.Card>

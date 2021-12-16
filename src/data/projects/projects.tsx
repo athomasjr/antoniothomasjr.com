@@ -1,23 +1,27 @@
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
+import { DiJavascript } from 'react-icons/di'
+import { FaSass } from 'react-icons/fa'
+import {
+	SiApollographql,
+	SiExpress,
+	SiGatsby,
+	SiGraphql,
+	SiMongodb,
+	SiNetlify,
+	SiReact,
+	SiSemanticuireact,
+	SiStyledcomponents,
+	SiSvelte,
+	SiTypescript,
+} from 'react-icons/si'
 
-type Technology =
-	| 'React'
-	| 'Gatsby'
-	| 'Sass/Scss'
-	| 'styled-components'
-	| 'Svelte'
-	| 'GraphQl'
-	| 'Apollo'
-	| 'MongoDB'
-	| 'TypeScript'
-	| 'Express'
 type Responsibility = 'Full design & development' | 'development'
 
 export interface Project {
 	title: string
 	description: string
-	stack: Technology[]
+	stack: JSX.Element[]
 	responsibility: Responsibility
 	featuredImage?: JSX.Element
 	image: JSX.Element
@@ -32,11 +36,13 @@ const imageStyles = {
 
 export const projectData: Project[] = [
 	{
+		isFeatured: true,
 		title: 'Lotus Solutions',
+		url: 'https://www.lotussolutions.io',
+		stack: [<SiSvelte />, <DiJavascript />, <FaSass />, <SiNetlify />],
+		responsibility: 'Full design & development',
 		description:
 			'Web development services for small to medium-size businesses; change how your customers define "experience" because they deserve it.',
-		stack: ['Svelte', 'Sass/Scss'],
-		responsibility: 'Full design & development',
 		featuredImage: (
 			<StaticImage
 				src='../../images/projects/lotussolutions/lotusprojectimg.png'
@@ -51,16 +57,22 @@ export const projectData: Project[] = [
 				{...imageStyles}
 			/>
 		),
-		url: 'https://www.lotussolutions.io',
-		isFeatured: true,
 	},
 	{
 		title: 'Nutrition Tracker',
+		stack: [
+			<SiReact />,
+			<SiTypescript />,
+			<SiExpress />,
+			<SiGraphql />,
+			<SiApollographql />,
+			<SiMongodb />,
+			<SiSemanticuireact />,
+		],
 		sourceCode: 'https://github.com/athomasjr/fitness-app',
+		responsibility: 'Full design & development',
 		description:
 			'A Nutrition tracker built in TypeScript with MongoDb, Express, React, GraphQL and the Food Center API.',
-		stack: ['Express', 'TypeScript', 'MongoDB', 'GraphQl', 'React'],
-		responsibility: 'Full design & development',
 		image: (
 			<StaticImage
 				src='../../images/projects/nutrition-tracker/nutrition-tracker-thumbnail.jpeg'
@@ -71,9 +83,15 @@ export const projectData: Project[] = [
 	},
 	{
 		title: 'Krazy Kats Club',
+		stack: [
+			<SiGatsby />,
+			<DiJavascript />,
+			<SiStyledcomponents />,
+			<SiNetlify />,
+		],
+
 		description:
 			'KrazyKatsClub is your one place to mint your KrazyKats_NFT and join an amazing group of NFT and crypto enthusiasts.',
-		stack: ['styled-components', 'Gatsby'],
 		responsibility: 'development',
 		featuredImage: (
 			<StaticImage
@@ -94,9 +112,10 @@ export const projectData: Project[] = [
 	},
 	{
 		title: 'Read Sleep Eat Repeat',
+		stack: [<SiGatsby />, <SiTypescript />, <FaSass />, <SiNetlify />],
+
 		description:
 			'A blog to check out books that are worth reading and books to skip with honest feedback from Read Eat Sleep Repeat',
-		stack: ['Gatsby', 'React', 'Sass/Scss'],
 		responsibility: 'Full design & development',
 
 		featuredImage: (

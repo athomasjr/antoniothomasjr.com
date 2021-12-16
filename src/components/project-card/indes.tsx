@@ -35,7 +35,13 @@ export default function ProjectCard({ project, idx }: ProjectCardProps) {
 			<S.InfoContainer>
 				<h3>{project.title}</h3>
 				<p>{project.description}</p>
+				<S.Stack>
+					{project.stack.map(icon => (
+						<li>{icon}</li>
+					))}
+				</S.Stack>
 			</S.InfoContainer>
+
 			<S.ButtonsContainer>
 				{project.sourceCode && (
 					<S.Button
