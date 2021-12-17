@@ -1,8 +1,5 @@
 <h1 align="center">Welcome to Antonio's Portfolio 👋</h1>
 <p>
-  <a href="#" target="_blank">
-    <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
-  </a>
   <a href="https://twitter.com/athomas\_jr" target="_blank">
     <img alt="Twitter: athomas\_jr" src="https://img.shields.io/twitter/follow/athomas_jr.svg?style=social" />
   </a>
