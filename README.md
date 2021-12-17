@@ -16,14 +16,15 @@
 
 👤 **Antonio Thomas**
 
-* Website: https://antoniothomasjr.com/
-* Twitter: [@athomas\_jr](https://twitter.com/athomas\_jr)
-* Github: [@athomasjr](https://github.com/athomasjr)
-* LinkedIn: [@athomas-jr](https://linkedin.com/in/athomas-jr)
+- Website: https://antoniothomasjr.com/
+- Twitter: [@athomas_jr](https://twitter.com/athomas_jr)
+- Github: [@athomasjr](https://github.com/athomasjr)
+- LinkedIn: [@athomas-jr](https://linkedin.com/in/athomas-jr)
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
 
-***
+---
+
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
