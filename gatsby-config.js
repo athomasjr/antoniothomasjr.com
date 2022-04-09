@@ -113,20 +113,20 @@ module.exports = {
 				siteUrl: siteUrl,
 			},
 		},
-		// {
-		// 	resolve: `gatsby-plugin-csp`,
-		// 	options: {
-		// 		mergeScriptHashes: false,
-		// 		mergeStyleHashes: false,
-		// 		directives: {
-		// 			'script-src': `'self' 'unsafe-inline' 'unsafe-eval'  ${process.env.GATSBY_MAILCHIMP_FORM_ACTION_CSP} https://www.googletagmanager.com`,
-		// 			'style-src': ` 'self' 'unsafe-inline'`,
-		// 			'connect-src': `'self' https://www.google-analytics.com`,
-		// 			'img-src': `'self' data:;`,
-		// 			'report-to': `${process.env.GATSBY_CSP_REPORT_TO}`,
-		// 		},
-		// 	},
-		// },
+		{
+			resolve: `gatsby-plugin-csp`,
+			options: {
+				mergeScriptHashes: false,
+				mergeStyleHashes: false,
+				directives: {
+					'script-src': `'self' 'unsafe-inline' 'unsafe-eval'  ${process.env.GATSBY_MAILCHIMP_FORM_ACTION_CSP} https://www.googletagmanager.com`,
+					'style-src': ` 'self' 'unsafe-inline'`,
+					'connect-src': `'self' https://www.google-analytics.com`,
+					'img-src': `'self' data:;`,
+					'report-to': `${process.env.GATSBY_CSP_REPORT_TO}`,
+				},
+			},
+		},
 		{
 			resolve: `gatsby-plugin-netlify`,
 			options: {
