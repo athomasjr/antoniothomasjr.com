@@ -1,6 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useThemeContext } from 'context/theme'
 import { navigate } from 'gatsby'
+import encode from 'helpers/encode'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
@@ -32,13 +33,6 @@ const schema = yup
 			.required(),
 	})
 	.required()
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const encode = (data: any) =>
-	Object.keys(data)
-		// eslint-disable-next-line prefer-template
-		.map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-		.join('&')
 
 export default function ContactForm() {
 	const { colorMode } = useThemeContext()

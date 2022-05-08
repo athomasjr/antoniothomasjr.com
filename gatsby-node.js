@@ -1,9 +1,4 @@
-const ignoreOrder = require('./site/webpack/ignore-order.js')
 const { createRemoteFileNode } = require('gatsby-source-filesystem')
-
-// exports.onCreateWebpackConfig = gatsbyConfig => {
-// 	ignoreOrder(gatsbyConfig)
-// }
 
 exports.createSchemaCustomization = ({ actions, schema }) => {
 	const { createTypes, printTypeDefinitions } = actions

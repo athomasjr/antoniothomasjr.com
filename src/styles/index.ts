@@ -1,4 +1,4 @@
-export * from './constants'
-export * from './global-styles'
-export * from './media-queries'
 export * from './blog'
+export * from './constants'
+export * from './GlobalStyles'
+export * from './mediaQueries'

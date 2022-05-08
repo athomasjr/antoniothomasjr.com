@@ -45,14 +45,14 @@ export const projectData: Project[] = [
 			'Web development services for small to medium-size businesses; change how your customers define "experience" because they deserve it.',
 		featuredImage: (
 			<StaticImage
-				src='../../images/projects/lotussolutions/lotusprojectimg.png'
+				src='../../assets/images/projects/lotussolutions/lotusprojectimg.png'
 				alt='Lotus Solutions website header section'
 				style={{ borderRadius: '4px' }}
 			/>
 		),
 		image: (
 			<StaticImage
-				src='../../images/projects/lotussolutions/lotussolutions-ogimage.jpeg'
+				src='../../assets/images/projects/lotussolutions/lotussolutions-ogimage.jpeg'
 				alt='Lotus Solutions website'
 				{...imageStyles}
 			/>
@@ -75,7 +75,7 @@ export const projectData: Project[] = [
 			'A Nutrition tracker built in TypeScript with MongoDb, Express, React, GraphQL and the Food Center API.',
 		image: (
 			<StaticImage
-				src='../../images/projects/nutrition-tracker/nutrition-tracker-thumbnail.jpeg'
+				src='../../assets/images/projects/nutrition-tracker/nutrition-tracker-thumbnail.jpeg'
 				alt='Nutrition Tracker'
 				{...imageStyles}
 			/>
@@ -95,14 +95,14 @@ export const projectData: Project[] = [
 		responsibility: 'development',
 		featuredImage: (
 			<StaticImage
-				src='../../images/projects/krazy-kats-club/kkc.jpeg'
+				src='../../assets/images/projects/krazy-kats-club/kkc.jpeg'
 				alt='Krazy Kats Club website hero section'
 				style={{ borderRadius: '4px' }}
 			/>
 		),
 		image: (
 			<StaticImage
-				src='../../images/projects/krazy-kats-club/kkc.jpeg'
+				src='../../assets/images/projects/krazy-kats-club/kkc.jpeg'
 				alt='Nutrition Tracker'
 				{...imageStyles}
 			/>
@@ -120,14 +120,14 @@ export const projectData: Project[] = [
 
 		featuredImage: (
 			<StaticImage
-				src='../../images/projects/read-eat-sleep-repeat/resp1.png'
+				src='../../assets/images/projects/read-eat-sleep-repeat/resp1.png'
 				alt='Read Sleep Eat Repeat website'
 				style={{ borderRadius: '4px' }}
 			/>
 		),
 		image: (
 			<StaticImage
-				src='../../images/projects/read-eat-sleep-repeat/resp1.png'
+				src='../../assets/images/projects/read-eat-sleep-repeat/resp1.png'
 				alt='Read Sleep Eat Repeat website'
 				{...imageStyles}
 			/>

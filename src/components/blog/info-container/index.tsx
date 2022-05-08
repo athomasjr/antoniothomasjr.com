@@ -19,7 +19,7 @@ export default function InfoContainer({
 		<S.InfoContainer>
 			<S.Image>
 				<StaticImage
-					src='../../../images/hero7.png'
+					src='../../../assets/images/hero7.png'
 					alt='Antonio in a white collared shirt and blue tie with purple background'
 				/>
 			</S.Image>
