@@ -166,9 +166,4 @@ module.exports = {
 		`gatsby-plugin-perf-budgets`,
 		`gatsby-plugin-loadable-components-ssr`,
 	],
-	flags: {
-		// FAST_DEV: true,
-		// PARALLEL_SOURCING: true,
-		// DEV_SSR: true,
-	},
 }
